@@ -1,0 +1,29 @@
+#demo:
+first_name: 111
+basic_name:
+ test_name: 444
+ selected_name:
+  - 666         #list
+  - 777
+url:
+   ysy_api: 'https://api.yishengyue.cn'
+   ysy_test: 'https://trest.yishengyue.cn'
+
+db:
+  test:
+    db_host: '116.62.63.151'
+    db_port: 3316
+    db_name: 'yishengyue_platform_db'
+    user: 'ysy'
+    pwd: 'aaaaa888'
+  official:
+    db_host: 'rm-bp155162txb9055txo.mysql.rds.aliyuncs.com'
+    db_port: 3336
+    db_name: 'yishengyue_platform_db'
+    user: 'ysy_check'
+    pwd: 'rammstein5!'
+
+email:
+  user_list: ['503106686@qq.com']
+  sub: '接口自动化测试报告'
+  content: '此次一共运行接口测试用例{s1}个，其中成功{s2}个，失败{s3}个，通过率为{s4}。失败的用例为{s5},通过的用例为{s6}'
