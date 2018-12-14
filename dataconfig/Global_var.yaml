@@ -6,7 +6,7 @@ basic_name:
   - 666         #list
   - 777
 url:
-   ysy_api: 'https://api.yishengyue.cn'
+   ysy_official: 'https://api.yishengyue.cn'
    ysy_test: 'https://trest.yishengyue.cn'
 
 db:
