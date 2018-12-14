@@ -97,9 +97,8 @@ class RunTest(object):
         return global_var
 
 if __name__ == '__main__':
-    #run_test = RunTest()
-    # f, p = run_test.go_on_run()
-    #p, f =run_test.sheets_to_run()
-    # print("p,f:", p, f)
-    print ('p,f,a')
+    run_test = RunTest()
+    # f, p = run_test.go_on_run()  调试专用
+    p, f =run_test.sheets_to_run()
+    print("p,f:", p, f)
     # run_test.send_report()     # 调试时不发送邮件

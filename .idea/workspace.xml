@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/debug.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +63,7 @@
         <counts>
           <entry key="Python Console" value="25" />
           <entry key="dummy" value="16" />
-          <entry key="py" value="3549" />
+          <entry key="py" value="3561" />
           <entry key="txt" value="15" />
           <entry key="yaml" value="122" />
         </counts>
@@ -72,7 +71,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="31" />
-          <entry key="Python" value="3574" />
+          <entry key="Python" value="3586" />
           <entry key="YAML" value="122" />
         </counts>
       </usages-collector>
@@ -84,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="291">
-              <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+              <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
               <folding>
                 <element signature="e#43#79#0" expanded="true" />
               </folding>
@@ -448,14 +447,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18986385" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18986385" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.23021583" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30359712" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30359712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4561151" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -724,7 +722,7 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
-          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+          <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
           <folding>
             <element signature="e#43#79#0" expanded="true" />
           </folding>
