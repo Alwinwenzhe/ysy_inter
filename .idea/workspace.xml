@@ -5,36 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataconfig/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/getdata/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/getdata/excel_data_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ysy_inter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ysy_inter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/HTMLTestRunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/HTMLTestRunner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/Run_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/Run_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/demo_mock.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/demo_mock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/runmethod.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/runmethod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/unittest_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/unittest_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/excel_data_config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdata/get_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataconfig/Global_var.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/Global_var.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataconfig/case.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/case.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataconfig/json.json" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/json.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/debug.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/run_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/common_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/common_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/operate_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operate_excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/operate_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operate_json.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/operate_mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operate_mysql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/operate_yaml.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operate_yaml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/send_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/send_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/debug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,14 +64,15 @@
         <counts>
           <entry key="Python Console" value="25" />
           <entry key="dummy" value="16" />
-          <entry key="py" value="3530" />
+          <entry key="py" value="3549" />
+          <entry key="txt" value="15" />
           <entry key="yaml" value="122" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="3555" />
+          <entry key="PLAIN_TEXT" value="31" />
+          <entry key="Python" value="3574" />
           <entry key="YAML" value="122" />
         </counts>
       </usages-collector>
@@ -110,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+            <state relative-caret-position="291">
+              <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
               <folding>
                 <element signature="e#43#79#0" expanded="true" />
               </folding>
@@ -454,6 +427,14 @@
       <option name="presentableId" value="Default" />
       <updated>1542614649813</updated>
     </task>
+    <task id="LOCAL-00001" summary="Pycharm 第一次提交">
+      <created>1544797449733</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1544797449733</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -474,7 +455,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.23021583" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6172662" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30359712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4561151" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -499,6 +480,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Pycharm 第一次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pycharm 第一次提交" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/base/__init__.py">
@@ -738,8 +723,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+        <state relative-caret-position="291">
+          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
           <folding>
             <element signature="e#43#79#0" expanded="true" />
           </folding>
