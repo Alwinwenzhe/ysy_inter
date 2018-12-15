@@ -8,16 +8,17 @@ from util.operate_yaml import OperateYaml
 from util.operate_json import OperateJson
 from util.common_util import CommonUtil
 from util.send_email import SendEmail
-import json, sys
+from util.operate_excel import OperateExcel
+import json, sys, threading
 
 class RunTest(object):
     """
     主程序入口
     """
-    def __init__(self):
+    def __init__(self,sheetid):
         self.s_email = SendEmail()
         self.run_me = RunMethod()
-        self.run_data = GetData()
+        self.run_data = GetData(sheetid)
         self.com_util = CommonUtil()
         self.yaml_data = OperateYaml()
         self.oper_json = OperateJson()
@@ -59,14 +60,18 @@ class RunTest(object):
                     print('测试失败,ID:',id ,'期望值：', expect_value, '.实际值为：', res)
         return fail_count, pass_count
 
-    def sheets_to_run(self):
+    def threads_to_run(self):
         """
-        第一个sheets为调试页，第二个开始为运行sheet
+        第三种运行模式：通过多线程运行不同sheets
         :return:
         """
-        sheets_count = self.run_data.get_sheets_count()
-        for i in sheets_count[1::]:
-            self.go_on_run()
+        theading_list = []
+        sheets_list = self.run_data.get_sheets_count()
+        for i in range(len(sheets_list)-1):
+            t = threading.Thread(target=self.go_on_run())
+            theading_list.append(t)
+        for j in theading_list:
+            j.start()
 
     def send_report(self):
         """
@@ -97,8 +102,22 @@ class RunTest(object):
         return global_var
 
 if __name__ == '__main__':
-    run_test = RunTest()
-    # f, p = run_test.go_on_run()  调试专用
-    p, f =run_test.sheets_to_run()
-    print("p,f:", p, f)
-    # run_test.send_report()     # 调试时不发送邮件
+    theading_list = []
+    """多sheet，遍历执行"""
+    oe = OperateExcel()
+    sheets = oe.get_sheets()
+    for i in range(1,len(sheets)):          #从sheetid为1开始遍历
+        print(">>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>")
+        run_test = RunTest(i)
+        run_test.go_on_run()
+    # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
+    # for i in range(1,len(sheets)):
+    #     rt = RunTest(i)
+    #     t = threading.Thread(target=rt.go_on_run())
+    #     theading_list.append(t)
+    # for j in theading_list:
+    #     k = 1
+    #     print("线程" + str(k) + "对应的sheet_id为:" + str(k) + "用例开始执行！")
+    #     j.start()
+
+    # rt.send_report()     # 调试时不发送邮件

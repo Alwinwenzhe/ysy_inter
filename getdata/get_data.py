@@ -17,8 +17,8 @@ class GetData(object):
     直接判断excel某行的各项数据
     """
 
-    def __init__(self):
-        self.read_ex = OperateExcel()
+    def __init__(self,sheetid=0):
+        self.read_ex = OperateExcel(sheetid)
         self.excel_data = ExceDataConfig()
         self.oper_json = OperateJson()
         self.oper_sql = OperateMySQL()

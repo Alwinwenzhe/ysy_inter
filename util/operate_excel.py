@@ -9,12 +9,11 @@ from xlutils.copy import copy
 
 class OperateExcel(object):
 
-    def __init__(self, file_name=None, sheet_id=None):
-        if file_name:
-            self.file_name = file_name
+    def __init__(self, sheet_id=None):
+        self.file_name = r'dataconfig\case.xlsx'
+        if sheet_id:
             self.sheet_id = sheet_id
         else:
-            self.file_name = r'dataconfig\case.xlsx'
             self.sheet_id = 0
         self.data = self.get_sheet()
 
@@ -24,7 +23,8 @@ class OperateExcel(object):
         :return: 一个内存地址
         """
         workbook = xlrd.open_workbook(self.file_name)
-        return workbook.sheets()[self.sheet_id]  # 仅加载指定sheet id
+        # return workbook.sheets()[self.sheet_id]  # 仅加载指定sheet id
+        return workbook.sheets()
 
     def get_sheets(self):
         '''
@@ -40,7 +40,8 @@ class OperateExcel(object):
         获取行数
         :return: str
         '''
-        tables = self.data
+        sheets = self.get_sheets()
+        tables = self.data[self.sheet_id]
         return tables.nrows
 
     def get_id(self, row):
@@ -48,7 +49,7 @@ class OperateExcel(object):
         获取id值
         :return:
         '''
-        return self.data.cell_value(int(row), int())
+        return self.data[self.sheet_id].cell_value(int(row), int())
 
     def get_cell(self, row, col):
         '''
@@ -57,7 +58,7 @@ class OperateExcel(object):
         :param col:
         :return:
         '''
-        return self.data.cell_value(int(row), int(col))
+        return self.data[self.sheet_id].cell_value(int(row), int(col))
 
     def write_data(self, row, col, value):
         '''
