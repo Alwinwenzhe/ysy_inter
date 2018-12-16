@@ -43,21 +43,23 @@ class RunTest(object):
             expect_value = self.run_data.get_expect_data(i)
             if is_run:  # 运行的出接口响应值
                 res = self.run_me.run_main(method, url, data, header)  # output：str
-                if key:  # 获取需要提取的全局变量
-                    for key, value in self.get_path(key, res).items():  # 获取字典对应的key，value
-                        self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
-                    self.run_data.write_excle_data(i, 'pass')
-                    pass_count.append(id[0])
-                    print('测试通过',id)
-                    continue
-                elif self.com_util.is_contain(expect_value, res):  # 从期望值对比
-                    self.run_data.write_excle_data(i, 'pass')
-                    pass_count.append(id[0])
-                    print('测试通过',id)
-                else:
+                try:
+                    if key:  # 获取需要提取的全局变量
+                        for key, value in self.get_path(key, res).items():  # 获取字典对应的key，value
+                            self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
+                        self.run_data.write_excle_data(i, 'pass')
+                        pass_count.append(id[0])
+                        print('测试通过',id)
+                    elif self.com_util.is_contain(expect_value, res):  # 从期望值对比
+                        self.run_data.write_excle_data(i, 'pass')
+                        pass_count.append(id[0])
+                        print('测试通过',id)
+                except AssertionError as e:
                     self.run_data.write_excle_data(i, res)  # 如果出错，返回接口错误信息
                     fail_count.append(id[0])
                     print('测试失败,ID:',id ,'期望值：', expect_value, '.实际值为：', res)
+                    print('>>>'+ e)
+
         return fail_count, pass_count
 
     def threads_to_run(self):
