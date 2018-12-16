@@ -102,7 +102,6 @@ class RunTest(object):
         return global_var
 
 if __name__ == '__main__':
-    theading_list = []
     """多sheet，遍历执行"""
     oe = OperateExcel()
     sheets = oe.get_sheets()
@@ -111,6 +110,7 @@ if __name__ == '__main__':
         run_test = RunTest(i)
         run_test.go_on_run()
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
+    # theading_list = []
     # for i in range(1,len(sheets)):
     #     rt = RunTest(i)
     #     t = threading.Thread(target=rt.go_on_run())

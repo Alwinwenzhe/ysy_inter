@@ -76,7 +76,8 @@ class OperateExcel(object):
         book1 = xlrd.open_workbook(self.file_name)
         book2 = copy(book1)
         # print(dir(book2))
-        sheet = book2.get_sheet(0)  # 获取第几个sheet页，book2现在的是xlutils里的方法，不是xlrd的
+        # print(dir(book2))
+        sheet = book2.get_sheet(self.sheet_id)  # 获取第几个sheet页，book2现在的是xlutils里的方法，不是xlrd的
         sheet.write(row, col, value)
         book2.save(self.file_name)
 
