@@ -8,14 +8,21 @@ import pymysql
 
 class OperateMySQL(object):
 
-    def __init__(self):
+    def __init__(self,db='ysy_test'):
         """yaml文件中读取相关配置"""
         oy = OperateYaml()
-        self.dbhost = oy.read_yaml()['db']['official']['db_host']
-        self.dbport = oy.read_yaml()['db']['official']['db_port']
-        self.dbname = oy.read_yaml()['db']['official']['db_name']
-        self.user = oy.read_yaml()['db']['official']['user']
-        self.pwd = oy.read_yaml()['db']['official']['pwd']
+        if db == 'ysy_test':
+            self.dbhost = oy.read_yaml()['db']['ysy_test']['db_host']
+            self.dbport = oy.read_yaml()['db']['ysy_test']['db_port']
+            self.dbname = oy.read_yaml()['db']['ysy_test']['db_name']
+            self.user = oy.read_yaml()['db']['ysy_test']['user']
+            self.pwd = oy.read_yaml()['db']['ysy_test']['pwd']
+        elif db == 'ysy_official':
+            self.dbhost = oy.read_yaml()['db']['ysy_official']['db_host']
+            self.dbport = oy.read_yaml()['db']['ysy_official']['db_port']
+            self.dbname = oy.read_yaml()['db']['ysy_official']['db_name']
+            self.user = oy.read_yaml()['db']['ysy_official']['user']
+            self.pwd = oy.read_yaml()['db']['ysy_official']['pwd']
 
     def con_db(self, sql_str):
         '''

@@ -86,6 +86,8 @@ class GetData(object):
             url_head = self.oper_ya.read_yaml()['url']['ysy_official']
         elif value.startswith('ysy_test'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_test']
+        elif value.startswith('ysy_zp_test'):
+            url_head = self.oper_ya.read_yaml()['url']['ysy_zp_test']
         return value, url_head
 
     def get_request_method(self, row):
@@ -111,11 +113,11 @@ class GetData(object):
             return None
 
     def value_none(self, value):
-        '''
+        """
         判断header中的value值，是否有None，有就从yaml文件中取对应值
         :param value:
         :return:
-        '''
+        """
         header_value = json.loads(value)  # 自动转换为字典
         for key, value in header_value.items():  # 遍历字典键值
             if value == "":  # json格式需保留，即使没有值也是""
@@ -176,6 +178,23 @@ class GetData(object):
             return expect_data
         else:
             return None
+
+    def get_expect_no_result(self,row):
+        """
+        返回接口中不应该包含的值
+        :param row:
+        :return:
+        """
+        col = int(self.excel_data.get_expect_no_result())
+        expect_no_data = self.read_ex.get_cell(row,col)
+        if 'Mysql::' in expect_no_data:
+            expect_data = self.oper_sql.deal_sql2(expect_no_data)
+            return expect_data
+        if expect_no_data:
+            return expect_no_data
+        else:
+            return None
+
 
     def write_excle_data(self, row, value):
         '''

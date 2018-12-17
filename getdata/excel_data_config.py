@@ -15,8 +15,9 @@ class ExceDataConfig(object):
     Depend_field = '10'
     Request_data = '11'
     Expect_result = '12'
-    Reality_result = '13'
-    Whether_pass = '14'
+    Expect_no_result = '13'
+    Reality_result = '14'
+    Whether_pass = '15'
 
     def gett_id(self):
         """
@@ -67,6 +68,13 @@ class ExceDataConfig(object):
          :return:
          '''
         return ExceDataConfig.Expect_result
+
+    def get_expect_no_result(self):
+        """
+        判定预期结果中不包含
+        :return:
+        """
+        return ExceDataConfig.Expect_no_result
 
     def get_reality_result(self):
         '''

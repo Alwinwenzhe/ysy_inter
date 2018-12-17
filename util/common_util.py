@@ -27,3 +27,22 @@ class CommonUtil(object):
             return False
         else:
             return True
+
+    def not_contain(self,str1,str2):
+        """
+        判定st2不被包含
+        :param str1: 目标字符串
+        :param str2: 被包含主体
+        :return:
+        """
+        flag = []
+        st = str(str1).split(',')
+        for i in st:
+            if i in str2:
+                flag.append('false')
+            else:
+                flag.append('true')
+        if 'false' in flag:
+            return False
+        else:
+            return True
