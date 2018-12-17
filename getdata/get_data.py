@@ -52,7 +52,7 @@ class GetData(object):
         elif is_run == 'N':
             flag = False
         else:
-            print("The cell data is error!!")
+            print("Whether or not to perform value is error!!")
         return flag
 
     def get_global_val(self, row):
