@@ -26,18 +26,7 @@ class RunTest(object):
         self.com_util = CommonUtil()
         self.yaml_data = OperateYaml()
         self.oper_json = OperateJson()
-
-    def conn_sql(self,sheetid):
-        """
-        这里判定默认连接的数据库，注意：必须一个sheet连接一个库，否则会失败或异常
-        :return:需要的数据库标识
-        这里构建函数调用有问题：
-        """
-        value = self.get_data.get_id_yaml(0)       #默认使用第一行即可
-        if value.startswith('ysy_test') or value.startswith('ysy_zp_test'):
-            return 'ysy_test'
-        elif value.startswith('ysy_official'):
-            return 'ysy_official'
+        self.oper_sql = OperateMySQL()
 
     def get_path(self, key, res):
         """
@@ -49,9 +38,9 @@ class RunTest(object):
         global_var = {}
         list_comma = key.split(',')
         # if isinstance(key,list):        # 判断list
-        for i in list_comma:  # 写入之多个时，需循环处理2018-10-30 13：00
+        for i in list_comma:            # 写入之多个时，需循环处理2018-10-30 13：00
             list = i.split("/")
-            list_last = list[-1]  # 获取最后一个值
+            list_last = list[-1]           # 获取最后一个值
             res_value = json.loads(res, encoding='utf-8')
             for i in range(len(list)):
                 res_value = res_value[list[i]]  # 循环取值需要设置变量
@@ -145,19 +134,18 @@ class RunTest(object):
         print("p,f:", p, f)
 
 
-
 if __name__ == '__main__':
-    """仅调试使用"""
-    run_test = RunTest(0)
-    run_test.go_on_run()
+    # """仅调试使用"""
+    # run_test = RunTest(0)
+    # run_test.go_on_run()
 
-    # """多sheet，遍历执行"""
-    # oe = OperateExcel()
-    # sheets = oe.get_sheets()
-    # for i in range(1,len(sheets)):          #从sheetid为1开始遍历
-    #     print(">>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>")
-    #     run_test = RunTest(i)
-    #     run_test.go_on_run()
+    """多sheet，遍历执行"""
+    oe = OperateExcel()
+    sheets = oe.get_sheets()
+    for i in range(1,len(sheets)):          #从sheetid为1开始遍历
+        print(">>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>")
+        run_test = RunTest(i)
+        run_test.go_on_run()
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
     # theading_list = []

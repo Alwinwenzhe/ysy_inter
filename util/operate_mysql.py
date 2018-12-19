@@ -8,27 +8,35 @@ import pymysql
 
 class OperateMySQL(object):
 
-    def __init__(self,db='ysy_test'):
+    def __init__(self):
         """yaml文件中读取相关配置"""
-        oy = OperateYaml()
-        if db == 'ysy_test':
-            self.dbhost = oy.read_yaml()['db']['ysy_test']['db_host']
-            self.dbport = oy.read_yaml()['db']['ysy_test']['db_port']
-            self.dbname = oy.read_yaml()['db']['ysy_test']['db_name']
-            self.user = oy.read_yaml()['db']['ysy_test']['user']
-            self.pwd = oy.read_yaml()['db']['ysy_test']['pwd']
-        elif db == 'ysy_official':
-            self.dbhost = oy.read_yaml()['db']['ysy_official']['db_host']
-            self.dbport = oy.read_yaml()['db']['ysy_official']['db_port']
-            self.dbname = oy.read_yaml()['db']['ysy_official']['db_name']
-            self.user = oy.read_yaml()['db']['ysy_official']['user']
-            self.pwd = oy.read_yaml()['db']['ysy_official']['pwd']
+        self.oy = OperateYaml()
 
-    def con_db(self, sql_str):
+    def conn_db(self,goal_db):
+        """
+        通过传入的字符串判定连接的数据库配置
+        :param goal_db:
+        :return:
+        """
+        if 'ysy_test' == goal_db:
+            self.dbhost = self.oy.read_yaml()['db']['ysy_test']['db_host']
+            self.dbport = self.oy.read_yaml()['db']['ysy_test']['db_port']
+            self.dbname = self.oy.read_yaml()['db']['ysy_test']['db_name']
+            self.user = self.oy.read_yaml()['db']['ysy_test']['user']
+            self.pwd = self.oy.read_yaml()['db']['ysy_test']['pwd']
+        elif 'ysy_official' == goal_db:
+            self.dbhost = self.oy.read_yaml()['db']['ysy_official']['db_host']
+            self.dbport = self.oy.read_yaml()['db']['ysy_official']['db_port']
+            self.dbname = self.oy.read_yaml()['db']['ysy_official']['db_name']
+            self.user = self.oy.read_yaml()['db']['ysy_official']['user']
+            self.pwd = self.oy.read_yaml()['db']['ysy_official']['pwd']
+
+    def execute_sql(self, conn_str, sql_str):
         '''
         连接并创建游标,执行sql,返回结果
         :return:
         '''
+        self.conn_db(conn_str)
         db = pymysql.connect(host=self.dbhost, port=self.dbport, user=self.user, passwd=self.pwd, db=self.dbname,
                              charset='utf8')
         cursor = db.cursor()  # 创建一个游标
@@ -57,10 +65,11 @@ class OperateMySQL(object):
         :return:
         '''
         result_list = ""
-        temp_list = sentence.split('Mysql::')
+        temp_list = sentence.split('::')
+        conn_db = temp_list[0]
         temp_list = temp_list[1::]
         for i in range(len(temp_list)):
-            sql_result = self.con_db(temp_list[i])
+            sql_result = self.execute_sql(conn_db, temp_list[i])
             if sql_result:
                 result_list = result_list + sql_result
         return result_list

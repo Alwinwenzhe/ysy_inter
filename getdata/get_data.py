@@ -120,8 +120,13 @@ class GetData(object):
         """
         header_value = json.loads(value)  # 自动转换为字典
         for key, value in header_value.items():  # 遍历字典键值
-            if value == "":  # json格式需保留，即使没有值也是""
+            if value == "":  # json格式需保留，即使没有值也是"";
                 header_value[key] = self.oper_json.get_json_value(key)  # 获取value为空的key
+            elif value == 'none':     #满足仅有key，没有对应value的情况
+                header_value[key] = ''
+            elif value.startswith("json"):     #如果全局变量中值和key有差异，使用这个特殊处理
+                temp = value.split("::")[1]
+                header_value[key] = self.oper_json.get_json_value(temp)
         return header_value
 
     def get_request_url(self, row):
@@ -165,16 +170,16 @@ class GetData(object):
 
     def get_expect_data(self, row):
         '''
-        获取期望结果
+        获取期望结果，当expect_data语句以'ysy_test::' or 'ysy_official' 开头，就需要特殊处理
         :param row:
         :return:  期望值
         '''
         col = int(self.excel_data.get_expect_result())
         expect_data = self.read_ex.get_cell(row, col)
-        if 'Mysql::' in expect_data:
+        if expect_data.startswith("ysy_test") or expect_data.startswith("ysy_official"):
             expect_data = self.oper_sql.deal_sql2(expect_data)
             return expect_data
-        if expect_data:
+        elif expect_data:
             return expect_data
         else:
             return None
@@ -187,7 +192,7 @@ class GetData(object):
         """
         col = int(self.excel_data.get_expect_no_result())
         expect_no_data = self.read_ex.get_cell(row,col)
-        if 'Mysql::' in expect_no_data:
+        if expect_no_data.startswith("ysy_test") or expect_no_data.startswith("ysy_official"):
             expect_data = self.oper_sql.deal_sql2(expect_no_data)
             return expect_data
         if expect_no_data:
