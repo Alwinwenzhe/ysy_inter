@@ -10,7 +10,7 @@ from util.operate_mysql import OperateMySQL
 from util.common_util import CommonUtil
 from util.send_email import SendEmail
 from util.operate_excel import OperateExcel
-import json, sys, threading
+import json, sys, threading,time
 
 class RunTest(object):
     """
@@ -28,6 +28,15 @@ class RunTest(object):
         self.oper_json = OperateJson()
         self.oper_sql = OperateMySQL()
 
+    def set_tomorrow_time(self):
+        """
+        写入明天时间，需要放在每个用例执行的开始
+        :return:
+        """
+        value = self.com_util.get_tomorrow()
+        key = 'tomorrow_time'
+        self.oper_json.write_json_value(key,value)
+
     def get_path(self, key, res):
         """
         获取字典中的路径定位
@@ -43,7 +52,10 @@ class RunTest(object):
             list_last = list[-1]           # 获取最后一个值
             res_value = json.loads(res, encoding='utf-8')
             for i in range(len(list)):
-                res_value = res_value[list[i]]  # 循环取值需要设置变量
+                if str(list[i]).isdigit():
+                    res_value = res_value[int(list[i])]
+                else:
+                    res_value = res_value[list[i]]  # 循环取值需要设置变量
             global_var[list_last] = res_value
         return global_var
 
@@ -75,8 +87,19 @@ class RunTest(object):
         :return: fail_count, pass_count
         """
         row_counts = self.get_data.get_case_lines()
+        self.set_tomorrow_time()
         for i in range(1, row_counts):  # 排除第一行
             res = None
+            # 有可能url中需要前置数据处理，所以需要放这里
+            preset = self.get_data.get_pres_data(i)
+            if preset:
+                # 使用$$分割row中的key、value，再写入json
+                preset_list = preset.split("$$")
+                if preset_list[1].startswith("ysy_test"):
+                    preset_value = self.oper_sql.deal_sql2(preset_list[1])
+                else:
+                    preset_value = preset_list[1]
+                self.oper_json.write_json_value(preset_list[0],preset_value)
             id = self.get_data.get_id_yaml(i)
             is_run = self.get_data.get_is_run(i)
             url = id[1] + self.get_data.get_request_url(i)
@@ -84,11 +107,13 @@ class RunTest(object):
             header = self.get_data.get_header(i)
             data = self.get_data.get_request_data(i)
             key = self.get_data.get_global_val(i)
-            expect_value = self.get_data.get_expect_data(i)
-            expect_no_value = self.get_data.get_expect_no_result(i)
-            if is_run:  # 运行的出接口响应值
+            if is_run:
+                # 运行的出接口响应值
                 res = self.run_me.run_main(method, url, data, header)  # output：str
-                if key:  # 获取需要提取的全局变量
+                expect_value = self.get_data.get_expect_data(i)             #这里涉及比对值可能是再接口请求之后，所以需要放到这里
+                expect_no_value = self.get_data.get_expect_no_result(i)
+                if key:
+                    # 获取需要提取的全局变量
                     for key, value in self.get_path(key, res).items():  # 获取字典对应的key，value
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
                     self.get_data.write_excle_data(i, 'pass')

@@ -146,6 +146,15 @@ class GetData(object):
         else:
             return url
 
+    def get_pres_data(self,row):
+        """
+        获取前置数据：
+        :param row:
+        :return:
+        """
+        col =self.excel_data.get_preset_data()
+        return self.read_ex.get_cell(row,col)
+
     def get_request_data(self, row):
         '''
         获取请求数据,内部处理了特殊json

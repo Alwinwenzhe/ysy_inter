@@ -4,6 +4,7 @@
 # Comment:获取excel中每行每个字段在列中定位
 
 class ExceDataConfig(object):
+
     Id = '0'
     Run = '1'
     Url = '2'
@@ -13,58 +14,87 @@ class ExceDataConfig(object):
     Depend_id = '8'
     Depend_data = '9'
     Depend_field = '10'
-    Request_data = '11'
-    Expect_result = '12'
-    Expect_no_result = '13'
-    Reality_result = '14'
-    Whether_pass = '15'
+    Prese_data = '11'
+    Request_data = '12'
+    Expect_result = '13'
+    Expect_no_result = '14'
+    Reality_result = '15'
+    Whether_pass = '16'
 
     def gett_id(self):
         """
-         获取id
+         获取id位置
          :return: id对应列index
          """
         return ExceDataConfig.Id  # 类中的方法，可以通过类名，直接调用其常量及方法;注意是调用函数本身
 
-    # 获取是否运行
     def get_run(self):
+        """
+        获取是否运行位置
+        :return:
+        """
         return ExceDataConfig.Run
 
     # 获取Url
     def get_url(self):
         return ExceDataConfig.Url
 
-    # 获取请求方法：
     def get_method(self):
+        """
+        获取请求方法位置
+        :return:
+        """
         return ExceDataConfig.Method
 
-    # 获取请求头部
     def get_header(self):
+        """
+        获取请求头部位置
+        :return:
+        """
         return ExceDataConfig.Header_value
 
-    # 获取全局变量设置的key值
     def get_global_val(self):
+        """获取全局变量设置的key值位置"""
         return ExceDataConfig.Global_val
 
-    # 获取依赖用例ID
     def get_depend_id(self):
+        """
+        获取依赖用例ID位置
+        :return:
+        """
         return ExceDataConfig.Depend_id
 
-    # 获取依赖用例数据
     def get_depend_data(self):
+        """
+        获取依赖用例数据位置
+        :return:
+        """
         return ExceDataConfig.Depend_data
 
-    # 获取依赖用例字段
     def get_depend_field(self):
+        """
+        获取依赖用例字段位置
+        :return:
+        """
         return ExceDataConfig.Depend_field
 
-    # 获取请求数据
+    def get_preset_data(self):
+        """
+        获取需预置的数据位置
+        :return:
+        """
+        return ExceDataConfig.Prese_data
+
     def get_request_data(self):
+        """
+        获取请求数据位置
+        :return:
+        """
         return ExceDataConfig.Request_data
 
     def get_expect_result(self):
         '''
-         获取预期结果
+         获取预期结果位置
          :return:
          '''
         return ExceDataConfig.Expect_result
@@ -83,8 +113,11 @@ class ExceDataConfig(object):
          '''
         return ExceDataConfig.Reality_result
 
-    # 获取是否通过
     def get_whether_pass(self):
+        """
+        获取是否通过
+        :return:
+        """
         return ExceDataConfig.Whether_pass
 
 

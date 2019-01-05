@@ -1,6 +1,8 @@
 # Author:
 # Data:
 # Status
+import datetime, time
+
 
 class CommonUtil(object):
     '''
@@ -46,3 +48,18 @@ class CommonUtil(object):
             return False
         else:
             return True
+
+    def get_tomorrow(self):
+        """
+        获取明天这个时间点
+        :return: str格式的字符串
+        """
+        today = datetime.date.today()
+        tomorrow = today + datetime.timedelta(days=1)  # 获取明天日期
+        h_m = time.strftime(" %H:%M")
+        return str(tomorrow) + str(h_m)
+
+if __name__ == '__main__':
+    cu = CommonUtil()
+    now_time= cu.get_tomorrow()
+    print(now_time)
