@@ -5,11 +5,19 @@ basic_name:
  selected_name:
   - 666         #list
   - 777
+
 url:
    ysy_official: 'https://api.yishengyue.cn'
    ysy_test: 'https://trest.yishengyue.cn'
    ysy_zp_test: 'http://116.62.63.151:8109'
 
+#account msg
+account:
+  test:
+    seller_account: '15008499834'
+    user_account: '15828022852'
+
+#database msg
 db:
   ysy_test:
     db_host: '116.62.63.151'

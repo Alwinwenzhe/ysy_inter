@@ -93,13 +93,7 @@ class RunTest(object):
             # 有可能url中需要前置数据处理，所以需要放这里
             preset = self.get_data.get_pres_data(i)
             if preset:
-                # 使用$$分割row中的key、value，再写入json
-                preset_list = preset.split("$$")
-                if preset_list[1].startswith("ysy_test"):
-                    preset_value = self.oper_sql.deal_sql2(preset_list[1])
-                else:
-                    preset_value = preset_list[1]
-                self.oper_json.write_json_value(preset_list[0],preset_value)
+               self.oper_sql.sql_main(preset)
             id = self.get_data.get_id_yaml(i)
             is_run = self.get_data.get_is_run(i)
             url = id[1] + self.get_data.get_request_url(i)
@@ -118,22 +112,22 @@ class RunTest(object):
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
                     self.get_data.write_excle_data(i, 'pass')
                     self.pass_count.append(id[0])
-                    print('测试通过',id)
+                    print('测试通过',url)
                 elif expect_no_value and expect_value:
                     rel1 = self.com_util.is_contain(expect_value, res)
                     rel2 = self.com_util.not_contain(expect_no_value,res)  # 从期望值对比
                     if rel1 and rel2:
-                        self.do_pass_result(i,id)
+                        self.do_pass_result(i,url)
                     else:
-                        self.do_fail_result(i, res, id, expect_value,expect_no_value)
+                        self.do_fail_result(i, res, url, expect_value,expect_no_value)
                 elif expect_value:
                     rel1 = self.com_util.is_contain(expect_value, res)
                     if rel1:
-                        self.do_pass_result(i,id)
+                        self.do_pass_result(i,url)
                     else:
-                        self.do_fail_result(i, res, id, expect_value,expect_no_value)
+                        self.do_fail_result(i, res, url, expect_value,expect_no_value)
                 else:
-                    self.do_fail_result(i, res, id, expect_value,expect_no_value)
+                    self.do_fail_result(i, res, url, expect_value,expect_no_value)
         return self.fail_count, self.pass_count
 
     def threads_to_run(self):

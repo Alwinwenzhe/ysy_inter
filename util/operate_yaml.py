@@ -20,6 +20,16 @@ class OperateYaml(object):
             data = yaml.load(f)
         return data
 
+    def read_main(self, str):
+        """
+        对传入字符串做切割处理
+        :return:
+        """
+        if '/' in str:
+            value_len = str.split('/')  # 这里都只会是三级定位，否则出错
+            yaml_value = self.read_yaml()[value_len[0]][value_len[1]][value_len[2]]
+        return yaml_value
+
     def write_yaml(self, key, value):
         '''
         写入yaml---覆盖

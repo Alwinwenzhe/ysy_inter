@@ -61,18 +61,9 @@ class OperateMySQL(object):
         data = cursor.fetchone()
         if data:  # 当语句执行后没有结果，则不返回
             return str(data[0])
+        else:
+            return None
         db.close()  # 关闭数据库
-
-    # def deal_sql(self,sentence):
-    #     '''
-    #     被deal_sql2替换
-    #     将传入的语句进行拆分，对多个语句进行执行并返回数据库结果中的第一个元组值
-    #     :param sentence:
-    #     :return:
-    #     '''
-    #     temp_list = sentence.split('Mysql::')
-    #     sql_result = self.con_db(temp_list[1])
-    #     return sql_result[0]
 
     def deal_sql2(self, sentence):
         """
@@ -91,6 +82,18 @@ class OperateMySQL(object):
                 result_list = result_list + sql_result
         return result_list
 
+    def sql_main(self,preset):
+        """
+        sql处理入口：使用$$分割row中的key、value，再写入json
+        :param preset:
+        :return:
+        """
+        preset_list = preset.split("$$")
+        if preset_list[1].startswith("ysy_test"):
+            preset_value = self.deal_sql2(preset_list[1])
+        else:
+            preset_value = preset_list[1]
+        self.oj.write_json_value(preset_list[0], preset_value)
 
 if __name__ == "__main__":
     om = OperateMySQL()

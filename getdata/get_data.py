@@ -64,7 +64,7 @@ class GetData(object):
         flag = None
         col = self.excel_data.get_global_val()
         global_val = self.read_ex.get_cell(row, col)
-        flag = global_val if global_val else None  # 三元运算
+        flag = global_val if global_val else None
         return flag
 
     def get_id(self, row):
@@ -114,9 +114,9 @@ class GetData(object):
 
     def value_none(self, value):
         """
-        判断header中的value值，是否有None，有就从yaml文件中取对应值
+        对请求数据中的值进行多重判断
         :param value:
-        :return:
+        :return:以字典形式返回
         """
         header_value = json.loads(value)  # 自动转换为字典
         for key, value in header_value.items():  # 遍历字典键值
@@ -127,22 +127,36 @@ class GetData(object):
             elif value.startswith("json"):     #如果全局变量中值和key有差异，使用这个特殊处理
                 temp = value.split("::")[1]
                 header_value[key] = self.oper_json.get_json_value(temp)
+            elif value.startswith("yaml"):
+                temp = value.split("::")[1]
+                header_value[key] = self.oper_ya.read_main(temp)
         return header_value
 
     def get_request_url(self, row):
         """
-        获取url,如果url中包含$,则从json数据中获取对应值，重新拼接
+        获取url,如果url中包含$,则判断是否从json或yaml数据中获取对应值，重新拼接
+        示例：/api/v1/seller/admin/subLogin?&mobile=yaml::account/test/seller_account&password=123456&suRoleType=suAdmin
         :param row:
         :return:
         """
         col = self.excel_data.get_url()
         url = self.read_ex.get_cell(row, col)
-        if '$' in url:
-            temp_list = url.split('$')
-            for i in temp_list[1::]:  # 通过特定标签判定是否需要从json取值
-                value = self.oper_json.get_json_value(i)
-                new_url = temp_list[0] + '&' + i + '=' + value
-            return new_url
+        spell_url = ''
+        if '?' in url:
+            temp_list = url.split('&')
+            spell_url = temp_list[0]
+            for i in temp_list[1::]:
+                val = i.split('=')
+                if val[1].startswith("yaml::"): # 从yaml中读取:
+                    var = i.split("yaml::")[1]
+                    spell_url= spell_url + '&' + val[0] + '=' + self.oper_ya.read_main(var)
+                elif val[1].startswith("json::"):                   # 默认从json中读取
+                    val_i = val[1].split("json::")[1]
+                    value = self.oper_json.get_json_value(val_i)
+                    spell_url = spell_url + '&' + val[0] + '=' + value
+                else:
+                    spell_url = spell_url + '&' + i
+            return spell_url
         else:
             return url
 
