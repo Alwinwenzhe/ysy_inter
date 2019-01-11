@@ -69,17 +69,19 @@ class RunTest(object):
         """
         self.get_data.write_excle_data(i, res)  # 如果出错，返回接口错误信息
         self.fail_count.append(id[0])
-        print('测试失败,ID:', id, '>>期望值：', expect_value, '>>期望不包含值：',expect_no_value,'.实际值为：', res)
+        print('测试失败,ID:', id[0], '>>期望值：', expect_value, '>>期望不包含值：',expect_no_value,'.实际值为：', res)
 
-    def do_pass_result(self,i,id):
+    def do_pass_result(self,result_row, case_id, case_url):
         """
         测试成功时，对结果和输出的处理
-        :param i:
+        :param result_row: 结果位置处于第几行
+        :param case_id: 执行的case_id
+        :param case_url: case的url地址
         :return:
         """
-        self.get_data.write_excle_data(i, 'pass')
-        self.pass_count.append(id[0])
-        print('测试通过', id)
+        self.get_data.write_excle_data(result_row, 'pass')
+        self.pass_count.append(case_id)
+        print('测试通过:', case_id, case_url)
 
     def go_on_run(self):
         """
@@ -95,6 +97,7 @@ class RunTest(object):
             if preset:
                self.oper_sql.sql_main(preset)
             id = self.get_data.get_id_yaml(i)
+            envir = id[0].split('-')[0]             #case的执行环境设定，如：ysy_test
             is_run = self.get_data.get_is_run(i)
             url = id[1] + self.get_data.get_request_url(i)
             method = self.get_data.get_request_method(i)
@@ -104,26 +107,26 @@ class RunTest(object):
             if is_run:
                 # 运行的出接口响应值
                 res = self.run_me.run_main(method, url, data, header)  # output：str
-                expect_value = self.get_data.get_expect_data(i)             #这里涉及比对值可能是再接口请求之后，所以需要放到这里
-                expect_no_value = self.get_data.get_expect_no_result(i)
+                expect_value = self.get_data.get_expect_data(envir, i)             #这里涉及比对值可能是再接口请求之后，所以需要放到这里
+                expect_no_value = self.get_data.get_not_expect_data(envir, i)
                 if key:
                     # 获取需要提取的全局变量
                     for key, value in self.get_path(key, res).items():  # 获取字典对应的key，value
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
                     self.get_data.write_excle_data(i, 'pass')
                     self.pass_count.append(id[0])
-                    print('测试通过',url)
+                    print('测试通过:', id[0], url)
                 elif expect_no_value and expect_value:
                     rel1 = self.com_util.is_contain(expect_value, res)
                     rel2 = self.com_util.not_contain(expect_no_value,res)  # 从期望值对比
                     if rel1 and rel2:
-                        self.do_pass_result(i,url)
+                        self.do_pass_result(i,id[0],url)
                     else:
                         self.do_fail_result(i, res, url, expect_value,expect_no_value)
                 elif expect_value:
                     rel1 = self.com_util.is_contain(expect_value, res)
                     if rel1:
-                        self.do_pass_result(i,url)
+                        self.do_pass_result(i,id[0],url)
                     else:
                         self.do_fail_result(i, res, url, expect_value,expect_no_value)
                 else:

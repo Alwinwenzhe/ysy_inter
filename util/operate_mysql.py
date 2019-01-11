@@ -59,28 +59,18 @@ class OperateMySQL(object):
         exe_sql = self.formate_sql(sql_str)
         cursor.execute(exe_sql)
         data = cursor.fetchone()
-        if data:  # 当语句执行后没有结果，则不返回
-            return str(data[0])
-        else:
-            return None
+        return data[0]
         db.close()  # 关闭数据库
 
-    def deal_sql2(self, sentence):
+    def deal_sql2(self, conn, sql_str):
         """
-        将传入的语句进行拆分，对多个语句进行执行
-        并将结果集(数据库结果中的第一个元组值)合并为一个str返回
-        :param sentence:如果以关键字开头则连接对应数据库，如：ysy_test
+        去掉该方法
+        :param conn: 指定连接的数据库
+        :param sql_str: 执行的语句
         :return:
         """
-        result_list = ""
-        temp_list = sentence.split('::')
-        conn_db = temp_list[0]
-        temp_list = temp_list[1::]
-        for i in range(len(temp_list)):
-            sql_result = self.execute_sql(conn_db, temp_list[i])
-            if sql_result:
-                result_list = result_list + sql_result
-        return result_list
+        sql_result = self.execute_sql(conn, sql_str)
+        return sql_result
 
     def sql_main(self,preset):
         """

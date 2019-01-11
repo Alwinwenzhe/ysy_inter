@@ -135,7 +135,7 @@ class GetData(object):
     def get_request_url(self, row):
         """
         获取url,如果url中包含$,则判断是否从json或yaml数据中获取对应值，重新拼接
-        示例：/api/v1/seller/admin/subLogin?&mobile=yaml::account/test/seller_account&password=123456&suRoleType=suAdmin
+        示例：/api/v1/seller/admin/subLogin?mobile=y::account/test/seller_account&password=123456&suRoleType=suAdmin
         :param row:
         :return:
         """
@@ -143,19 +143,20 @@ class GetData(object):
         url = self.read_ex.get_cell(row, col)
         spell_url = ''
         if '?' in url:
-            temp_list = url.split('&')
-            spell_url = temp_list[0]
-            for i in temp_list[1::]:
+            temp_list = url.split('?')
+            spell_url = temp_list[0] + '?'
+            param_list = temp_list[1].split('&')
+            for i in param_list:
                 val = i.split('=')
-                if val[1].startswith("yaml::"): # 从yaml中读取:
-                    var = i.split("yaml::")[1]
-                    spell_url= spell_url + '&' + val[0] + '=' + self.oper_ya.read_main(var)
-                elif val[1].startswith("json::"):                   # 默认从json中读取
-                    val_i = val[1].split("json::")[1]
+                if val[1].startswith("y::"):                    # 从yaml中读取:
+                    var = i.split("y::")[1]
+                    spell_url= spell_url + val[0] + '=' + self.oper_ya.read_main(var) + "&"
+                elif val[1].startswith("j::"):                   # 从json中读取
+                    val_i = val[1].split("j::")[1]
                     value = self.oper_json.get_json_value(val_i)
-                    spell_url = spell_url + '&' + val[0] + '=' + value
+                    spell_url = spell_url + val[0] + '=' + value + '&'
                 else:
-                    spell_url = spell_url + '&' + i
+                    spell_url = spell_url + i + '&'
             return spell_url
         else:
             return url
@@ -191,37 +192,44 @@ class GetData(object):
         json_data = self.oper_json.get_json_value(self.get_request_data(row))
         return json_data
 
-    def get_expect_data(self, row):
-        '''
-        获取期望结果，当expect_data语句以'ysy_test::' or 'ysy_official' 开头，就需要特殊处理
+    def get_expect_data(self, envir, row):
+        """
+        获取期望包含值
         :param row:
-        :return:  期望值
-        '''
+        :return:
+        """
         col = int(self.excel_data.get_expect_result())
         expect_data = self.read_ex.get_cell(row, col)
-        if expect_data.startswith("ysy_test") or expect_data.startswith("ysy_official"):
-            expect_data = self.oper_sql.deal_sql2(expect_data)
-            return expect_data
-        elif expect_data:
-            return expect_data
-        else:
-            return None
+        return self.deal_expec_and_not_expec(envir, expect_data)
 
-    def get_expect_no_result(self,row):
+    def get_not_expect_data(self, envir, row):
         """
-        返回接口中不应该包含的值
+        获取不期望包含值
         :param row:
         :return:
         """
         col = int(self.excel_data.get_expect_no_result())
-        expect_no_data = self.read_ex.get_cell(row,col)
-        if expect_no_data.startswith("ysy_test") or expect_no_data.startswith("ysy_official"):
-            expect_data = self.oper_sql.deal_sql2(expect_no_data)
-            return expect_data
-        if expect_no_data:
-            return expect_no_data
+        expect_not_data = self.read_ex.get_cell(row, col)
+        return self.deal_expec_and_not_expec(envir, expect_not_data)
+
+    def deal_expec_and_not_expec(self, envir, expect_data):
+        """
+        获取期望结果，可以为多个sql，以分号间隔；每个sql以特定字符开头
+        :param envir: 环境配置
+        :param row:
+        :return:  统一返回值为list类型
+        """
+        result = []
+        if "::" in str(expect_data):  # 验证头部
+            val_1 = expect_data.split("::")
+            val_2 = val_1[1].split(";")
+            for i in val_2:
+                temp = self.oper_sql.execute_sql(envir, i)
+                result.append(temp)
+            return result
         else:
-            return None
+            result.append(expect_data)
+            return result
 
 
     def write_excle_data(self, row, value):
