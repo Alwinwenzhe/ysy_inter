@@ -138,6 +138,7 @@ class RunTest(object):
                         self.do_fail_result(i, res, id[0], expect_value, expect_no_value)
                 else:
                     self.do_fail_result(i, res, id[0], expect_value, expect_no_value)
+        print("\n该选项卡总计用例{0}个，通过{1}个用例，失败{2}个用例\n\n".format(len(self.pass_count)+len(self.fail_count),len(self.pass_count),len(self.fail_count)))
         return self.fail_count, self.pass_count
 
     def threads_to_run(self):
@@ -164,17 +165,17 @@ class RunTest(object):
 
 
 if __name__ == '__main__':
-    """仅调试使用"""
-    run_test = RunTest(0)
-    run_test.go_on_run()
+    # """仅调试使用"""
+    # run_test = RunTest(0)
+    # run_test.go_on_run()
 
-    # """多sheet，遍历执行"""
-    # oe = OperateExcel()
-    # sheets = oe.get_sheets()
-    # for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
-    #     print(">>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>")
-    #     run_test = RunTest(i)
-    #     run_test.go_on_run()
+    """多sheet，遍历执行"""
+    oe = OperateExcel()
+    sheets = oe.get_sheets()
+    for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        run_test = RunTest(i)
+        run_test.go_on_run()
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
     # theading_list = []
