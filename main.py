@@ -63,13 +63,15 @@ class RunTest(object):
         """
         测试失败时，对结果和输出的处理
         :param i:
-        :param res:
+        :param res: 响应值
+        :param id: id值
         :param expect_value:
+        :param expect_no_value:
         :return:
         """
         self.get_data.write_excle_data(i, res)  # 如果出错，返回接口错误信息
-        self.fail_count.append(id[0])
-        print('测试失败,ID:', id[0], '>>期望值：', expect_value, '>>期望不包含值：',expect_no_value,'.实际值为：', res)
+        self.fail_count.append(id)
+        print('测试失败,ID:', id, '>>期望值：', expect_value, '>>期望不包含值：',expect_no_value,'.实际值为：', res)
 
     def do_pass_result(self,result_row, case_id, case_url):
         """
@@ -94,10 +96,11 @@ class RunTest(object):
             res = None
             # 有可能url中需要前置数据处理，所以需要放这里
             preset = self.get_data.get_pres_data(i)
-            if preset:
-               self.oper_sql.sql_main(preset)
+
             id = self.get_data.get_id_yaml(i)
-            envir = id[0].split('-')[0]             #case的执行环境设定，如：ysy_test
+            envir = id[0].split('-')[0]  # case的执行环境设定，如：ysy_test
+            if preset:
+               self.oper_sql.sql_main(envir,preset)
             is_run = self.get_data.get_is_run(i)
             url = id[1] + self.get_data.get_request_url(i)
             method = self.get_data.get_request_method(i)
@@ -109,28 +112,30 @@ class RunTest(object):
                 res = self.run_me.run_main(method, url, data, header)  # output：str
                 expect_value = self.get_data.get_expect_data(envir, i)             #这里涉及比对值可能是再接口请求之后，所以需要放到这里
                 expect_no_value = self.get_data.get_not_expect_data(envir, i)
-                if key:
+                if key and 'code": 0' not in res:                   #   当接口相应异常且想获取全局变量值时，直接抛错
+                    self.do_fail_result(i, res, id[0], expect_value, expect_no_value)
+                elif key:
                     # 获取需要提取的全局变量
                     for key, value in self.get_path(key, res).items():  # 获取字典对应的key，value
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
                     self.get_data.write_excle_data(i, 'pass')
                     self.pass_count.append(id[0])
                     print('测试通过:', id[0], url)
-                elif expect_no_value and expect_value:
+                elif expect_no_value != None and expect_value != None :  #期望包含值和期望不包含值都不为空
                     rel1 = self.com_util.is_contain(expect_value, res)
-                    rel2 = self.com_util.not_contain(expect_no_value,res)  # 从期望值对比
+                    rel2 = self.com_util.not_contain(expect_no_value, res)  # 从期望值对比
                     if rel1 and rel2:
                         self.do_pass_result(i,id[0],url)
                     else:
-                        self.do_fail_result(i, res, url, expect_value,expect_no_value)
-                elif expect_value:
+                        self.do_fail_result(i, res, id[0], expect_value, expect_no_value)
+                elif expect_value != None:                                  # 期望包含值是不为空的(这个值不可能为空)
                     rel1 = self.com_util.is_contain(expect_value, res)
                     if rel1:
                         self.do_pass_result(i,id[0],url)
                     else:
-                        self.do_fail_result(i, res, url, expect_value,expect_no_value)
+                        self.do_fail_result(i, res, id[0], expect_value, expect_no_value)
                 else:
-                    self.do_fail_result(i, res, url, expect_value,expect_no_value)
+                    self.do_fail_result(i, res, id[0], expect_value,expect_no_value)
         return self.fail_count, self.pass_count
 
     def threads_to_run(self):
@@ -157,17 +162,17 @@ class RunTest(object):
 
 
 if __name__ == '__main__':
-    # """仅调试使用"""
-    # run_test = RunTest(0)
-    # run_test.go_on_run()
+    """仅调试使用"""
+    run_test = RunTest(0)
+    run_test.go_on_run()
 
-    """多sheet，遍历执行"""
-    oe = OperateExcel()
-    sheets = oe.get_sheets()
-    for i in range(1,len(sheets)):          #从sheetid为1开始遍历
-        print(">>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>")
-        run_test = RunTest(i)
-        run_test.go_on_run()
+    # """多sheet，遍历执行"""
+    # oe = OperateExcel()
+    # sheets = oe.get_sheets()
+    # for i in range(1,len(sheets)):          #从sheetid为1开始遍历
+    #     print(">>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>")
+    #     run_test = RunTest(i)
+    #     run_test.go_on_run()
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
     # theading_list = []

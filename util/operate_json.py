@@ -7,9 +7,9 @@ import json
 
 
 class OperateJson(object):
-    file_path = r'dataconfig\json.json'
 
     def __init__(self):
+        self.file_path = r'dataconfig\json.json'
         self.json_data = self.read_json()
 
     # 读取json文件

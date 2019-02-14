@@ -72,17 +72,15 @@ class OperateMySQL(object):
         sql_result = self.execute_sql(conn, sql_str)
         return sql_result
 
-    def sql_main(self,preset):
+    def sql_main(self,dbcon,preset):
         """
-        sql处理入口：使用$$分割row中的key、value，再写入json
-        :param preset:
-        :return:
+        sql处理入口：将sql进行有序分割；且执行对应sql得到返回值后，调用写入json方法
+        :param dbcon:连接指定db
+        :param preset:sql语句
+        :return: 写入json，无返回值
         """
         preset_list = preset.split("$$")
-        if preset_list[1].startswith("ysy_test"):
-            preset_value = self.deal_sql2(preset_list[1])
-        else:
-            preset_value = preset_list[1]
+        preset_value = self.execute_sql(dbcon,preset_list[1])
         self.oj.write_json_value(preset_list[0], preset_value)
 
 if __name__ == "__main__":

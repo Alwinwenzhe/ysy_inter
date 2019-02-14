@@ -7,6 +7,7 @@ from util.operate_excel import OperateExcel
 from util.operate_json import OperateJson
 from util.operate_mysql import OperateMySQL
 from util.operate_yaml import OperateYaml
+from util.common_util import CommonUtil
 import json, sys, os
 curPath = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(curPath)[0]
@@ -23,6 +24,7 @@ class GetData(object):
         self.oper_json = OperateJson()
         self.oper_sql = OperateMySQL()
         self.oper_ya = OperateYaml()
+        self.com_util = CommonUtil()
 
     def get_sheets_count(self):
         """
@@ -88,6 +90,8 @@ class GetData(object):
             url_head = self.oper_ya.read_yaml()['url']['ysy_test']
         elif value.startswith('ysy_zp_test'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_zp_test']
+        else:
+            url_head = None
         return value, url_head
 
     def get_request_method(self, row):
@@ -115,7 +119,7 @@ class GetData(object):
     def value_none(self, value):
         """
         对请求数据中的值进行多重判断
-        :param value:
+        :param value: 接口请求参数
         :return:以字典形式返回
         """
         header_value = json.loads(value)  # 自动转换为字典
@@ -124,10 +128,10 @@ class GetData(object):
                 header_value[key] = self.oper_json.get_json_value(key)  # 获取value为空的key
             elif value == 'none':     #满足仅有key，没有对应value的情况
                 header_value[key] = ''
-            elif value.startswith("json"):     #如果全局变量中值和key有差异，使用这个特殊处理
+            elif value.startswith("j::"):     #如果全局变量中值和key有差异，使用这个特殊处理
                 temp = value.split("::")[1]
                 header_value[key] = self.oper_json.get_json_value(temp)
-            elif value.startswith("yaml"):
+            elif value.startswith("y::"):
                 temp = value.split("::")[1]
                 header_value[key] = self.oper_ya.read_main(temp)
         return header_value
@@ -142,7 +146,7 @@ class GetData(object):
         col = self.excel_data.get_url()
         url = self.read_ex.get_cell(row, col)
         spell_url = ''
-        if '?' in url:
+        if 'y::' in url or 'j::' in url:
             temp_list = url.split('?')
             spell_url = temp_list[0] + '?'
             param_list = temp_list[1].split('&')
@@ -200,7 +204,11 @@ class GetData(object):
         """
         col = int(self.excel_data.get_expect_result())
         expect_data = self.read_ex.get_cell(row, col)
-        return self.deal_expec_and_not_expec(envir, expect_data)
+        if expect_data:
+            expect_list = expect_data.split(";")            # 分号分隔不同sql语句
+            return self.deal_expec_and_not_expec(envir, expect_list)
+        else:
+            return None
 
     def get_not_expect_data(self, envir, row):
         """
@@ -210,7 +218,11 @@ class GetData(object):
         """
         col = int(self.excel_data.get_expect_no_result())
         expect_not_data = self.read_ex.get_cell(row, col)
-        return self.deal_expec_and_not_expec(envir, expect_not_data)
+        if expect_not_data:
+            expect_not_data_list = expect_not_data.split(",")
+            return self.deal_expec_and_not_expec(envir, expect_not_data_list)
+        else:
+            return None
 
     def deal_expec_and_not_expec(self, envir, expect_data):
         """
@@ -220,17 +232,23 @@ class GetData(object):
         :return:  统一返回值为list类型
         """
         result = []
-        if "::" in str(expect_data):  # 验证头部
-            val_1 = expect_data.split("::")
-            val_2 = val_1[1].split(";")
-            for i in val_2:
-                temp = self.oper_sql.execute_sql(envir, i)
-                result.append(temp)
+        if expect_data != "":                # 判定值是否为空
+            for i in expect_data:
+                if "SELECT" in str(i) or "UPDATE" in str(i) or "DELETE" in str(i) or "INSERT" in str(i) :  # 验证是否为SQL语句
+                    val_2 = i.split(";")
+                    for i in val_2:
+                        temp = self.oper_sql.execute_sql(envir, i)
+                        if ',' in str(temp):
+                            temp_list = self.com_util.split_self(',',temp)
+                            result = self.com_util.data_joint(result,temp_list)
+                        else:
+                            result.append(temp)
+                    return result
+                else:
+                    result.append(i)
             return result
         else:
-            result.append(expect_data)
-            return result
-
+            return ""
 
     def write_excle_data(self, row, value):
         '''

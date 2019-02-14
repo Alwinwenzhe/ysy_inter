@@ -19,6 +19,7 @@ class CommonUtil(object):
         # if isinstance(str1,unicode):           因python3中str对应的就是python2中的unicode，所以python3中没有nicode
         #     str1 = str1.encode('unicode-escape').decode('string-secape')
         flag=[]
+        str_list = self.split_self(',',str_list)
         for i in str_list:
             if str(i) in str2:
                 flag.append('true')
@@ -57,7 +58,38 @@ class CommonUtil(object):
         h_m = time.strftime(" %H:%M")
         return str(tomorrow) + str(h_m)
 
+    def split_self(self,symbol,total_str):
+        """
+        根据特定符号，返回切割后的字符串
+        :param symbol: 特定符号
+        :param str: 被切割对象
+        :return: 返回list
+        """
+        temp = []
+        for i in total_str:                   #list遍历值
+            if ',' in str(i):
+                list_split = i.split(symbol)
+                temp = temp + list_split
+            else:
+                temp.append(i)
+        return temp
+
+    def data_joint(self,data1,data2):
+        """
+        根据传入的2个数据类型，对比后，拼接成一个完成的类型;其中data1是原数据，data2是被拼接数据
+        :param data1:
+        :param data2:
+        :return: list
+        """
+        if type(data1) == list and type(data2) == list:         # 判定二者类型相等且是list
+            temp = data1 + data2
+            return temp
+        elif type(data1) == list and type(data2) == str:        #判定二者不相等且data1是list，data2是str
+            data1.append(data2)
+            return data1
+
 if __name__ == '__main__':
     cu = CommonUtil()
-    now_time= cu.get_tomorrow()
-    print(now_time)
+    list1 = [1,2,3]
+    data2 = [4,5]
+    print(cu.data_joint(list1,data2))
