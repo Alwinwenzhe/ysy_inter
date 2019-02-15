@@ -16,6 +16,7 @@ account:
   test:
     seller_account: '15008499834'
     user_account: '15828022852'
+    property_account: '15828022851'
 
 #database msg
 db:
