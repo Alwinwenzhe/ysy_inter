@@ -20,7 +20,7 @@ class OperateMySQL(object):
         :param goal_db:
         :return:
         """
-        if 'ysy_test' == goal_db:
+        if 'ysy_test' == goal_db or 'property_bg_test' == goal_db:
             self.dbhost = self.oy.read_yaml()['db']['ysy_test']['db_host']
             self.dbport = self.oy.read_yaml()['db']['ysy_test']['db_port']
             self.dbname = self.oy.read_yaml()['db']['ysy_test']['db_name']
@@ -79,9 +79,11 @@ class OperateMySQL(object):
         :param preset:sql语句
         :return: 写入json，无返回值
         """
-        preset_list = preset.split("$$")
-        preset_value = self.execute_sql(dbcon,preset_list[1])
-        self.oj.write_json_value(preset_list[0], preset_value)
+        preset_l = preset.split(";")
+        for i in preset_l:
+            preset_list = i.split("$$")
+            preset_value = self.execute_sql(dbcon,preset_list[1])
+            self.oj.write_json_value(preset_list[0], preset_value)
 
 if __name__ == "__main__":
     om = OperateMySQL()

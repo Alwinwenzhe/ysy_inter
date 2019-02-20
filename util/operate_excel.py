@@ -68,17 +68,10 @@ class OperateExcel(object):
         :param value:
         :return:
         '''
-        # read_data = xlrd.open_workbook(self.file_name)
-        # write_data = copy(read_data)
-        # sheet_data = write_data.get_sheet(0)
-        # sheet_data.write_data(row,col,value)
-        # write_data.save(self.file_name)
         book1 = xlrd.open_workbook(self.file_name)
         book2 = copy(book1)
-        # print(dir(book2))
-        # print(dir(book2))
         sheet = book2.get_sheet(self.sheet_id)  # 获取第几个sheet页，book2现在的是xlutils里的方法，不是xlrd的
-        sheet.write(row, col, value)
+        sheet.write(row, col, value)       # 这里的value只是一个相应状态，具体接口内容在其下的text中
         book2.save(self.file_name)
 
 if __name__ == '__main__':

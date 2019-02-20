@@ -62,7 +62,7 @@ class RunTest(object):
             global_var[list_last] = res_value
         return global_var
 
-    def do_fail_result(self, i, res, id, expect_value, expect_no_value):
+    def do_fail_result(self, i, res, id, url, expect_value, expect_no_value):
         """
         测试失败时，对结果和输出的处理
         :param i:
@@ -74,7 +74,7 @@ class RunTest(object):
         """
         self.get_data.write_excle_data(i, res)  # 如果出错，返回接口错误信息
         self.fail_count.append(id)
-        print('测试失败,ID:', id, '>>期望值：', expect_value, '>>期望不包含值：', expect_no_value, '.实际值为：', res)
+        print('测试失败,ID:', id, 'URL为：', url,'>>期望值：', expect_value, '>>期望不包含值：', expect_no_value, '.实际值为：', res)
 
     def do_pass_result(self, result_row, case_id, case_url):
         """
@@ -96,7 +96,6 @@ class RunTest(object):
         row_counts = self.get_data.get_case_lines()
         self.set_tomorrow_time()
         for i in range(1, row_counts):  # 排除第一行
-            # res = None
             # 有可能url中需要前置数据处理，所以需要放这里
             preset = self.get_data.get_pres_data(i)
             id = self.get_data.get_id_yaml(i)
@@ -114,30 +113,33 @@ class RunTest(object):
                 res = self.run_me.run_main(method, url, data, header)  # output：str
                 expect_value = self.get_data.get_expect_data(envir, i)  # 这里涉及比对值可能是再接口请求之后，所以需要放到这里
                 expect_no_value = self.get_data.get_not_expect_data(envir, i)
-                if key and 'code": 0' not in res:  # 当接口相应异常且想获取全局变量值时，直接抛错
-                    self.do_fail_result(i, res, id[0], expect_value, expect_no_value)
+                if res == 'true' :                       #   当接口相应值为html，会直接返回True
+                    self.do_pass_result(i, id[0], url)
+                elif key and 'code":0' not in res.text:  # 当接口相应异常且想获取全局变量值时，直接抛错
+                    self.do_fail_result(i, res.text, id[0], url, expect_value, expect_no_value)
                 elif key:
                     # 获取需要提取的全局变量
-                    for key, value in self.get_path(key, res).items():  # 获取字典对应的key，value
+                    for key, value in self.get_path(key, res.text).items():  # 获取字典对应的key，value
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
                     self.get_data.write_excle_data(i, 'pass')
                     self.pass_count.append(id[0])
                     print('测试通过:', id[0], url)
                 elif expect_no_value is not None and expect_value is not None:  # 期望包含值和期望不包含值都不为空
-                    rel1 = self.com_util.is_contain(expect_value, res)
-                    rel2 = self.com_util.not_contain(expect_no_value, res)  # 从期望值对比
+                    rel1 = self.com_util.is_contain(expect_value, c)
+                    rel2 = self.com_util.not_contain(expect_no_value, res.text)  # 从期望值对比
                     if rel1 and rel2:
                         self.do_pass_result(i, id[0], url)
                     else:
-                        self.do_fail_result(i, res, id[0], expect_value, expect_no_value)
+                        self.do_fail_result(i, res.text, id[0], url, expect_value, expect_no_value)
                 elif expect_value is not None:  # 期望包含值是不为空的(这个值不可能为空)
-                    rel1 = self.com_util.is_contain(expect_value, res)
+                    rel1 = self.com_util.is_contain(expect_value, res.text)
                     if rel1:
                         self.do_pass_result(i, id[0], url)
                     else:
-                        self.do_fail_result(i, res, id[0], expect_value, expect_no_value)
+                        self.do_fail_result(i, res.text, id[0], url, expect_value, expect_no_value)
                 else:
-                    self.do_fail_result(i, res, id[0], expect_value, expect_no_value)
+                    self.do_fail_result(i, res.text, id[0], url, expect_value, expect_no_value)
+                    continue
         print("\n该选项卡总计用例{0}个，通过{1}个用例，失败{2}个用例\n\n".format(len(self.pass_count)+len(self.fail_count),len(self.pass_count),len(self.fail_count)))
         return self.fail_count, self.pass_count
 
@@ -163,6 +165,9 @@ class RunTest(object):
         self.s_email.send_main(f, p)
         print("p,f:", p, f)
 
+    # def pass_fail_count(self):
+    #     f,p = self.go_on_run()
+
 
 if __name__ == '__main__':
     # """仅调试使用"""
@@ -172,10 +177,15 @@ if __name__ == '__main__':
     """多sheet，遍历执行"""
     oe = OperateExcel()
     sheets = oe.get_sheets()
+    pass_count = 0
+    fail_count = 0
     for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
         run_test = RunTest(i)
-        run_test.go_on_run()
+        f, p = run_test.go_on_run()
+        pass_count += len(p)
+        fail_count += len(f)
+    print(">>>>>>>总计运行用例{0}个，通过{1}个用例，失败{2}个用例>>>>>>>>\n\n".format(pass_count+fail_count, pass_count, fail_count))
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
     # theading_list = []

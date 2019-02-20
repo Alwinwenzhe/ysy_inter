@@ -1,7 +1,9 @@
 # Author:
 # Data:
 # Status
-import datetime, time
+import datetime
+import time
+import json
 
 
 class CommonUtil(object):
@@ -87,6 +89,21 @@ class CommonUtil(object):
         elif type(data1) == list and type(data2) == str:        #判定二者不相等且data1是list，data2是str
             data1.append(data2)
             return data1
+
+    def response_content_diff(self,res):
+        """
+        判定不同形式的返回值处理方式,目前包含json、html
+        :param res:
+        :return:
+        """
+        if 'code:' in res:
+            result =  res.json()
+            return json.dumps(result, indent=3, sort_keys=True, ensure_ascii=False)  # 返回值可以包含非ascii字符
+        elif 'DOCTYPE html' in res.text:        #  这里是验证当res返回内容为html，需要从str格式中寻找目标字符串
+            return 'true'
+        else:
+            return res
+
 
 if __name__ == '__main__':
     cu = CommonUtil()

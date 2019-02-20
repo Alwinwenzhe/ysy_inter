@@ -10,6 +10,7 @@ url:
    ysy_official: 'https://api.yishengyue.cn'
    ysy_test: 'https://trest.yishengyue.cn'
    zp_official: 'http://zpapi.yishengyue.cn'
+   property_bg_test: 'http://116.62.63.151:8096'
 
 #account msg
 account:
@@ -17,6 +18,11 @@ account:
     seller_account: '15008499834'
     user_account: '15828022852'
     property_account: '15828022851'
+    biotope_account: '15008499838'
+  official:
+    property_account: '18030478860'
+    user_account: '15828022852'
+
 
 #database msg
 db:
@@ -38,6 +44,12 @@ db:
     db_name: 'yishengyue_platform_db'
     user: 'ysy_check'
     pwd: 'rammstein5!'
+  property_bg_test:
+    db_host: '116.62.63.151'
+    db_port: 3316
+    db_name: 'yishengyue_platform_db'
+    user: 'ysy'
+    pwd: 'aaaaa888'
 
 email:
   user_list: ['503106686@qq.com']

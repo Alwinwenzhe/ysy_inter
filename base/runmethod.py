@@ -3,10 +3,15 @@
 # Status
 # Comment:重构了get，post方法
 
-import requests, json
+import requests
+import json
+from util.common_util import CommonUtil
 
 
 class RunMethod(object):
+
+    def __init__(self):
+        self.com_util = CommonUtil()
 
     def post_main(self, url, data, header=None, cookies=None):
         """
@@ -24,7 +29,7 @@ class RunMethod(object):
         else:
             res = requests.post(url=url, data=json.dumps(data))
         print('>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-        return res.json()
+        return self.com_util.response_content_diff(res)
 
     def put_main(self, url, data, header=None, cookies=None):
         '''
@@ -42,7 +47,7 @@ class RunMethod(object):
         else:
             res = requests.post(url=url, data=json.dumps(data))
         print('>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-        return res.json()
+        return self.com_util.response_content_diff(res)
 
     def get_main(self, url, data=None, header=None, cookies=None):
         '''
@@ -63,7 +68,7 @@ class RunMethod(object):
         else:
             res = requests.get(url=url)
         print('>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')  # 接口返回状态
-        return res.json()  # 返回响应的json编码内容(如果有的话)#这里有可能是res.text()
+        return self.com_util.response_content_diff(res)
 
     def run_main(self, method, url, data=None, header=None):
         '''
@@ -81,7 +86,7 @@ class RunMethod(object):
             res = self.get_main(url, data, header)
         else:
             print("Fail,request menthod is error!Please check it!")
-        return json.dumps(res, indent=3, sort_keys=True, ensure_ascii=False)  # 返回值可以包含非ascii字符
+        return res
 
 
 if __name__ == '__main__':
