@@ -31,15 +31,6 @@ class RunTest(object):
         self.oper_json = OperateJson()
         self.oper_sql = OperateMySQL()
 
-    def set_tomorrow_time(self):
-        """
-        写入明天时间，需要放在每个用例执行的开始
-        :return:
-        """
-        value = self.com_util.get_tomorrow()
-        key = 'tomorrow_time'
-        self.oper_json.write_json_value(key, value)
-
     def get_path(self, key, res):
         """
         获取字典中的路径定位
@@ -65,7 +56,7 @@ class RunTest(object):
     def do_fail_result(self, i, res, id, url, expect_value, expect_no_value):
         """
         测试失败时，对结果和输出的处理
-        :param i:
+        :param i:   第几行数据
         :param res: 响应值
         :param id: id值
         :param expect_value:
@@ -74,7 +65,7 @@ class RunTest(object):
         """
         self.get_data.write_excle_data(i, res)  # 如果出错，返回接口错误信息
         self.fail_count.append(id)
-        print('测试失败,ID:', id, 'URL为：', url,'>>期望值：', expect_value, '>>期望不包含值：', expect_no_value, '.实际值为：', res)
+        print('\033[7;31m测试失败,ID:{0}, URL为：{1}, 期望值：{2},期望不包含值：{3},实际值为：{4}'.format(id, url, expect_value,  expect_no_value, res))
 
     def do_pass_result(self, result_row, case_id, case_url):
         """
@@ -86,7 +77,7 @@ class RunTest(object):
         """
         self.get_data.write_excle_data(result_row, 'pass')
         self.pass_count.append(case_id)
-        print('测试通过:', case_id, case_url)
+        print('\033[0m测试通过:', case_id, case_url)
 
     def go_on_run(self):
         """
@@ -94,7 +85,7 @@ class RunTest(object):
         :return: fail_count, pass_count
         """
         row_counts = self.get_data.get_case_lines()
-        self.set_tomorrow_time()
+        self.com_util.set_tomorrow_time()
         for i in range(1, row_counts):  # 排除第一行
             # 有可能url中需要前置数据处理，所以需要放这里
             preset = self.get_data.get_pres_data(i)

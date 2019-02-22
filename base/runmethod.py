@@ -28,7 +28,7 @@ class RunMethod(object):
                                 headers=header)  # dumps:将python中的dict类型的数据转成str，非表单形式提交;verify=False HTTPS请求时不报错
         else:
             res = requests.post(url=url, data=json.dumps(data))
-        print('>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+        print('\033[0m>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
         return self.com_util.response_content_diff(res)
 
     def put_main(self, url, data, header=None, cookies=None):
@@ -46,7 +46,7 @@ class RunMethod(object):
                                 headers=header)  # dumps:将python中的dict类型的数据转成str，非表单形式提交;verify=False HTTPS请求时不报错
         else:
             res = requests.post(url=url, data=json.dumps(data))
-        print('>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+        print('\033[0m>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
         return self.com_util.response_content_diff(res)
 
     def get_main(self, url, data=None, header=None, cookies=None):
@@ -67,7 +67,7 @@ class RunMethod(object):
             res = requests.get(url=url, params=data)
         else:
             res = requests.get(url=url)
-        print('>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')  # 接口返回状态
+        print('\033[0m>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')  # 接口返回状态
         return self.com_util.response_content_diff(res)
 
     def run_main(self, method, url, data=None, header=None):

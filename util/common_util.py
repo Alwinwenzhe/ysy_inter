@@ -4,12 +4,15 @@
 import datetime
 import time
 import json
-
+from util.operate_json import OperateJson
 
 class CommonUtil(object):
     '''
     通用工具包
     '''
+
+    def __init__(self):
+        self.oper_json = OperateJson()
 
     def is_contain(self, str_list, str2):
         """
@@ -103,6 +106,15 @@ class CommonUtil(object):
             return 'true'
         else:
             return res
+
+    def set_tomorrow_time(self):
+        """
+        写入明天时间，需要放在每个用例执行的开始
+        :return:
+        """
+        value = self.get_tomorrow()
+        key = 'tomorrow_time'
+        self.oper_json.write_json_value(key, value)
 
 
 if __name__ == '__main__':

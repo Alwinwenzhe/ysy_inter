@@ -5,25 +5,36 @@
 
 import json
 
-
 class OperateJson(object):
 
     def __init__(self):
         self.file_path = r'dataconfig\json.json'
         self.json_data = self.read_json()
 
-    # 读取json文件
     def read_json(self):
+        """
+        读取json文件
+        :return:
+        """
         with open(self.file_path, 'r', encoding='UTF-8') as fp:
             data = json.load(fp)
             return data
 
-    # 获取对应json值
     def get_json_value(self, id):
+        """
+        获取对应json值
+        :param id:
+        :return:
+        """
         return self.json_data[id]
 
-    # 将新值写入json原有数据中，如果值相同，则覆盖
     def write_json_value(self, key, value):
+        """
+        将新值写入json原有数据中，如果值相同，则覆盖
+        :param key:
+        :param value:
+        :return:
+        """
         init_json = self.json_data
         init_json[key] = value
         with open(self.file_path, 'w') as f:

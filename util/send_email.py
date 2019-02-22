@@ -36,6 +36,8 @@ class SendEmail(object):
             print('邮件发送成功')
         except smtplib.SMTPException:
             print('邮件发送失败')
+        finally:
+            print ('>>>>>>>不管是否发送成功，始终会执行finally>>>>>>')
         server.close()
 
     def send_main(self, pass_list, fail_list):
