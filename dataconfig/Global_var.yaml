@@ -7,10 +7,12 @@ basic_name:
   - 777
 
 url:
-   ysy_official: 'https://api.yishengyue.cn'
    ysy_test: 'https://trest.yishengyue.cn'
-   zp_official: 'http://zpapi.yishengyue.cn'
+   tfysy_test: 'http://ttfra.yishengyue.cn'
    property_bg_test: 'http://116.62.63.151:8096'
+   zp_official: 'http://zpapi.yishengyue.cn'
+   ysy_official: 'https://api.yishengyue.cn'
+
 
 #account msg
 account:
@@ -22,6 +24,9 @@ account:
   official:
     property_account: '18030478860'
     user_account: '15828022852'
+  tftest:
+    user_account: '15828022852'
+    repair_master: '18099938732'
 
 
 #database msg
@@ -32,6 +37,12 @@ db:
     db_name: 'yishengyue_platform_db'
     user: 'ysy'
     pwd: 'aaaaa888'
+  tfysy_test:
+    db_host: '101.132.194.124'
+    db_name: 'tfyishengyue_test_db'
+    db_port: 3316
+    user: 'root'
+    pwd: 'r88888'
   ysy_official:
     db_host: 'rm-bp155162txb9055txo.mysql.rds.aliyuncs.com'
     db_port: 3336

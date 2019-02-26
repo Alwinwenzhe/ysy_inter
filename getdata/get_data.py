@@ -92,6 +92,8 @@ class GetData(object):
             url_head = self.oper_ya.read_yaml()['url']['ysy_zp_test']
         elif value.startswith('property_bg_test'):
             url_head = self.oper_ya.read_yaml()['url']['property_bg_test']
+        elif value.startswith('tfysy_test'):
+            url_head = self.oper_ya.read_yaml()['url']['tfysy_test']
         else:
             url_head = None
         return value, url_head
@@ -127,7 +129,7 @@ class GetData(object):
         header_value = json.loads(value)  # 自动转换为字典
         for key, value in header_value.items():  # 遍历字典键值
             if value == "":  # json格式需保留，即使没有值也是"";
-                header_value[key] = self.oper_json.get_json_value(key)  # 获取value为空的key
+                header_value[key] = self.oper_json.get_json_value(key)  # 当value为空时，默认从json文件取值
             elif value == 'none':     #满足仅有key，没有对应value的情况
                 header_value[key] = ''
             elif value.startswith("j::"):     #如果全局变量中值和key有差异，使用这个特殊处理
