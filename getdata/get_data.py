@@ -81,6 +81,7 @@ class GetData(object):
     def get_id_yaml(self, row):
         """
         判定id中yaml值,返回实际id值与url域名
+        每次新增加域名或ip需要在这里添加对应的值
         :return:
         """
         value = self.get_id(row)
@@ -88,6 +89,8 @@ class GetData(object):
             url_head = self.oper_ya.read_yaml()['url']['ysy_official']
         elif value.startswith('ysy_test'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_test']
+        elif value.startswith('ysy_t_property'):
+            url_head = self.oper_ya.read_yaml()['url']['ysy_t_property']
         elif value.startswith('ysy_zp_test'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_zp_test']
         elif value.startswith('property_bg_test'):
@@ -129,9 +132,7 @@ class GetData(object):
         header_value = json.loads(value)  # 自动转换为字典
         for key, value in header_value.items():  # 遍历字典键值
             if value == "":  # json格式需保留，即使没有值也是"";
-                header_value[key] = self.oper_json.get_json_value(key)  # 当value为空时，默认从json文件取值
-            elif value == 'none':     #满足仅有key，没有对应value的情况
-                header_value[key] = ''
+                header_value[key] = ""        # 当value为空时，默认从json文件取值
             elif value.startswith("j::"):     #如果全局变量中值和key有差异，使用这个特殊处理
                 temp = value.split("::")[1]
                 header_value[key] = self.oper_json.get_json_value(temp)

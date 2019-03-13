@@ -106,8 +106,8 @@ class RunTest(object):
                 expect_no_value = self.get_data.get_not_expect_data(envir, i)
                 if res == 'true' :                       #   当接口相应值为html，会直接返回True
                     self.do_pass_result(i, id[0], url)
-                elif key and 'code":0' not in res.text:  # 当接口相应异常且想获取全局变量值时，直接抛错
-                    self.do_fail_result(i, res.text, id[0], url, expect_value, expect_no_value)
+                # elif key and 'code":0' not in res.text:  # 当接口相应异常且想获取全局变量值时，直接抛错 这个不行，因为有异常接口需要判断code为其它值
+                #     self.do_fail_result(i, res.text, id[0], url, expect_value, expect_no_value)
                 elif key:
                     # 获取需要提取的全局变量
                     for key, value in self.get_path(key, res.text).items():  # 获取字典对应的key，value
@@ -156,27 +156,24 @@ class RunTest(object):
         self.s_email.send_main(f, p)
         print("p,f:", p, f)
 
-    # def pass_fail_count(self):
-    #     f,p = self.go_on_run()
-
 
 if __name__ == '__main__':
-    # """仅调试使用"""
-    # run_test = RunTest(0)
-    # run_test.go_on_run()
+    """仅调试使用"""
+    run_test = RunTest(0)
+    run_test.go_on_run()
 
-    """多sheet，遍历执行"""
-    oe = OperateExcel()
-    sheets = oe.get_sheets()
-    pass_count = 0
-    fail_count = 0
-    for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
-        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
-        run_test = RunTest(i)
-        f, p = run_test.go_on_run()
-        pass_count += len(p)
-        fail_count += len(f)
-    print(">>>>>>>总计运行用例{0}个，通过{1}个用例，失败{2}个用例>>>>>>>>\n\n".format(pass_count+fail_count, pass_count, fail_count))
+    # """多sheet，遍历执行"""
+    # oe = OperateExcel()
+    # sheets = oe.get_sheets()
+    # pass_count = 0
+    # fail_count = 0
+    # for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
+    #     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    #     run_test = RunTest(i)
+    #     f, p = run_test.go_on_run()
+    #     pass_count += len(p)
+    #     fail_count += len(f)
+    # print(">>>>>>>总计运行用例{0}个，通过{1}个用例，失败{2}个用例>>>>>>>>\n\n".format(pass_count+fail_count, pass_count, fail_count))
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
     # theading_list = []

@@ -8,6 +8,7 @@ basic_name:
 
 url:
    ysy_test: 'https://trest.yishengyue.cn'
+   ysy_t_property: 'http://116.62.63.151:8106'
    tfysy_test: 'http://ttfra.yishengyue.cn'
    property_bg_test: 'http://116.62.63.151:8096'
    zp_official: 'http://zpapi.yishengyue.cn'
@@ -21,6 +22,7 @@ account:
     user_account: '15828022852'
     property_account: '15828022851'
     biotope_account: '15008499838'
+    repair_acc: '17345888627'
   official:
     property_account: '18030478860'
     user_account: '15828022852'

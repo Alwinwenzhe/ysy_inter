@@ -5,6 +5,7 @@
 from util.operate_yaml import OperateYaml
 from util.operate_json import OperateJson
 import pymysql
+import re
 
 
 class OperateMySQL(object):
@@ -20,13 +21,13 @@ class OperateMySQL(object):
         :param goal_db:
         :return:
         """
-        if 'ysy_test' == goal_db or 'property_bg_test' == goal_db:
+        if goal_db.startswith("ysy_test") or goal_db.startswith("property_bg_test") or goal_db.startswith("ysy_t_property"):
             self.dbhost = self.oy.read_yaml()['db']['ysy_test']['db_host']
             self.dbport = self.oy.read_yaml()['db']['ysy_test']['db_port']
             self.dbname = self.oy.read_yaml()['db']['ysy_test']['db_name']
             self.user = self.oy.read_yaml()['db']['ysy_test']['user']
             self.pwd = self.oy.read_yaml()['db']['ysy_test']['pwd']
-        elif 'ysy_official' == goal_db:
+        elif goal_db.startswith("ysy_official"):
             self.dbhost = self.oy.read_yaml()['db']['ysy_official']['db_host']
             self.dbport = self.oy.read_yaml()['db']['ysy_official']['db_port']
             self.dbname = self.oy.read_yaml()['db']['ysy_official']['db_name']
@@ -34,6 +35,11 @@ class OperateMySQL(object):
             self.pwd = self.oy.read_yaml()['db']['ysy_official']['pwd']
 
     def formate_sql(self,sql_str):
+        '''
+        该方法暂时不使用，被re_sql代替
+        :param sql_str:
+        :return:
+        '''
         if '%%%(' in sql_str:
             sql_list = sql_str.split("%%%(")
             sql_vars = sql_list[1].split(",")
@@ -56,7 +62,7 @@ class OperateMySQL(object):
         db = pymysql.connect(host=self.dbhost, port=self.dbport, user=self.user, passwd=self.pwd, db=self.dbname,
                              charset='utf8')
         cursor = db.cursor()  # 创建一个游标
-        exe_sql = self.formate_sql(sql_str)
+        exe_sql = self.re_sql(sql_str)
         cursor.execute(exe_sql)
         data = cursor.fetchone()
         return data[0]
@@ -84,6 +90,41 @@ class OperateMySQL(object):
             preset_list = i.split("$$")
             preset_value = self.execute_sql(dbcon,preset_list[1])
             self.oj.write_json_value(preset_list[0], preset_value)
+
+    def re_sql(self,var_str):
+        """
+		处理str中包含了变量的sql
+		:param str:
+		:return:
+		"""
+        if 'formate' in var_str:
+            p1 = re.compile(r"[(](.*?)[')]", re.S)  # 非贪心匹配
+            split_str = var_str.split('formate')
+            var_1 = re.findall(p1, split_str[1])
+            #这里会对list中每个值进行判断
+            var_1 = self.list_value_y_j(var_1)
+            # 注意这里只传递了第一个格式化值进来
+            sql_resutl = split_str[0].format(*var_1)
+            return sql_resutl
+        else:
+            return var_str
+
+    def list_value_y_j(self,list_var):
+        """
+        将传入的list，遍历每个值，处理后，以list形式再度返回
+        :param list_var:
+        :return:
+        """
+        temp_list = []
+        for i in list_var:
+            if  i.startswith("j::"):     #如果全局变量中值和key有差异，使用这个特殊处理
+                temp = i.split("::")[1]
+                i = self.oper_json.get_json_value(temp)
+            elif i.startswith("y::"):
+                temp = i.split("::")[1]
+                i = self.oy.read_main(temp)
+            temp_list.append(i)
+        return temp_list
 
 if __name__ == "__main__":
     om = OperateMySQL()
