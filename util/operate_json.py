@@ -22,7 +22,7 @@ class OperateJson(object):
 
     def get_json_value(self, id):
         """
-        获取对应json值
+        获取对应json值,这里会读到上一次token信息
         :param id:
         :return:
         """
@@ -31,6 +31,7 @@ class OperateJson(object):
     def write_json_value(self, key, value):
         """
         将新值写入json原有数据中，如果值相同，则覆盖
+        每次写入一组数据
         :param key:
         :param value:
         :return:

@@ -30,8 +30,7 @@ account:
     user_account: '15828022852'
     repair_master: '18099938732'
 
-
-#database msg
+#database_connect
 db:
   ysy_test:
     db_host: '116.62.63.151'

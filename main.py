@@ -11,6 +11,7 @@ from util.common_util import CommonUtil
 from util.send_email import SendEmail
 from util.operate_excel import OperateExcel
 import json
+import time
 import threading
 
 
@@ -79,6 +80,16 @@ class RunTest(object):
         self.pass_count.append(case_id)
         print('\033[0m测试通过:', case_id, case_url)
 
+    def preset_data(self, line, envir):
+        preset = self.get_data.get_pres_data(line)
+        if preset:
+            self.oper_sql.sql_main(envir, preset)
+
+
+    def go_on_run_test(self):
+        #preset_data
+        pass
+
     def go_on_run(self):
         """
         运行生产环境接口：ysy_api
@@ -88,11 +99,12 @@ class RunTest(object):
         self.com_util.set_tomorrow_time()
         for i in range(1, row_counts):  # 排除第一行
             # 有可能url中需要前置数据处理，所以需要放这里
-            preset = self.get_data.get_pres_data(i)
+            # preset = self.get_data.get_pres_data(line)
             id = self.get_data.get_id_yaml(i)
             envir = id[0].split('-')[0]  # case的执行环境设定，如：ysy_test
-            if preset:
-                self.oper_sql.sql_main(envir, preset)
+            self.preset_data(i, envir)
+            # if preset:
+            #     self.oper_sql.sql_main(envir, preset)
             is_run = self.get_data.get_is_run(i)
             url = id[1] + self.get_data.get_request_url(i)
             method = self.get_data.get_request_method(i)
@@ -131,6 +143,7 @@ class RunTest(object):
                 else:
                     self.do_fail_result(i, res.text, id[0], url, expect_value, expect_no_value)
                     continue
+            # time.sleep(5)           # 避免json数据读取旧文件
         print("\n该选项卡总计用例{0}个，通过{1}个用例，失败{2}个用例\n\n".format(len(self.pass_count)+len(self.fail_count),len(self.pass_count),len(self.fail_count)))
         return self.fail_count, self.pass_count
 
