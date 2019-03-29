@@ -81,23 +81,31 @@ class RunTest(object):
         print('\033[0m测试通过:', case_id, case_url)
 
     def preset_data(self, line, envir):
+        '''
+        预置数据处理
+        :param line:行数
+        :param envir:环境
+        :return:
+        '''
         preset = self.get_data.get_pres_data(line)
         if preset:
             self.oper_sql.sql_main(envir, preset)
 
-
-    def go_on_run_test(self):
-        #preset_data
-        pass
+    def sheet_row_counts(self):
+        '''
+        获取每个sheets行数，及预先设置明日的事件格式
+        :return:
+        '''
+        row_counts = self.get_data.get_case_lines()
+        self.com_util.set_tomorrow_time()
+        return row_counts
 
     def go_on_run(self):
         """
         运行生产环境接口：ysy_api
         :return: fail_count, pass_count
         """
-        row_counts = self.get_data.get_case_lines()
-        self.com_util.set_tomorrow_time()
-        for i in range(1, row_counts):  # 排除第一行
+        for i in range(1, self.sheet_row_counts()):  # 排除第一行
             # 有可能url中需要前置数据处理，所以需要放这里
             # preset = self.get_data.get_pres_data(line)
             id = self.get_data.get_id_yaml(i)

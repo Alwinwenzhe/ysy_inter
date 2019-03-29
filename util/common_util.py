@@ -116,9 +116,23 @@ class CommonUtil(object):
         key = 'tomorrow_time'
         self.oper_json.write_json_value(key, value)
 
+    def split_combine(self,var,split_char_1='::',split_char_2=';'):
+        '''
+        var中必须是split_char_1在钱，split_char_2在后
+        将传入的var，按照特定规则进行拆分后，又合并为一个整的list返回
+        示例：sort":2::SELECT IFNULL(banner_url,0) from banner
+        :param var:
+        :return:
+        '''
+        temp = []
+        expect_result = var.split(split_char_1)  # 首先按照逗号进行分割
+        for i in expect_result:
+            temb = i.split(split_char_2)  # 其次再用分号进行分割
+            temp = temp + temb
+        return temp
 
 if __name__ == '__main__':
     cu = CommonUtil()
     list1 = [1,2,3]
     data2 = [4,5]
-    print(cu.data_joint(list1,data2))
+    # print(cu.data_joint(list1,data2))

@@ -210,7 +210,7 @@ class GetData(object):
         col = int(self.excel_data.get_expect_result())
         expect_data = self.read_ex.get_cell(row, col)
         if expect_data:
-            expect_list = expect_data.split(";")            # 分号分隔不同sql语句
+            expect_list = self.com_util.split_combine(expect_data)
             return self.deal_expec_and_not_expec(envir, expect_list)
         else:
             return None
