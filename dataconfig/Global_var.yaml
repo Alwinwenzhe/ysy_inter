@@ -10,10 +10,10 @@ url:
    ysy_test: 'https://trest.yishengyue.cn'
    ysy_t_property: 'http://116.62.63.151:8106'
    tfysy_test: 'http://ttfra.yishengyue.cn'
-   property_bg_test: 'http://116.62.63.151:8096'
+   property_bg_test: 'http://192.168.0.64:8081'
    zp_official: 'http://zpapi.yishengyue.cn'
    ysy_official: 'https://api.yishengyue.cn'
-
+   property_bg_TEST: 'http://116.62.63.151:8096'
 
 #account msg
 account:
@@ -23,12 +23,17 @@ account:
     property_account: '15828022851'
     biotope_account: '15008499838'
     repair_acc: '17345888627'
+    property_manage_user: '18180734223'
+    property_manage_register: '13438981899'
+    property_manage_test: '18800000000'
   official:
     property_account: '18030478860'
     user_account: '15828022852'
   tftest:
     user_account: '15828022852'
     repair_master: '18099938732'
+  enterpriseId:
+    chengdu: '510100'
 
 #database_connect
 db:
@@ -56,11 +61,17 @@ db:
     db_name: 'yishengyue_platform_db'
     user: 'ysy_check'
     pwd: 'rammstein5!'
-  property_bg_test:
+  property_bg_TEST:
     db_host: '116.62.63.151'
     db_port: 3316
     db_name: 'yishengyue_platform_db'
     user: 'ysy'
+    pwd: 'aaaaa888'
+  property_bg_test:
+    db_host: '192.168.0.250'
+    db_port: 3306
+    db_name: 'yishengyue_platform_db'
+    user: 'ysy_data'
     pwd: 'aaaaa888'
 
 email:

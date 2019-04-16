@@ -21,7 +21,7 @@ class OperateMySQL(object):
         :param goal_db:
         :return:
         """
-        if goal_db.startswith("ysy_test") or goal_db.startswith("property_bg_test") or goal_db.startswith("ysy_t_property"):
+        if goal_db.startswith("ysy_test") or goal_db.startswith("ysy_t_property"):
             self.dbhost = self.oy.read_yaml()['db']['ysy_test']['db_host']
             self.dbport = self.oy.read_yaml()['db']['ysy_test']['db_port']
             self.dbname = self.oy.read_yaml()['db']['ysy_test']['db_name']
@@ -33,6 +33,12 @@ class OperateMySQL(object):
             self.dbname = self.oy.read_yaml()['db']['ysy_official']['db_name']
             self.user = self.oy.read_yaml()['db']['ysy_official']['user']
             self.pwd = self.oy.read_yaml()['db']['ysy_official']['pwd']
+        elif goal_db.startswith("property_bg_test"):
+            self.dbhost = self.oy.read_yaml()['db']['property_bg_test']['db_host']
+            self.dbport = self.oy.read_yaml()['db']['property_bg_test']['db_port']
+            self.dbname = self.oy.read_yaml()['db']['property_bg_test']['db_name']
+            self.user = self.oy.read_yaml()['db']['property_bg_test']['user']
+            self.pwd = self.oy.read_yaml()['db']['property_bg_test']['pwd']
 
     def formate_sql(self,sql_str):
         '''
@@ -88,14 +94,15 @@ class OperateMySQL(object):
         preset_l = preset.split(";")
         for i in preset_l:
             preset_list = i.split("$$")
+            #這裏dbcon值需要轉化
             preset_value = self.execute_sql(dbcon,preset_list[1])
             self.oj.write_json_value(preset_list[0], preset_value)
 
     def re_sql(self,var_str):
         """
 		处理str中包含了变量的sql
-		:param str:
-		:return:
+		:param str:可能包含了formate的字符串
+		:return:不包含了formate的字符串
 		"""
         if 'formate' in var_str:
             p1 = re.compile(r"[(](.*?)[')]", re.S)  # 非贪心匹配

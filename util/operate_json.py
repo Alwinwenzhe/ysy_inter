@@ -9,7 +9,8 @@ class OperateJson(object):
 
     def __init__(self):
         self.file_path = r'dataconfig\json.json'
-        self.json_data = self.read_json()
+        #如果构建函数中增加了下行代码会导致用例:第一个用例修改了json，第二个用例读取最新json值会读到旧值；因为初始化就会将json文件读入到内存，的第二次会督导内存中的值
+        # self.json_data = self.read_json()
 
     def read_json(self):
         """
@@ -26,7 +27,7 @@ class OperateJson(object):
         :param id:
         :return:
         """
-        return self.json_data[id]
+        return self.read_json()[id]
 
     def write_json_value(self, key, value):
         """
@@ -36,9 +37,10 @@ class OperateJson(object):
         :param value:
         :return:
         """
-        init_json = self.json_data
+        # 单独读取文件
+        init_json = self.read_json()
         init_json[key] = value
-        with open(self.file_path, 'w') as f:
+        with open(self.file_path, 'w', encoding='UTF-8') as f:
             json.dump(init_json, f)
 
 

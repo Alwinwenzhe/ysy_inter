@@ -109,7 +109,7 @@ class RunTest(object):
             # 有可能url中需要前置数据处理，所以需要放这里
             # preset = self.get_data.get_pres_data(line)
             id = self.get_data.get_id_yaml(i)
-            envir = id[0].split('-')[0]  # case的执行环境设定，如：ysy_test
+            envir = id[0].split('-')[0]  # case的执行环境设定，如：ysy_test-001
             self.preset_data(i, envir)
             # if preset:
             #     self.oper_sql.sql_main(envir, preset)
@@ -128,7 +128,7 @@ class RunTest(object):
                     self.do_pass_result(i, id[0], url)
                 # elif key and 'code":0' not in res.text:  # 当接口相应异常且想获取全局变量值时，直接抛错 这个不行，因为有异常接口需要判断code为其它值
                 #     self.do_fail_result(i, res.text, id[0], url, expect_value, expect_no_value)
-                elif key:
+                if key:
                     # 获取需要提取的全局变量
                     for key, value in self.get_path(key, res.text).items():  # 获取字典对应的key，value
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass

@@ -93,10 +93,12 @@ class GetData(object):
             url_head = self.oper_ya.read_yaml()['url']['ysy_t_property']
         elif value.startswith('ysy_zp_test'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_zp_test']
-        elif value.startswith('property_bg_test'):
+        elif value.startswith('property_bg_test') :
             url_head = self.oper_ya.read_yaml()['url']['property_bg_test']
         elif value.startswith('tfysy_test'):
             url_head = self.oper_ya.read_yaml()['url']['tfysy_test']
+        elif value.startswith('property_bg_TEST'):
+            url_head = self.oper_ya.read_yaml()['url']['property_bg_TEST']
         else:
             url_head = None
         return value, url_head
@@ -224,36 +226,31 @@ class GetData(object):
         col = int(self.excel_data.get_expect_no_result())
         expect_not_data = self.read_ex.get_cell(row, col)
         if expect_not_data:
-            expect_not_data_list = expect_not_data.split(",")
-            return self.deal_expec_and_not_expec(envir, expect_not_data_list)
+            expect_list = self.com_util.split_combine(expect_not_data)
+            return self.deal_expec_and_not_expec(envir, expect_list)
         else:
             return None
 
     def deal_expec_and_not_expec(self, envir, expect_data):
         """
-        获取期望结果，可以为多个sql，以分号间隔；每个sql以特定字符开头
+
         :param envir: 环境配置
-        :param row:
+        :param expect_data:包含两种数据:sql、普通期望值
         :return:  统一返回值为list类型
         """
         result = []
-        if expect_data != "":                # 判定值是否为空
-            for i in expect_data:
-                if "SELECT" in str(i) or "UPDATE" in str(i) or "DELETE" in str(i) or "INSERT" in str(i) :  # 验证是否为SQL语句
-                    val_2 = i.split(";")
-                    for i in val_2:
-                        temp = self.oper_sql.execute_sql(envir, i)
-                        if ',' in str(temp):
-                            temp_list = self.com_util.split_self(',',temp)
-                            result = self.com_util.data_joint(result,temp_list)
-                        else:
-                            result.append(temp)
-                    return result
+        for i in expect_data:
+            if "SELECT" in str(i) or "UPDATE" in str(i) or "DELETE" in str(i) or "INSERT" in str(i) :  # 验证是否为SQL语句
+                temp = self.oper_sql.execute_sql(envir, i)
+                if ',' in str(temp):                        # 返回結果中包含多個結果，進行拆分
+                    temp_list = self.com_util.split_self(',',temp)
+                    result = result + temp_list             # 合并list
                 else:
-                    result.append(i)
-            return result
-        else:
-            return ""
+                    result.append(temp)
+            else:
+                result.append(i)
+        return result
+
 
     def write_excle_data(self, row, value):
         '''

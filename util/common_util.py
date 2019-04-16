@@ -5,6 +5,8 @@ import datetime
 import time
 import json
 from util.operate_json import OperateJson
+from util.operate_yaml import OperateYaml
+from util.operate_mysql import OperateMySQL
 
 class CommonUtil(object):
     '''
@@ -13,6 +15,8 @@ class CommonUtil(object):
 
     def __init__(self):
         self.oper_json = OperateJson()
+        self.oper_yaml = OperateYaml()
+        self.oper_sql = OperateMySQL()
 
     def is_contain(self, str_list, str2):
         """
@@ -71,12 +75,17 @@ class CommonUtil(object):
         :return: 返回list
         """
         temp = []
-        for i in total_str:                   #list遍历值
-            if ',' in str(i):
-                list_split = i.split(symbol)
+        if isinstance(total_str,list):                     # 当total_str长度大于1时
+            for i in total_str:                   #list遍历值
+                if ',' in str(i):
+                    list_split = i.split(symbol)
+                    temp = temp + list_split
+                else:
+                    temp.append(i)
+        elif isinstance(total_str,str):
+            if ',' in str(total_str):
+                list_split = total_str.split(symbol)
                 temp = temp + list_split
-            else:
-                temp.append(i)
         return temp
 
     def data_joint(self,data1,data2):
@@ -116,20 +125,39 @@ class CommonUtil(object):
         key = 'tomorrow_time'
         self.oper_json.write_json_value(key, value)
 
-    def split_combine(self,var,split_char_1='::',split_char_2=';'):
+    def split_combine(self,var,split_char_1='**',split_char_2=';'):
         '''
-        var中必须是split_char_1在钱，split_char_2在后
+        var中必须是split_char_1在前，split_char_2在后
         将传入的var，按照特定规则进行拆分后，又合并为一个整的list返回
         示例：sort":2::SELECT IFNULL(banner_url,0) from banner
+        --2019-04-01 修改
+        這裏的參數最好使用*args,只是這樣傳遞后，不知道内部怎麽分辨第一、第二
         :param var:
         :return:
         '''
         temp = []
-        expect_result = var.split(split_char_1)  # 首先按照逗号进行分割
-        for i in expect_result:
-            temb = i.split(split_char_2)  # 其次再用分号进行分割
-            temp = temp + temb
-        return temp
+        if split_char_1 in var:
+            expect_result = var.split(split_char_1)  # 首先按照**号进行分割
+            for i in expect_result:
+                temb = i.split(split_char_2)  # 其次再用分号进行分割
+                temp = temp + temb
+        else:
+            temp = var.split(split_char_2)
+        formate_list = self.formate_list(temp)  #將temp中可能帶有formate的變量，值替代出來
+        return formate_list
+
+    def formate_list(self,list):
+        '''
+        處理list中，sql可能包含的變量
+        :param list:
+        :return: 不包含formate變量的值
+        '''
+        list_result =[]
+        for i in list:
+            j = self.oper_sql.re_sql(i)
+            list_result.append(j)
+        return list_result
+
 
 if __name__ == '__main__':
     cu = CommonUtil()
