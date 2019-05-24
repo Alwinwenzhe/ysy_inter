@@ -6,14 +6,17 @@ basic_name:
   - 666         #list
   - 777
 
+
 url:
    ysy_test: 'https://trest.yishengyue.cn'
-   ysy_t_property: 'http://116.62.63.151:8106'
+   #旧物业系统接口地址
+   ysy_t_property: 'http://116.62.63.151:8096'
    tfysy_test: 'http://ttfra.yishengyue.cn'
-   property_bg_test: 'http://192.168.0.64:8081'
    zp_official: 'http://zpapi.yishengyue.cn'
    ysy_official: 'https://api.yishengyue.cn'
-   property_bg_TEST: 'http://116.62.63.151:8096'
+   #新系统资源接口地址
+   property_bg_test: 'http://116.62.63.151:8112'
+
 
 #account msg
 account:
@@ -23,7 +26,7 @@ account:
     property_account: '15828022851'
     biotope_account: '15008499838'
     repair_acc: '17345888627'
-    property_manage_user: '18180734223'
+    property_manage_user: '15828022851'
     property_manage_register: '13438981899'
     property_manage_test: '18800000000'
   official:
