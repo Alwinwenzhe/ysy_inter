@@ -108,13 +108,14 @@ class CommonUtil(object):
         :param res:
         :return:
         """
-        if 'code:' in res:
-            result =  res.json()
-            return json.dumps(result, indent=3, sort_keys=True, ensure_ascii=False)  # 返回值可以包含非ascii字符
+        if 'code' in res.text:
+            # result =  res.json()
+            # return json.dumps(result, indent=3, sort_keys=True, ensure_ascii=False)  # 返回值可以包含非ascii字符
+            return res          #这里由于在main函数中使用了res.text，所以这里需要返回整个res--20190710
         elif 'DOCTYPE html' in res.text:        #  这里是验证当res返回内容为html，需要从str格式中寻找目标字符串
             return 'true'
-        else:
-            return res
+        # else:         #这里应该是无用的，注销掉--20190709
+        #     return res
 
     def set_tomorrow_time(self):
         """

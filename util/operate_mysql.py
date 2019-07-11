@@ -21,13 +21,13 @@ class OperateMySQL(object):
         :param goal_db:
         :return:
         """
-        if goal_db.startswith("ysy_test") or goal_db.startswith("ysy_t_property"):
+        if goal_db.startswith("ysy_test") or goal_db.startswith("ysy_t_property") or goal_db.startswith("ysy_t_property_app"):
             self.dbhost = self.oy.read_yaml()['db']['ysy_test']['db_host']
             self.dbport = self.oy.read_yaml()['db']['ysy_test']['db_port']
             self.dbname = self.oy.read_yaml()['db']['ysy_test']['db_name']
             self.user = self.oy.read_yaml()['db']['ysy_test']['user']
             self.pwd = self.oy.read_yaml()['db']['ysy_test']['pwd']
-        elif goal_db.startswith("ysy_official"):
+        elif goal_db.startswith("ysy_official") or goal_db.startswith(" ysy_property_off_web"):
             self.dbhost = self.oy.read_yaml()['db']['ysy_official']['db_host']
             self.dbport = self.oy.read_yaml()['db']['ysy_official']['db_port']
             self.dbname = self.oy.read_yaml()['db']['ysy_official']['db_name']
@@ -94,7 +94,7 @@ class OperateMySQL(object):
         preset_l = preset.split(";")
         for i in preset_l:
             preset_list = i.split("$$")
-            #這裏dbcon值需要轉化
+            #分割后的每个sql，执行后，直接覆盖写入json
             preset_value = self.execute_sql(dbcon,preset_list[1])
             self.oj.write_json_value(preset_list[0], preset_value)
 

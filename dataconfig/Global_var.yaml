@@ -6,17 +6,17 @@ basic_name:
   - 666         #list
   - 777
 
-
 url:
    ysy_test: 'https://trest.yishengyue.cn'
    #旧物业系统接口地址
    ysy_t_property: 'http://116.62.63.151:8096'
+   ysy_t_property_app: 'http://116.62.63.151:8106'
+   ysy_property_off_web: 'http://wuye.yishengyue.cn/#/'
    tfysy_test: 'http://ttfra.yishengyue.cn'
    zp_official: 'http://zpapi.yishengyue.cn'
    ysy_official: 'https://api.yishengyue.cn'
    #新系统资源接口地址
    property_bg_test: 'http://116.62.63.151:8112'
-
 
 #account msg
 account:
