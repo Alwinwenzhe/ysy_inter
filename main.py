@@ -22,6 +22,7 @@ class RunTest(object):
 
     def __init__(self, sheetid):
         # self.db = self.conn_sql(sheetid)
+        self.sheet_id = sheetid
         self.pass_count = []
         self.fail_count = []
         self.s_email = SendEmail()
@@ -78,7 +79,7 @@ class RunTest(object):
         """
         self.get_data.write_excle_data(result_row, 'pass')
         self.pass_count.append(case_id)
-        print('\033[0m测试通过:', case_id, case_url)
+        # print('\033[0m测试通过:', case_id, case_url)
 
     def preset_data(self, line, envir):
         '''
@@ -134,7 +135,7 @@ class RunTest(object):
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
                     self.get_data.write_excle_data(i, 'pass')
                     self.pass_count.append(id[0])
-                    print('测试通过:', id[0], url)
+                    # print('测试通过:', id[0], url)        进打印选项卡统计数据及失败数据--2019-07-12
                 elif expect_no_value is not None and expect_value is not None:  # 期望包含值和期望不包含值都不为空
                     rel1 = self.com_util.is_contain(expect_value, c)
                     rel2 = self.com_util.not_contain(expect_no_value, res.text)  # 从期望值对比
@@ -152,7 +153,7 @@ class RunTest(object):
                     self.do_fail_result(i, res.text, id[0], url, expect_value, expect_no_value)
                     continue
             # time.sleep(5)           # 避免json数据读取旧文件
-        print("\n该选项卡总计用例{0}个，通过{1}个用例，失败{2}个用例\n\n".format(len(self.pass_count)+len(self.fail_count),len(self.pass_count),len(self.fail_count)))
+        print("\n第{0}个选项卡总计用例{1}个，通过{2}个用例，失败{3}个用例\n\n".format(self.sheet_id,len(self.pass_count)+len(self.fail_count),len(self.pass_count),len(self.fail_count)))
         return self.fail_count, self.pass_count
 
     def threads_to_run(self):
@@ -183,6 +184,7 @@ if __name__ == '__main__':
     run_test = RunTest(0)
     run_test.go_on_run()
 
+
     # """多sheet，遍历执行"""
     # oe = OperateExcel()
     # sheets = oe.get_sheets()
@@ -194,7 +196,7 @@ if __name__ == '__main__':
     #     f, p = run_test.go_on_run()
     #     pass_count += len(p)
     #     fail_count += len(f)
-    # print(">>>>>>>总计运行用例{0}个，通过{1}个用例，失败{2}个用例>>>>>>>>\n\n".format(pass_count+fail_count, pass_count, fail_count))
+    # print(">>>>>>>第{0}选项卡总计运行用例{1}个，通过{2}个用例，失败{3}个用例>>>>>>>>\n\n".format(str(i),pass_count+fail_count, pass_count, fail_count))
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
     # theading_list = []
