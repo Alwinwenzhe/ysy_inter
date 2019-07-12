@@ -154,7 +154,7 @@ class RunTest(object):
                     continue
             # time.sleep(5)           # 避免json数据读取旧文件
         print("\n第{0}个选项卡总计用例{1}个，通过{2}个用例，失败{3}个用例\n\n".format(self.sheet_id,len(self.pass_count)+len(self.fail_count),len(self.pass_count),len(self.fail_count)))
-        return self.fail_count, self.pass_count
+        # return self.fail_count, self.pass_count
 
     def threads_to_run(self):
         """
@@ -180,22 +180,22 @@ class RunTest(object):
 
 
 if __name__ == '__main__':
-    """仅调试使用"""
-    run_test = RunTest(0)
-    run_test.go_on_run()
+    # """仅调试使用"""
+    # run_test = RunTest(0)
+    # run_test.go_on_run()
 
 
-    # """多sheet，遍历执行"""
-    # oe = OperateExcel()
-    # sheets = oe.get_sheets()
-    # pass_count = 0
-    # fail_count = 0
-    # for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
-    #     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
-    #     run_test = RunTest(i)
-    #     f, p = run_test.go_on_run()
-    #     pass_count += len(p)
-    #     fail_count += len(f)
+    """多sheet，遍历执行"""
+    oe = OperateExcel()
+    sheets = oe.get_sheets()
+    pass_count = 0
+    fail_count = 0
+    for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        run_test = RunTest(i)
+        run_test.go_on_run()
+        # pass_count += len(p)          #该打印内容已由运行中实现，不用这里重复实现
+        # fail_count += len(f)
     # print(">>>>>>>第{0}选项卡总计运行用例{1}个，通过{2}个用例，失败{3}个用例>>>>>>>>\n\n".format(str(i),pass_count+fail_count, pass_count, fail_count))
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""

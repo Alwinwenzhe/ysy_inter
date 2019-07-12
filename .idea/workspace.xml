@@ -7,8 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/runmethod.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/runmethod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/htmlreport.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/htmlreport.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/case.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/case.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/json.json" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/json.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -27,7 +25,7 @@
     <SUITE FILE_PATH="coverage/ysy_inter$debug.coverage" NAME="debug Coverage Results" MODIFIED="1554717022036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/debug" />
     <SUITE FILE_PATH="coverage/ysy_inter$operate_mysql.coverage" NAME="operate_mysql Coverage Results" MODIFIED="1545376797022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/ysy_inter$runmethod.coverage" NAME="runmethod Coverage Results" MODIFIED="1559635946164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/base" />
-    <SUITE FILE_PATH="coverage/ysy_inter$main.coverage" NAME="main Coverage Results" MODIFIED="1562902210604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ysy_inter$main.coverage" NAME="main Coverage Results" MODIFIED="1562902629008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ysy_inter$operate_excel.coverage" NAME="operate_excel Coverage Results" MODIFIED="1544860554621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/ysy_inter$Unittests_in_unittest_demo_py.coverage" NAME="Unittests in unittest_demo.py Coverage Results" MODIFIED="1562836080414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/ysy_inter$mytool.coverage" NAME="mytool Coverage Results" MODIFIED="1552274173057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../python3/Lib/site-packages/Alwin" />
@@ -134,9 +132,9 @@
           <entry key="dummy" value="16" />
           <entry key="json" value="30" />
           <entry key="md" value="447" />
-          <entry key="py" value="22147" />
+          <entry key="py" value="22171" />
           <entry key="sql" value="73" />
-          <entry key="txt" value="398" />
+          <entry key="txt" value="436" />
           <entry key="yaml" value="1088" />
         </counts>
       </usages-collector>
@@ -144,8 +142,8 @@
         <counts>
           <entry key="JSON" value="30" />
           <entry key="Markdown" value="447" />
-          <entry key="PLAIN_TEXT" value="414" />
-          <entry key="Python" value="22171" />
+          <entry key="PLAIN_TEXT" value="452" />
+          <entry key="Python" value="22195" />
           <entry key="RegExp" value="1" />
           <entry key="Scratch" value="73" />
           <entry key="YAML" value="1088" />
@@ -161,8 +159,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="117">
+              <caret line="195" column="66" selection-start-line="195" selection-start-column="66" selection-end-line="195" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -351,8 +349,8 @@
         <option value="$PROJECT_DIR$/util/common_util.py" />
         <option value="$PROJECT_DIR$/getdata/excel_data_config.py" />
         <option value="$PROJECT_DIR$/case/unittest_demo.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/base/runmethod.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -659,7 +657,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558665472129</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="修改了运行日志输出，仅打印错误日志，及每个sheet的总的失败与成功统计数目">
+      <created>1562902275885</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1562902275885</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -692,7 +697,7 @@
       <window_info id="Favorites" order="3" sideWeight="0.48320413" side_tool="true" weight="0.14220877" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.23309353" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7639939" visible="true" weight="0.4561151" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7639939" visible="true" weight="0.45179856" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3582734" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -758,7 +763,8 @@
     <MESSAGE value="将一生约接口用例中，话题等用例预期值修改为动态值" />
     <MESSAGE value="修复了预置数据不会立即生效的问题" />
     <MESSAGE value="切换至运行生产环境" />
-    <option name="LAST_COMMIT_MESSAGE" value="切换至运行生产环境" />
+    <MESSAGE value="修改了运行日志输出，仅打印错误日志，及每个sheet的总的失败与成功统计数目" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改了运行日志输出，仅打印错误日志，及每个sheet的总的失败与成功统计数目" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1248,8 +1254,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="117">
+          <caret line="195" column="66" selection-start-line="195" selection-start-column="66" selection-end-line="195" selection-end-column="66" />
         </state>
       </provider>
     </entry>
