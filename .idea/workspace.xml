@@ -7,8 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataconfig/case.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/case.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataconfig/json.json" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/json.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -132,9 +130,9 @@
           <entry key="dummy" value="16" />
           <entry key="json" value="30" />
           <entry key="md" value="447" />
-          <entry key="py" value="22171" />
+          <entry key="py" value="22175" />
           <entry key="sql" value="73" />
-          <entry key="txt" value="436" />
+          <entry key="txt" value="450" />
           <entry key="yaml" value="1088" />
         </counts>
       </usages-collector>
@@ -142,8 +140,8 @@
         <counts>
           <entry key="JSON" value="30" />
           <entry key="Markdown" value="447" />
-          <entry key="PLAIN_TEXT" value="452" />
-          <entry key="Python" value="22195" />
+          <entry key="PLAIN_TEXT" value="466" />
+          <entry key="Python" value="22199" />
           <entry key="RegExp" value="1" />
           <entry key="Scratch" value="73" />
           <entry key="YAML" value="1088" />
@@ -159,8 +157,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="195" column="66" selection-start-line="195" selection-start-column="66" selection-end-line="195" selection-end-column="66" />
+            <state relative-caret-position="20">
+              <caret line="187" selection-start-line="187" selection-end-line="193" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -664,7 +662,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562902275885</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="调整都线程运行及日志输出方式">
+      <created>1562902688072</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1562902688072</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -691,13 +696,13 @@
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5175097" visible="true" weight="0.14977308" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5175097" visible="true" weight="0.14977308" />
       <window_info id="Structure" order="1" sideWeight="0.48249027" side_tool="true" weight="0.16187595" />
       <window_info id="Terminal" order="2" sideWeight="0.46618706" side_tool="true" weight="0.14372164" />
       <window_info id="Favorites" order="3" sideWeight="0.48320413" side_tool="true" weight="0.14220877" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.23309353" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7639939" visible="true" weight="0.45179856" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7639939" visible="true" weight="0.5093525" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3582734" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -764,7 +769,8 @@
     <MESSAGE value="修复了预置数据不会立即生效的问题" />
     <MESSAGE value="切换至运行生产环境" />
     <MESSAGE value="修改了运行日志输出，仅打印错误日志，及每个sheet的总的失败与成功统计数目" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了运行日志输出，仅打印错误日志，及每个sheet的总的失败与成功统计数目" />
+    <MESSAGE value="调整都线程运行及日志输出方式" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整都线程运行及日志输出方式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1254,8 +1260,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="195" column="66" selection-start-line="195" selection-start-column="66" selection-end-line="195" selection-end-column="66" />
+        <state relative-caret-position="20">
+          <caret line="187" selection-start-line="187" selection-end-line="193" selection-end-column="28" />
         </state>
       </provider>
     </entry>
