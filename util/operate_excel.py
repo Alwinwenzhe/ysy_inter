@@ -35,6 +35,15 @@ class OperateExcel(object):
         sheets = workbooks.sheets()
         return sheets
 
+    def get_sheet_names(self):
+        '''
+        返回所有sheet名字集合
+        :return:
+        '''
+        workbooks = xlrd.open_workbook(self.file_name)
+        sheet_name = workbooks.sheet_names()
+        return sheet_name
+
     def get_lines(self):
         '''
         获取行数
@@ -83,3 +92,4 @@ if __name__ == '__main__':
     print('行数为：', re.get_lines())
     print('单元格值为：', re.get_cell(2, 8))
     print('excel行数为：',re.get_sheets())
+    print(re.get_sheet_name(0))

@@ -22,7 +22,8 @@ class RunTest(object):
 
     def __init__(self, sheetid):
         # self.db = self.conn_sql(sheetid)
-        self.sheet_id = sheetid
+        self.oper_ex = OperateExcel()
+        self.sheet_name = self.oper_ex.get_sheet_names()[sheetid]
         self.pass_count = []
         self.fail_count = []
         self.s_email = SendEmail()
@@ -153,7 +154,7 @@ class RunTest(object):
                     self.do_fail_result(i, res.text, id[0], url, expect_value, expect_no_value)
                     continue
             # time.sleep(5)           # 避免json数据读取旧文件
-        print("\n第{0}个选项卡总计用例{1}个，通过{2}个用例，失败{3}个用例\n\n".format(self.sheet_id,len(self.pass_count)+len(self.fail_count),len(self.pass_count),len(self.fail_count)))
+        print("\n测试用例集《{0}》,总计用例{1}个，通过{2}个用例，失败{3}个用例\n\n".format(self.sheet_name,len(self.pass_count)+len(self.fail_count),len(self.pass_count),len(self.fail_count)))
         # return self.fail_count, self.pass_count
 
     def threads_to_run(self):
