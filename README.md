@@ -37,6 +37,8 @@ Request_data---{"mobile":"y::account/official/user_account","verifyCode":"6688"}
 
 预期结果包含(有全局变量值，则不需要预期结果)---code":104  SELECT IFNULL(GROUP_CONCAT(name),0) from menu WHERE is_valid='Y' AND su_system='3';
 该字段可由直接结果或sql返回值作为判断，如果都有，需要用**间隔
+如果预期值是小数，会自动转化为浮点型，暂未对这个进行处理，需将期望值都当作str
+注意如果期望结果中的sql是以分号结果的，那么期望值在sql的基础上会多一个空值，如：'stepNumber":"94',''
 
 
 

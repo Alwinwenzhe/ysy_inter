@@ -68,7 +68,7 @@ class RunTest(object):
         """
         self.get_data.write_excle_data(i, res)  # 如果出错，返回接口错误信息
         self.fail_count.append(id)
-        print('\033[7;31m测试失败,ID:{0}, URL为：{1}, 期望值：{2},期望不包含值：{3},实际值为：{4}'.format(id, url, expect_value,  expect_no_value, res))
+        print('\033[7;31m测试失败,ID:{0}, URL为：{1}, 期望值：{2},期望不包含值：{3},实际值为：{4}\033[0m'.format(id, url, expect_value,  expect_no_value, res))
 
     def do_pass_result(self, result_row, case_id, case_url):
         """

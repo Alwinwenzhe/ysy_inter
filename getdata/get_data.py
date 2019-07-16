@@ -172,7 +172,7 @@ class GetData(object):
                     spell_url = spell_url + val[0] + '=' + value + '&'
                 else:
                     spell_url = spell_url + i + '&'
-            return spell_url
+            return spell_url[0:-1]          #去掉最后一个&s
         else:
             return url
 
