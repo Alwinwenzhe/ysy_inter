@@ -10,9 +10,8 @@ from util.operate_mysql import OperateMySQL
 from util.common_util import CommonUtil
 from util.send_email import SendEmail
 from util.operate_excel import OperateExcel
-import json
-import time
-import threading
+import json, time
+import threading,multiprocessing
 
 
 class RunTest(object):
@@ -108,13 +107,12 @@ class RunTest(object):
         :return: fail_count, pass_count
         """
         for i in range(1, self.sheet_row_counts()):  # 排除第一行
+            time.sleep(3)  # 休眠1s，避开系统提示频繁请求
             # 有可能url中需要前置数据处理，所以需要放这里
             # preset = self.get_data.get_pres_data(line)
             id = self.get_data.get_id_yaml(i)
             envir = id[0].split('-')[0]  # case的执行环境设定，如：ysy_test-001
             self.preset_data(i, envir)
-            # if preset:
-            #     self.oper_sql.sql_main(envir, preset)
             is_run = self.get_data.get_is_run(i)
             url = id[1] + self.get_data.get_request_url(i)
             method = self.get_data.get_request_method(i)
@@ -138,7 +136,7 @@ class RunTest(object):
                     self.pass_count.append(id[0])
                     print('测试通过:', id[0], url)        #本地调试打开，生产需注释掉 进打印选项卡统计数据及失败数据--2019-07-12
                 elif expect_no_value is not None and expect_value is not None:  # 期望包含值和期望不包含值都不为空
-                    rel1 = self.com_util.is_contain(expect_value, c)
+                    rel1 = self.com_util.is_contain(expect_value,res.text)
                     rel2 = self.com_util.not_contain(expect_no_value, res.text)  # 从期望值对比
                     if rel1 and rel2:
                         self.do_pass_result(i, id[0], url)
@@ -156,6 +154,8 @@ class RunTest(object):
             # time.sleep(5)           # 避免json数据读取旧文件
         print("\n测试用例集《{0}》,总计用例{1}个，通过{2}个用例，失败{3}个用例\n\n".format(self.sheet_name,len(self.pass_count)+len(self.fail_count),len(self.pass_count),len(self.fail_count)))
         # return self.fail_count, self.pass_count
+
+
 
     def threads_to_run(self):
         """
@@ -185,7 +185,6 @@ if __name__ == '__main__':
     # run_test = RunTest(0)
     # run_test.go_on_run()
 
-
     """多sheet，遍历执行"""
     oe = OperateExcel()
     sheets = oe.get_sheets()
@@ -193,7 +192,6 @@ if __name__ == '__main__':
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
         run_test = RunTest(i)
         run_test.go_on_run()
-
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
     # theading_list = []

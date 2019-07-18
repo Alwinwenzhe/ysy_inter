@@ -25,7 +25,7 @@
     <SUITE FILE_PATH="coverage/ysy_inter$debug.coverage" NAME="debug Coverage Results" MODIFIED="1563189425705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/ysy_inter$operate_mysql.coverage" NAME="operate_mysql Coverage Results" MODIFIED="1545376797022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/ysy_inter$runmethod.coverage" NAME="runmethod Coverage Results" MODIFIED="1559635946164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/base" />
-    <SUITE FILE_PATH="coverage/ysy_inter$main.coverage" NAME="main Coverage Results" MODIFIED="1563325673788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ysy_inter$main.coverage" NAME="main Coverage Results" MODIFIED="1563452321656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ysy_inter$Unittests_in_unittest_demo_py.coverage" NAME="Unittests in unittest_demo.py Coverage Results" MODIFIED="1562836080414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/ysy_inter$operate_excel.coverage" NAME="operate_excel Coverage Results" MODIFIED="1562911109424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/ysy_inter$mytool.coverage" NAME="mytool Coverage Results" MODIFIED="1552274173057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../python3/Lib/site-packages/Alwin" />
@@ -108,10 +108,10 @@
           <entry key="json" value="53" />
           <entry key="md" value="7" />
           <entry key="pstat" value="1" />
-          <entry key="py" value="545" />
+          <entry key="py" value="547" />
           <entry key="pyi" value="2" />
           <entry key="sql" value="3" />
-          <entry key="yaml" value="39" />
+          <entry key="yaml" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -121,10 +121,10 @@
           <entry key="JSON" value="53" />
           <entry key="Markdown" value="7" />
           <entry key="Profiler Session" value="1" />
-          <entry key="Python" value="545" />
+          <entry key="Python" value="547" />
           <entry key="PythonStub" value="2" />
           <entry key="Scratch" value="3" />
-          <entry key="YAML" value="39" />
+          <entry key="YAML" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -133,9 +133,9 @@
           <entry key="dummy" value="16" />
           <entry key="json" value="30" />
           <entry key="md" value="546" />
-          <entry key="py" value="22724" />
+          <entry key="py" value="22769" />
           <entry key="sql" value="73" />
-          <entry key="txt" value="488" />
+          <entry key="txt" value="510" />
           <entry key="yaml" value="1088" />
         </counts>
       </usages-collector>
@@ -143,8 +143,8 @@
         <counts>
           <entry key="JSON" value="30" />
           <entry key="Markdown" value="546" />
-          <entry key="PLAIN_TEXT" value="504" />
-          <entry key="Python" value="22748" />
+          <entry key="PLAIN_TEXT" value="526" />
+          <entry key="Python" value="22793" />
           <entry key="RegExp" value="1" />
           <entry key="Scratch" value="73" />
           <entry key="YAML" value="1088" />
@@ -160,11 +160,43 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="197" column="37" lean-forward="true" selection-start-line="197" selection-start-column="37" selection-end-line="197" selection-end-column="37" />
+            <state relative-caret-position="140">
+              <caret line="108" selection-start-line="108" selection-end-line="109" selection-end-column="44" />
               <folding>
+                <element signature="n#!!doc" />
                 <element signature="e#43#79#0" expanded="true" />
+                <element signature="e#437#458#1" />
+                <element signature="e#1005#1142#1" />
+                <element signature="e#1833#2023#1" />
+                <element signature="e#7368#7401#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/base/runmethod.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-122">
+              <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../python3/Lib/json/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="226" selection-start-line="226" selection-end-line="226" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="24" column="30" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -330,11 +362,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="19" />
-    <option name="y" value="170" />
-    <option name="width" value="1319" />
-    <option name="height" value="591" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="23" />
+    <option name="y" value="57" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -675,7 +707,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563273790772</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="1、修改了一生约版本接口，期望值中多余的值">
+      <created>1563325795403</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1563325795403</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -699,16 +738,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5175097" visible="true" weight="0.15317461" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5175097" visible="true" weight="0.14599092" />
       <window_info id="Structure" order="1" sideWeight="0.48249027" side_tool="true" weight="0.16187595" />
       <window_info id="Terminal" order="2" sideWeight="0.46618706" side_tool="true" weight="0.14372164" />
       <window_info id="Favorites" order="3" sideWeight="0.48320413" side_tool="true" weight="0.14220877" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.23230769" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7639939" visible="true" weight="0.64615387" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5846154" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7639939" visible="true" weight="0.45179856" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42446044" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.26684636" />
@@ -777,7 +816,8 @@
     <MESSAGE value="调整都线程运行及日志输出方式" />
     <MESSAGE value="更改了main文件中的get_sheet_name" />
     <MESSAGE value="1、新增用例&#10;2、excel中新增行为字段" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、新增用例&#10;2、excel中新增行为字段" />
+    <MESSAGE value="1、修改了一生约版本接口，期望值中多余的值" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、修改了一生约版本接口，期望值中多余的值" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -804,7 +844,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>92</line>
+          <line>91</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -821,11 +861,6 @@
           <url>file://$PROJECT_DIR$/getdata/get_data.py</url>
           <line>196</line>
           <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>54</line>
-          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/getdata/get_data.py</url>
@@ -862,10 +897,25 @@
           <line>94</line>
           <option name="timeStamp" value="135" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/util/operate_mysql.py</url>
           <line>71</line>
           <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>145</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>123</line>
+          <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1082,13 +1132,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../python3/Lib/json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="353" selection-start-line="353" selection-end-line="353" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/operate_yaml.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -1124,13 +1167,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/xlrd/book.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
@@ -1142,13 +1178,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/base/runmethod.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1267,12 +1296,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../python3/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="226" selection-start-line="226" selection-end-line="226" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/runmethod.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-122">
+          <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="197" column="37" lean-forward="true" selection-start-line="197" selection-start-column="37" selection-end-line="197" selection-end-column="37" />
+        <state relative-caret-position="140">
+          <caret line="108" selection-start-line="108" selection-end-line="109" selection-end-column="44" />
           <folding>
+            <element signature="n#!!doc" />
             <element signature="e#43#79#0" expanded="true" />
+            <element signature="e#437#458#1" />
+            <element signature="e#1005#1142#1" />
+            <element signature="e#1833#2023#1" />
+            <element signature="e#7368#7401#0" />
           </folding>
         </state>
       </provider>
