@@ -10,7 +10,7 @@ from util.operate_mysql import OperateMySQL
 from util.common_util import CommonUtil
 from util.send_email import SendEmail
 from util.operate_excel import OperateExcel
-import json, time
+import json, time, argparse
 import threading,multiprocessing
 
 
@@ -32,6 +32,20 @@ class RunTest(object):
         self.yaml_data = OperateYaml()
         self.oper_json = OperateJson()
         self.oper_sql = OperateMySQL()
+
+    def print_param(self):
+        '''
+        输出单一变量
+        :return:
+        '''
+        parser = argparse.ArgumentParser()
+        parser.add_argument("envir")  # 添加参数--key
+        args = parser.parse_args()  # Namespace(package='com.xxx', totalEvent='100')赋值给args
+        param = vars(args)
+        v = {}
+        for key, value in param.items():
+            v[key] = value
+        return value
 
     def get_path(self, key, res):
         """
