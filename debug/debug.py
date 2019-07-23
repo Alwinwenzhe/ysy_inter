@@ -3,9 +3,20 @@
 # __Author: "Skiler Hao"
 # date: 2017/4/9 15:26
 
-vr = '科目明细,政务服务列表,智能硬件管理,发货管理智屏,店铺管理,订单管理,商品管理,商城banner,权限管理,验证扫码管理,应收查询,二级类目管理,一级类目管理,优选专题,物业结算,内容管理,微信配置,店铺管理,社交信息管理,APP用户管理,交易记录,消息列表,对账单,交换宝物,城市福利,统计查看,共享,话题,数据导出,周边服务,智屏管理,车位管理,组织管理,APP首页广告,报事报修预约设置,报事报修统计,认证商家,商家管理,帮助信息列表,休工期设置,发布管理,交易结算,假期管理,账务对账,赠品,城市服务,店铺概况,O2O商户管理,类目管理,系统管理,交易分析,物业用户审核,订单管理,营销管理,商品评价,账单明细,报表中心,报警管理,扫码记录,热搜词,商品统计,系统信息维护,报单管理,小区公告,账务结算,品类维护,催费管理,海报管理,流程管理,报表管理,账户安全,票据管理,后台用户列表,菜'
+import time, datetime
 
-list_vr = vr.split(',')
-print (list_vr)
+class Timst(object):
 
+    def current_stamp(self):
+        '''获取当前时间戳'''
+        now = datetime.datetime.now()           # 返回当前时间，带有小数点
+        now_stamp = datetime.datetime.timestamp(now)    # 将当前时间转化为时间错误
+        return int(now_stamp)             #去掉时间戳的小数点
 
+# today_array = time.strptime(today,'%Y-%m-%d %H:%M:%S')
+# timestamp = int(time.mktime(today_array))
+# print(timestamp)
+
+if __name__ == "__main__":
+    t = Timst()
+    print(t.current_stamp())

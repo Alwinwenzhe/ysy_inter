@@ -27,18 +27,24 @@ class OperateMySQL(object):
             self.dbname = self.oy.read_yaml()['db']['ysy_test']['db_name']
             self.user = self.oy.read_yaml()['db']['ysy_test']['user']
             self.pwd = self.oy.read_yaml()['db']['ysy_test']['pwd']
-        elif goal_db.startswith("ysy_official") or goal_db.startswith(" ysy_property_off_web"):
-            self.dbhost = self.oy.read_yaml()['db']['ysy_official']['db_host']
-            self.dbport = self.oy.read_yaml()['db']['ysy_official']['db_port']
-            self.dbname = self.oy.read_yaml()['db']['ysy_official']['db_name']
-            self.user = self.oy.read_yaml()['db']['ysy_official']['user']
-            self.pwd = self.oy.read_yaml()['db']['ysy_official']['pwd']
+        elif goal_db.startswith("ysy_release") or goal_db.startswith(" ysy_property_off_web"):
+            self.dbhost = self.oy.read_yaml()['db']['ysy_release']['db_host']
+            self.dbport = self.oy.read_yaml()['db']['ysy_release']['db_port']
+            self.dbname = self.oy.read_yaml()['db']['ysy_release']['db_name']
+            self.user = self.oy.read_yaml()['db']['ysy_release']['user']
+            self.pwd = self.oy.read_yaml()['db']['ysy_release']['pwd']
         elif goal_db.startswith("property_bg_test"):
             self.dbhost = self.oy.read_yaml()['db']['property_bg_test']['db_host']
             self.dbport = self.oy.read_yaml()['db']['property_bg_test']['db_port']
             self.dbname = self.oy.read_yaml()['db']['property_bg_test']['db_name']
             self.user = self.oy.read_yaml()['db']['property_bg_test']['user']
             self.pwd = self.oy.read_yaml()['db']['property_bg_test']['pwd']
+        elif goal_db.startswith("tfysy_test"):
+            self.dbhost = self.oy.read_yaml()['db']['tfysy_repair_test']['db_host']
+            self.dbport = self.oy.read_yaml()['db']['tfysy_repair_test']['db_port']
+            self.dbname = self.oy.read_yaml()['db']['tfysy_repair_test']['db_name']
+            self.user = self.oy.read_yaml()['db']['tfysy_repair_test']['user']
+            self.pwd = self.oy.read_yaml()['db']['tfysy_repair_test']['pwd']
 
     def formate_sql(self,sql_str):
         '''
@@ -139,4 +145,4 @@ if __name__ == "__main__":
     resl = om.deal_sql2(
         'Mysql::SELECT GROUP_CONCAT(sps.product_name) from sp_commend_product_detail spd LEFT JOIN sp_product_spu sps ON spd.id_sp_product_spu = sps.id WHERE id_sp_commend_product=1')
     print(type(resl), resl)  # 返回结果默认为tuple
-    # print(oy.read_yaml()['db']['official']['user'])
+    # print(oy.read_yaml()['db']['release']['user'])

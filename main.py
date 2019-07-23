@@ -130,7 +130,8 @@ class RunTest(object):
         :return: fail_count, pass_count
         """
         for i in range(1, self.sheet_row_counts()):  # 排除第一行
-            time.sleep(3)  # 休眠1s，避开系统提示频繁请求
+            # time.sleep(3)  # 休眠1s，避开系统提示频繁请求
+            self.com_util.stamp_to_json()
             # 有可能url中需要前置数据处理，所以需要放这里
             # preset = self.get_data.get_pres_data(line)
             id = self.get_data.get_id_yaml(i)

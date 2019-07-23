@@ -117,6 +117,19 @@ class CommonUtil(object):
         # else:         #这里应该是无用的，注销掉--20190709
         #     return res
 
+    def current_stamp(self):
+        '''获取当前时间戳'''
+        now = datetime.datetime.now()                   # 返回当前时间，带有小数点
+        now_stamp = datetime.datetime.timestamp(now)    # 将当前时间转化为时间错误
+        return int(now_stamp)                           # 去掉时间戳的小数点
+
+    def stamp_to_json(self):
+        '''
+        将时间戳写入json文件
+        :return:
+        '''
+        self.oper_json.write_json_value('time_stamp',self.current_stamp())
+
     def set_tomorrow_time(self):
         """
         写入明天时间，需要放在每个用例执行的开始

@@ -32,7 +32,7 @@ Header---{"Content-Type":"application/json; charset=UTF-19","accessToken":"j::da
 该字段可由直接结果或sql返回值作为判断，多个直接结果使用“；”间隔，sql内使用$$分割预期获取的变量值与sql语句；该字段表示用例执行前需要预先写入json的值，以备用例中读入该值，且sql中可以带入参数
 
 
-Request_data---{"mobile":"y::account/official/user_account","verifyCode":"6688"}
+Request_data---{"mobile":"y::account/release/user_account","verifyCode":"6688"}
 该字段代表请求体，且部分值可能来源于yaml或json
 
 预期结果包含(有全局变量值，则不需要预期结果)---code":104  SELECT IFNULL(GROUP_CONCAT(name),0) from menu WHERE is_valid='Y' AND su_system='3';

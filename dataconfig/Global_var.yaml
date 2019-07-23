@@ -12,9 +12,10 @@ url:
    ysy_t_property: 'http://116.62.63.151:8096'
    ysy_t_property_app: 'http://116.62.63.151:8106'
    ysy_property_off_web: 'http://wuye.yishengyue.cn/#/'
-   tfysy_test: 'http://ttfra.yishengyue.cn'
-   zp_official: 'http://zpapi.yishengyue.cn'
-   ysy_official: 'https://api.yishengyue.cn'
+   tfysy_repair_test: 'http://ttfra.yishengyue.cn'
+   tfysy_test: 'http://ttfapi.yishengyue.cn'
+   zp_release: 'http://zpapi.yishengyue.cn'
+   ysy_release: 'https://api.yishengyue.cn'
    #新系统资源接口地址
    property_bg_test: 'http://116.62.63.151:8112'
 
@@ -29,7 +30,7 @@ account:
     property_manage_user: '15828022851'
     property_manage_register: '13438981899'
     property_manage_test: '18800000000'
-  official:
+  release:
     property_account: '18030478860'
     user_account: '15828022852'
   tftest:
@@ -46,19 +47,19 @@ db:
     db_name: 'yishengyue_platform_db'
     user: 'ysy'
     pwd: 'aaaaa888'
-  tfysy_test:
+  tfysy_repair_test:
     db_host: '101.132.194.124'
     db_name: 'tfyishengyue_test_db'
     db_port: 3316
     user: 'root'
     pwd: 'r88888'
-  ysy_official:
+  ysy_release:
     db_host: 'rm-bp155162txb9055txo.mysql.rds.aliyuncs.com'
     db_port: 3336
     db_name: 'yishengyue_platform_db'
     user: 'ysy_check'
     pwd: 'rammstein5!'
-  zp_official:
+  zp_release:
     db_host: 'rm-bp155162txb9055txo.mysql.rds.aliyuncs.com'
     db_port: 3336
     db_name: 'yishengyue_platform_db'

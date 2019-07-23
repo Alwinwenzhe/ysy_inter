@@ -17,7 +17,6 @@ class GetData(object):
     """
     直接判断excel某行的各项数据
     """
-
     def __init__(self,sheetid=0):
         self.read_ex = OperateExcel(sheetid)
         self.excel_data = ExceDataConfig()
@@ -85,8 +84,8 @@ class GetData(object):
         :return:
         """
         value = self.get_id(row)
-        if value.startswith('ysy_official'):
-            url_head = self.oper_ya.read_yaml()['url']['ysy_official']
+        if value.startswith('ysy_release'):
+            url_head = self.oper_ya.read_yaml()['url']['ysy_release']
         elif value.startswith('ysy_test'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_test']
         elif value.startswith('ysy_t_property'):
@@ -95,7 +94,9 @@ class GetData(object):
             url_head = self.oper_ya.read_yaml()['url']['ysy_zp_test']
         elif value.startswith('property_bg_test') :
             url_head = self.oper_ya.read_yaml()['url']['property_bg_test']
-        elif value.startswith('tfysy_test'):
+        elif value.startswith('tfysy_repair_test'):
+            url_head = self.oper_ya.read_yaml()['url']['tfysy_repair_test']
+        elif value.startswith("tfysy_test"):
             url_head = self.oper_ya.read_yaml()['url']['tfysy_test']
         elif value.startswith('property_bg_TEST'):
             url_head = self.oper_ya.read_yaml()['url']['property_bg_TEST']
@@ -169,7 +170,7 @@ class GetData(object):
                 elif val[1].startswith("j::"):                   # 从json中读取
                     val_i = val[1].split("j::")[1]
                     value = self.oper_json.get_json_value(val_i)
-                    spell_url = spell_url + val[0] + '=' + value + '&'
+                    spell_url = spell_url + val[0] + '=' + str(value) + '&'
                 else:
                     spell_url = spell_url + i + '&'
             return spell_url[0:-1]          #去掉最后一个&s
@@ -237,7 +238,6 @@ class GetData(object):
 
     def deal_expec_and_not_expec(self, envir, expect_data):
         """
-
         :param envir: 环境配置
         :param expect_data:包含两种数据:sql、普通期望值
         :return:  统一返回值为list类型
@@ -255,7 +255,6 @@ class GetData(object):
                 result.append(i)
         return result
 
-
     def write_excle_data(self, row, value):
         '''
         再次封装写入方法
@@ -265,7 +264,6 @@ class GetData(object):
         '''
         col = int(self.excel_data.get_reality_result())
         self.read_ex.write_data(row, col, value)
-
 
 if __name__ == '__main__':
     get_data = GetData()
