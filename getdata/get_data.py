@@ -104,8 +104,10 @@ class GetData(object):
             url_head = self.oper_ya.read_yaml()['url']['ysy_property_off_web']
         elif value.startswith('ysy_t_property_app'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_t_property_app']
+        elif value.startswith('tp_tfysy_binduser'):
+            url_head = self.oper_ya.read_yaml()['url']['tp_tfysy_binduser']
         else:
-            url_head = None
+            url_head = None             #当这里没有检测到符合条件的，就返回None
         return value, url_head
 
     def get_request_method(self, row):
