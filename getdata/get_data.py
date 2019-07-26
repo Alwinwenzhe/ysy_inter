@@ -98,6 +98,8 @@ class GetData(object):
             url_head = self.oper_ya.read_yaml()['url']['tfysy_repair_test']
         elif value.startswith("tfysy_test"):
             url_head = self.oper_ya.read_yaml()['url']['tfysy_test']
+        elif value.startswith("ttfra_test"):
+            url_head = self.oper_ya.read_yaml()['url']['ttfra_test']
         elif value.startswith('property_bg_TEST'):
             url_head = self.oper_ya.read_yaml()['url']['property_bg_TEST']
         elif value.startswith('ysy_property_off_web'):

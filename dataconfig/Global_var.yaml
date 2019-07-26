@@ -14,6 +14,7 @@ url:
    ysy_property_off_web: 'http://wuye.yishengyue.cn/#/'
    tfysy_repair_test: 'http://ttfra.yishengyue.cn'
    tfysy_test: 'http://ttfapi.yishengyue.cn'
+   ttfra_test: 'http://ttfra.yishengyue.cn'
    zp_release: 'http://zpapi.yishengyue.cn'
    ysy_release: 'https://api.yishengyue.cn'
    # 新系统资源接口地址

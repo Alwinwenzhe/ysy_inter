@@ -204,17 +204,17 @@ class RunTest(object):
 
 
 if __name__ == '__main__':
-    """仅调试使用"""
-    run_test = RunTest(0)
-    run_test.go_on_run()
+    # """仅调试使用"""
+    # run_test = RunTest(0)
+    # run_test.go_on_run()
 
-    # """多sheet，遍历执行"""
-    # oe = OperateExcel()
-    # sheets = oe.get_sheets()
-    # for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
-    #     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
-    #     run_test = RunTest(i)
-    #     run_test.go_on_run()
+    """多sheet，遍历执行"""
+    oe = OperateExcel()
+    sheets = oe.get_sheets()
+    for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        run_test = RunTest(i)
+        run_test.go_on_run()
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
     # theading_list = []

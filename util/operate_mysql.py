@@ -39,7 +39,7 @@ class OperateMySQL(object):
             self.dbname = self.oy.read_yaml()['db']['property_bg_test']['db_name']
             self.user = self.oy.read_yaml()['db']['property_bg_test']['user']
             self.pwd = self.oy.read_yaml()['db']['property_bg_test']['pwd']
-        elif goal_db.startswith("tfysy_test"):
+        elif goal_db.startswith("tfysy_test") or goal_db.startswith("ttfra_test"):
             self.dbhost = self.oy.read_yaml()['db']['tfysy_repair_test']['db_host']
             self.dbport = self.oy.read_yaml()['db']['tfysy_repair_test']['db_port']
             self.dbname = self.oy.read_yaml()['db']['tfysy_repair_test']['db_name']
