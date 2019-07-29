@@ -102,7 +102,7 @@ class CommonUtil(object):
             data1.append(data2)
             return data1
 
-    def response_content_diff(self,res):
+    def response_content_diff(self,res,status_code):
         """
         判定不同形式的返回值处理方式,目前包含json、html
         :param res:
@@ -113,7 +113,10 @@ class CommonUtil(object):
             # return json.dumps(result, indent=3, sort_keys=True, ensure_ascii=False)  # 返回值可以包含非ascii字符
             return res          #这里由于在main函数中使用了res.text，所以这里需要返回整个res--20190710
         elif 'DOCTYPE html' in res.text:        #  这里是验证当res返回内容为html，需要从str格式中寻找目标字符串
-            return 'true'
+            if status_code != 200:      # 接口异常，直接返回错误吗
+                return status_code
+            else:
+                return 'true'           # 接口正常返回true
         # else:         #这里应该是无用的，注销掉--20190709
         #     return res
 

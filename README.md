@@ -40,5 +40,9 @@ Request_data---{"mobile":"y::account/release/user_account","verifyCode":"6688"}
 如果预期值是小数，会自动转化为浮点型，暂未对这个进行处理，需将期望值都当作str
 注意如果期望结果中的sql是以分号结果的，那么期望值在sql的基础上会多一个空值，如：'stepNumber":"94',''
 
+预期结果如果包含了sql的formate，需要这样实现：
+SELECT IFNULL(pe.is_receive,0) FROM property_employees pe WHERE pe.mobile={0} AND pe.state=1formate(y::account/test/repair_acc)
+
+
 
 

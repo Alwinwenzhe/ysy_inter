@@ -30,7 +30,7 @@ class RunMethod(object):
             res = requests.post(url=url, data=json.dumps(data))
         # print('\033[0m>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
         # 该打印时配合输出结果，现打印选项卡统计数据及失败数据--2019-07-12
-        return self.com_util.response_content_diff(res)
+        return self.com_util.response_content_diff(res,res.status_code)
 
     def put_main(self, url, data, header=None, cookies=None):
         '''
@@ -49,7 +49,7 @@ class RunMethod(object):
             res = requests.post(url=url, data=json.dumps(data))
         # print('\033[0m>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
         # 该打印时配合输出结果，现打印选项卡统计数据及失败数据--2019-07-12
-        return self.com_util.response_content_diff(res)
+        return self.com_util.response_content_diff(res,res.status_code)
 
     def get_main(self, url, data=None, header=None, cookies=None):
         '''
@@ -71,7 +71,7 @@ class RunMethod(object):
             res = requests.get(url=url)
         # print('\033[0m>>>>>>>>>>>>>>>>>>>>>>>>>Status:', res.status_code, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>')  # 接口返回状态
         # 该打印时配合输出结果，现打印选项卡统计数据及失败数据--2019-07-12
-        return self.com_util.response_content_diff(res)
+        return self.com_util.response_content_diff(res,res.status_code)
 
     def run_main(self, method, url, data=None, header=None):
         '''

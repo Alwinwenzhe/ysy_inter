@@ -21,7 +21,7 @@ class OperateMySQL(object):
         :param goal_db:
         :return:
         """
-        if goal_db.startswith("ysy_test") or goal_db.startswith("ysy_t_property") or goal_db.startswith("ysy_t_property_app"):
+        if goal_db.startswith("ysy_test") or goal_db.startswith("ysy_t_property") or goal_db.startswith("ysy_t_property_app") or goal_db.startswith('zp_test'):
             self.dbhost = self.oy.read_yaml()['db']['ysy_test']['db_host']
             self.dbport = self.oy.read_yaml()['db']['ysy_test']['db_port']
             self.dbname = self.oy.read_yaml()['db']['ysy_test']['db_name']

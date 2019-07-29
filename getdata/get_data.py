@@ -108,6 +108,8 @@ class GetData(object):
             url_head = self.oper_ya.read_yaml()['url']['ysy_t_property_app']
         elif value.startswith('tp_tfysy_binduser'):
             url_head = self.oper_ya.read_yaml()['url']['tp_tfysy_binduser']
+        elif value.startswith('zp_test'):
+            url_head = self.oper_ya.read_yaml()['url']['zp_test']
         else:
             url_head = None             #当这里没有检测到符合条件的，就返回None
         return value, url_head

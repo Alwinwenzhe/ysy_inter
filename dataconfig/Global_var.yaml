@@ -16,6 +16,7 @@ url:
    tfysy_test: 'http://ttfapi.yishengyue.cn'
    ttfra_test: 'http://ttfra.yishengyue.cn'
    zp_release: 'http://zpapi.yishengyue.cn'
+   zp_test: 'http://116.62.63.151:8109'
    ysy_release: 'https://api.yishengyue.cn'
    # 新系统资源接口地址
    property_bg_test: 'http://116.62.63.151:8112'
