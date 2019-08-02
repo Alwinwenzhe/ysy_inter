@@ -21,25 +21,25 @@ class OperateMySQL(object):
         :param goal_db:
         :return:
         """
-        if goal_db.startswith("ysy_test") or goal_db.startswith("ysy_t_property") or goal_db.startswith("ysy_t_property_app") or goal_db.startswith('zp_test'):
+        if goal_db[0] ==("ysy_test") or goal_db[0] ==("ysy_t_property") or goal_db[0] ==("ysy_t_property_app") or goal_db[0] ==('zp_test'):
             self.dbhost = self.oy.read_yaml()['db']['ysy_test']['db_host']
             self.dbport = self.oy.read_yaml()['db']['ysy_test']['db_port']
             self.dbname = self.oy.read_yaml()['db']['ysy_test']['db_name']
             self.user = self.oy.read_yaml()['db']['ysy_test']['user']
             self.pwd = self.oy.read_yaml()['db']['ysy_test']['pwd']
-        elif goal_db.startswith("ysy_release") or goal_db.startswith(" ysy_property_off_web"):
+        elif goal_db[0] ==("ysy_release") or goal_db[0] ==(" ysy_property_off_web"):
             self.dbhost = self.oy.read_yaml()['db']['ysy_release']['db_host']
             self.dbport = self.oy.read_yaml()['db']['ysy_release']['db_port']
             self.dbname = self.oy.read_yaml()['db']['ysy_release']['db_name']
             self.user = self.oy.read_yaml()['db']['ysy_release']['user']
             self.pwd = self.oy.read_yaml()['db']['ysy_release']['pwd']
-        elif goal_db.startswith("property_bg_test"):
+        elif goal_db[0] ==("property_bg_test"):
             self.dbhost = self.oy.read_yaml()['db']['property_bg_test']['db_host']
             self.dbport = self.oy.read_yaml()['db']['property_bg_test']['db_port']
             self.dbname = self.oy.read_yaml()['db']['property_bg_test']['db_name']
             self.user = self.oy.read_yaml()['db']['property_bg_test']['user']
             self.pwd = self.oy.read_yaml()['db']['property_bg_test']['pwd']
-        elif goal_db.startswith("tfysy_test") or goal_db.startswith("ttfra_test"):
+        elif goal_db[0] ==("tfysy_test") or goal_db[0] ==("ttfra_test"):
             self.dbhost = self.oy.read_yaml()['db']['tfysy_repair_test']['db_host']
             self.dbport = self.oy.read_yaml()['db']['tfysy_repair_test']['db_port']
             self.dbname = self.oy.read_yaml()['db']['tfysy_repair_test']['db_name']

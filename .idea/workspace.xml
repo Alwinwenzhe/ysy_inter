@@ -5,16 +5,15 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="调试用例">
+    <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/runmethod.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/runmethod.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/Global_var.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/Global_var.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/case.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/case.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/json.json" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/json.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getdata/excel_data_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdata/excel_data_config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/getdata/get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdata/get_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/common_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/common_util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/operate_mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operate_mysql.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,13 +25,14 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ysy_inter$run_test__2_.coverage" NAME="run_test (2) Coverage Results" MODIFIED="1544681672954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ysy_inter$operate_json.coverage" NAME="operate_json Coverage Results" MODIFIED="1550025674988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
+    <SUITE FILE_PATH="coverage/ysy_inter$crawler_beauty.coverage" NAME="crawler_beauty Coverage Results" MODIFIED="1564456332865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/ysy_inter$common_util.coverage" NAME="common_util Coverage Results" MODIFIED="1553754754116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/ysy_inter$run_test__1_.coverage" NAME="run_test (1) Coverage Results" MODIFIED="1544680639466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
-    <SUITE FILE_PATH="coverage/ysy_inter$debug.coverage" NAME="debug Coverage Results" MODIFIED="1564371788053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/ysy_inter$debug.coverage" NAME="debug Coverage Results" MODIFIED="1564630918950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/ysy_inter$debug__1_.coverage" NAME="debug (1) Coverage Results" MODIFIED="1563763613599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/debug" />
     <SUITE FILE_PATH="coverage/ysy_inter$operate_mysql.coverage" NAME="operate_mysql Coverage Results" MODIFIED="1545376797022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/ysy_inter$runmethod.coverage" NAME="runmethod Coverage Results" MODIFIED="1559635946164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/base" />
-    <SUITE FILE_PATH="coverage/ysy_inter$main.coverage" NAME="main Coverage Results" MODIFIED="1564371417965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ysy_inter$main.coverage" NAME="main Coverage Results" MODIFIED="1564737975643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ysy_inter$Unittests_in_unittest_demo_py.coverage" NAME="Unittests in unittest_demo.py Coverage Results" MODIFIED="1562836080414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/ysy_inter$operate_excel.coverage" NAME="operate_excel Coverage Results" MODIFIED="1562911109424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/ysy_inter$mytool.coverage" NAME="mytool Coverage Results" MODIFIED="1552274173057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../python3/Lib/site-packages/Alwin" />
@@ -42,7 +42,7 @@
     <SUITE FILE_PATH="coverage/ysy_inter$demo.coverage" NAME="demo Coverage Results" MODIFIED="1563526693065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/ysy_inter$monkeyrunner_demo.coverage" NAME="monkeyrunner_demo Coverage Results" MODIFIED="1563010622901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/ysy_inter$open_chrome.coverage" NAME="open_chrome Coverage Results" MODIFIED="1552884859676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/debug" />
-    <SUITE FILE_PATH="coverage/ysy_inter$get_data.coverage" NAME="get_data Coverage Results" MODIFIED="1563783073295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/getdata" />
+    <SUITE FILE_PATH="coverage/ysy_inter$get_data.coverage" NAME="get_data Coverage Results" MODIFIED="1564652398643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/getdata" />
     <SUITE FILE_PATH="coverage/ysy_inter$run_test.coverage" NAME="run_test Coverage Results" MODIFIED="1544671886866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/ysy_inter$debug_sql.coverage" NAME="debug_sql Coverage Results" MODIFIED="1552379550811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/debug" />
     <SUITE FILE_PATH="coverage/ysy_inter$Unittests_for_unittest_demo_UnittestDemo.coverage" NAME="Unittests for unittest_demo.UnittestDemo Coverage Results" MODIFIED="1562836115783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
@@ -86,9 +86,9 @@
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="26" />
-          <entry key="project.open.time.14" value="36" />
+          <entry key="project.open.time.14" value="38" />
           <entry key="project.open.time.15" value="26" />
-          <entry key="project.open.time.16" value="15" />
+          <entry key="project.open.time.16" value="16" />
           <entry key="project.open.time.17" value="8" />
           <entry key="project.open.time.18" value="5" />
           <entry key="project.open.time.19" value="8" />
@@ -106,7 +106,7 @@
           <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="184" />
+          <entry key="project.opened" value="187" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -116,10 +116,10 @@
           <entry key="json" value="58" />
           <entry key="md" value="9" />
           <entry key="pstat" value="1" />
-          <entry key="py" value="589" />
-          <entry key="pyi" value="3" />
+          <entry key="py" value="613" />
+          <entry key="pyi" value="4" />
           <entry key="sql" value="3" />
-          <entry key="yaml" value="41" />
+          <entry key="yaml" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -129,10 +129,10 @@
           <entry key="JSON" value="58" />
           <entry key="Markdown" value="9" />
           <entry key="Profiler Session" value="1" />
-          <entry key="Python" value="589" />
-          <entry key="PythonStub" value="3" />
+          <entry key="Python" value="613" />
+          <entry key="PythonStub" value="4" />
           <entry key="Scratch" value="3" />
-          <entry key="YAML" value="41" />
+          <entry key="YAML" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -141,21 +141,21 @@
           <entry key="dummy" value="16" />
           <entry key="json" value="38" />
           <entry key="md" value="583" />
-          <entry key="py" value="26074" />
+          <entry key="py" value="26796" />
           <entry key="sql" value="73" />
-          <entry key="txt" value="639" />
-          <entry key="yaml" value="1164" />
+          <entry key="txt" value="680" />
+          <entry key="yaml" value="1213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="38" />
           <entry key="Markdown" value="583" />
-          <entry key="PLAIN_TEXT" value="655" />
-          <entry key="Python" value="26138" />
+          <entry key="PLAIN_TEXT" value="696" />
+          <entry key="Python" value="26860" />
           <entry key="RegExp" value="1" />
           <entry key="Scratch" value="73" />
-          <entry key="YAML" value="1164" />
+          <entry key="YAML" value="1213" />
         </counts>
       </usages-collector>
     </session>
@@ -166,48 +166,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/debug.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/common_util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="121" selection-start-line="121" selection-end-line="121" />
-              <folding>
-                <element signature="e#27#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="214" selection-start-line="214" selection-end-line="220" selection-end-column="28" />
+            <state relative-caret-position="76">
+              <caret line="183" selection-start-line="183" selection-end-line="183" />
               <folding>
                 <element signature="n#!!doc" />
                 <element signature="e#43#79#0" expanded="true" />
-                <element signature="e#8049#8082#0" />
+                <element signature="e#8259#8278#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="155">
-                <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -215,35 +182,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/base/runmethod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="51" column="70" selection-start-line="51" selection-start-column="70" selection-end-line="51" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/operate_json.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataconfig/json.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret column="270" selection-start-column="270" selection-end-column="270" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="9" column="11" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="110">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
+              <folding>
+                <element signature="e#52#67#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -251,8 +194,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/operate_mysql.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="32" column="64" lean-forward="true" selection-start-line="32" selection-start-column="64" selection-end-line="32" selection-end-column="64" />
+            <state relative-caret-position="-1142">
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util/operate_yaml.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -260,8 +212,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="111" column="63" selection-start-line="111" selection-start-column="63" selection-end-line="111" selection-end-column="63" />
+            <state relative-caret-position="62">
+              <caret line="266" selection-start-line="266" selection-end-line="266" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-726">
+              <caret line="40" column="31" lean-forward="true" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/getdata/excel_data_config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2140">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util/operate_excel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1360">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
+              <folding>
+                <element signature="e#46#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -278,14 +260,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fail</find>
-      <find>do_fai</find>
-      <find>&gt;&gt;Status</find>
-      <find>else</find>
-      <find>y::</find>
-      <find>formate</find>
-      <find>re_sql</find>
-      <find>repair</find>
       <find>data</find>
       <find>ysy_property_off_web</find>
       <find>ysy_t_property</find>
@@ -297,17 +271,25 @@
       <find>Status:</find>
       <find>status</find>
       <find>测试失败</find>
-      <find>通过</find>
       <find>official</find>
       <find>release</find>
       <find>天</find>
       <find>url = id[1] + self.get_data.get_request_url(i)</find>
       <find>tfysy_repair_test</find>
-      <find>tfysy_test</find>
       <find>测试通过</find>
       <find>id</find>
       <find>ysy_test</find>
       <find>start</find>
+      <find>if</find>
+      <find>print</find>
+      <find>ttfra_test</find>
+      <find>ttfwap_test</find>
+      <find>=</find>
+      <find>id[0]</find>
+      <find>.startswith</find>
+      <find>conndb</find>
+      <find>tfysy_test</find>
+      <find>通过</find>
     </findStrings>
     <replaceStrings>
       <replace>(</replace>
@@ -315,6 +297,9 @@
       <replace>release</replace>
       <replace />
       <replace>tfysy_repair_test</replace>
+      <replace>print(</replace>
+      <replace>[0] ==</replace>
+      <replace>id</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\Job\python\Script\ysy_inter\dataconfig</dir>
@@ -361,18 +346,20 @@
         <option value="$PROJECT_DIR$/case/unittest_demo.py" />
         <option value="$PROJECT_DIR$/util/operate_excel.py" />
         <option value="$PROJECT_DIR$/case/monkeyrunner_demo.py" />
-        <option value="$PROJECT_DIR$/getdata/excel_data_config.py" />
         <option value="$PROJECT_DIR$/case/demo1.py" />
         <option value="$PROJECT_DIR$/case/demo.py" />
         <option value="$PROJECT_DIR$/debug/debug.py" />
         <option value="$PROJECT_DIR$/dataconfig/json.json" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/util/common_util.py" />
+        <option value="$PROJECT_DIR$/case/crawler_beauty.py" />
+        <option value="$PROJECT_DIR$/base/runmethod.py" />
         <option value="$PROJECT_DIR$/dataconfig/Global_var.yaml" />
+        <option value="$PROJECT_DIR$/case/pra1.py" />
+        <option value="$PROJECT_DIR$/getdata/excel_data_config.py" />
+        <option value="$PROJECT_DIR$/case/debug.py" />
         <option value="$PROJECT_DIR$/getdata/get_data.py" />
         <option value="$PROJECT_DIR$/util/operate_mysql.py" />
-        <option value="$PROJECT_DIR$/base/runmethod.py" />
-        <option value="$PROJECT_DIR$/case/debug.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -383,7 +370,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="-25" />
     <option name="width" value="1330" />
     <option name="height" value="777" />
@@ -417,21 +404,12 @@
             <path>
               <item name="ysy_inter" type="b2602c69:ProjectViewProjectNode" />
               <item name="ysy_inter" type="462c0819:PsiDirectoryNode" />
-              <item name="debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ysy_inter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ysy_inter" type="462c0819:PsiDirectoryNode" />
               <item name="getdata" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ysy_inter" type="b2602c69:ProjectViewProjectNode" />
               <item name="ysy_inter" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ysy_inter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -467,7 +445,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.debug">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="crawler_beauty" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ysy_inter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/case/crawler_beauty.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="debug (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ysy_inter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -504,28 +504,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/case/debug.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ysy_inter" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/case/demo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -581,17 +559,17 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.debug" />
-      <item itemvalue="Python.demo" />
       <item itemvalue="Python.debug (1)" />
       <item itemvalue="Python.get_data" />
+      <item itemvalue="Python.crawler_beauty" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.debug" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.get_data" />
+        <item itemvalue="Python.debug" />
+        <item itemvalue="Python.crawler_beauty" />
         <item itemvalue="Python.debug (1)" />
-        <item itemvalue="Python.demo" />
       </list>
     </recent_temporary>
   </component>
@@ -809,7 +787,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564124682574</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="增加接口请求时HTML返回值的状态码判断&#10;增加智屏 url地址判断">
+      <created>1564405318318</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1564405318318</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -833,19 +818,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.50812066" visible="true" weight="0.15873016" />
-      <window_info id="Structure" order="1" sideWeight="0.49187934" side_tool="true" weight="0.14447807" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5031447" visible="true" weight="0.15506808" />
+      <window_info id="Structure" order="1" sideWeight="0.49685535" side_tool="true" weight="0.15506808" />
       <window_info id="Terminal" order="2" sideWeight="0.48526523" side_tool="true" weight="0.1732224" />
       <window_info id="Favorites" order="3" sideWeight="0.48526523" side_tool="true" weight="0.1732224" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.45179856" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7639939" visible="true" weight="0.37384614" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4430769" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.22014388" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7639939" visible="true" weight="0.3467626" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.44604316" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.26684636" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.26618704" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49848714" weight="0.32805756" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
@@ -855,7 +840,7 @@
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.4705036" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.26190478" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.26190478" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="4" weight="0.20272315" />
       <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
@@ -894,7 +879,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="重新执行了一次，引起了json发生变化&#10;case中好像没修改" />
     <MESSAGE value="main中增加每个选项卡通过和失败用例统计" />
     <MESSAGE value="190215 增加物业账号" />
     <MESSAGE value="运行结果增加了成功失败统计&#10;增加了html结果返回值的处理" />
@@ -919,7 +903,8 @@
     <MESSAGE value="增加天富一生约接口用例涉及：石城动态，能源banner，报修" />
     <MESSAGE value="调整用例" />
     <MESSAGE value="调试用例" />
-    <option name="LAST_COMMIT_MESSAGE" value="调试用例" />
+    <MESSAGE value="增加接口请求时HTML返回值的状态码判断&#10;增加智屏 url地址判断" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加接口请求时HTML返回值的状态码判断&#10;增加智屏 url地址判断" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -956,22 +941,22 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/base/runmethod.py</url>
-          <line>30</line>
+          <line>29</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/getdata/get_data.py</url>
-          <line>203</line>
+          <line>216</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/getdata/get_data.py</url>
-          <line>166</line>
+          <line>170</line>
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/getdata/get_data.py</url>
-          <line>148</line>
+          <line>152</line>
           <option name="timeStamp" value="130" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -981,12 +966,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/getdata/get_data.py</url>
-          <line>251</line>
-          <option name="timeStamp" value="132" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/getdata/get_data.py</url>
-          <line>224</line>
+          <line>237</line>
           <option name="timeStamp" value="133" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -1005,39 +985,49 @@
           <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>172</line>
-          <option name="timeStamp" value="142" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/getdata/get_data.py</url>
-          <line>177</line>
+          <line>190</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/getdata/get_data.py</url>
-          <line>202</line>
+          <line>215</line>
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/getdata/get_data.py</url>
-          <line>181</line>
+          <line>194</line>
           <option name="timeStamp" value="156" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>136</line>
-          <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/util/common_util.py</url>
           <line>142</line>
           <option name="timeStamp" value="161" />
         </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/case/debug.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>138</line>
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>159</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/getdata/get_data.py</url>
+          <line>266</line>
+          <option name="timeStamp" value="172" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>148</line>
-          <option name="timeStamp" value="162" />
+          <line>183</line>
+          <option name="timeStamp" value="173" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1109,29 +1099,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/selenium/webdriver/chrome/webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="121" column="10" lean-forward="true" selection-start-line="121" selection-start-column="10" selection-end-line="121" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="900" column="47" selection-start-line="900" selection-start-column="40" selection-end-line="900" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/base/HTMLTestRunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="202" column="38" lean-forward="true" selection-start-line="198" selection-start-column="16" selection-end-line="202" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/Alwin/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/Alwin/mytool.py" />
     <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/yaml/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -1163,13 +1130,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/debug/debug_win32.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/debug/open_chrome.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1183,9 +1143,6 @@
           <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataconfig/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/AlwinLibrary/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1286,13 +1243,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/209985664/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="543" column="52" lean-forward="true" selection-start-line="538" selection-start-column="26" selection-end-line="543" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/case/demo1.py" />
     <entry file="file://$PROJECT_DIR$/case/demo.py" />
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/209985664/time.py">
@@ -1330,34 +1280,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/operate_yaml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/getdata/excel_data_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/xlrd/sheet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/typing.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="341" column="11" lean-forward="true" selection-start-line="341" selection-start-column="11" selection-end-line="341" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -1375,77 +1297,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/operate_excel.py">
+    <entry file="file://$PROJECT_DIR$/debug/debug_win32.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/crawler_beauty.py" />
+    <entry file="file://$PROJECT_DIR$/base/HTMLTestRunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="761" column="16" selection-start-line="761" selection-start-column="16" selection-end-line="761" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../python3/Lib/typing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="1592" column="4" selection-start-line="1592" selection-start-column="4" selection-end-line="1592" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/typing.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="343" column="8" lean-forward="true" selection-start-line="343" selection-start-column="8" selection-end-line="343" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/pra1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="94" column="31" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
-          <folding>
-            <element signature="e#46#57#0" expanded="true" />
-          </folding>
+          <caret selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/209985664/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="111" column="63" selection-start-line="111" selection-start-column="63" selection-end-line="111" selection-end-column="63" />
+        <state relative-caret-position="254">
+          <caret line="3626" column="10" selection-start-line="3626" selection-start-column="10" selection-end-line="3626" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/case/debug.py">
+    <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/xlrd/sheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="662">
+          <caret line="337" column="13" selection-start-line="337" selection-start-column="13" selection-end-line="337" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="9" column="11" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="11" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/dataconfig/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/common_util.py">
+    <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/requests/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
-          <folding>
-            <element signature="e#27#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/base/runmethod.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="51" column="70" selection-start-line="51" selection-start-column="70" selection-end-line="51" selection-end-column="70" />
+        <state relative-caret-position="150">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/util/operate_json.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
-          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/debug.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/common_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="163" column="19" lean-forward="true" selection-start-line="163" selection-start-column="19" selection-end-line="163" selection-end-column="19" />
+          <folding>
+            <element signature="e#27#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getdata/excel_data_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2140">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/operate_excel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="e#46#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/runmethod.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#52#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="266" selection-start-line="266" selection-end-line="266" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/operate_yaml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/util/operate_mysql.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="32" column="64" lean-forward="true" selection-start-line="32" selection-start-column="64" selection-end-line="32" selection-end-column="64" />
+        <state relative-caret-position="-1142">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="214" selection-start-line="214" selection-end-line="220" selection-end-column="28" />
+        <state relative-caret-position="76">
+          <caret line="183" selection-start-line="183" selection-end-line="183" />
           <folding>
             <element signature="n#!!doc" />
             <element signature="e#43#79#0" expanded="true" />
-            <element signature="e#8049#8082#0" />
+            <element signature="e#8259#8278#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-726">
+          <caret line="40" column="31" lean-forward="true" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
         </state>
       </provider>
     </entry>

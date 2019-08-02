@@ -93,7 +93,7 @@ class RunTest(object):
         """
         self.get_data.write_excle_data(result_row, 'pass')
         self.pass_count.append(case_id)
-        # print('\033[0m测试通过:', case_id, case_url)        #调试时可不用注释该行
+        print('\033[0m测试通过:', case_id, case_url)        #调试时可不用注释该行
 
     def preset_data(self, line, envir):
         '''
@@ -124,6 +124,21 @@ class RunTest(object):
         self.com_util.set_tomorrow_time()
         return row_counts
 
+    def get_multi_data(self,domain,i):
+        '''
+        获取excel多项关键数据
+        :param domain: domain环境
+        :param i: 用例行数
+        :return:
+        '''
+        url = domain[1] + self.get_data.get_request_url(i)
+        method = self.get_data.get_request_method(i)
+        header = self.get_data.get_header(i)
+        data = self.get_data.get_request_data(i)
+        key = self.get_data.get_global_val(i)
+        expect_val, not_expect_val = self.get_expect_and_not(domain, i)
+        return url,method,header,data,key,expect_val,not_expect_val
+
     def go_on_run(self):
         """
         运行生产环境接口：ysy_api
@@ -134,55 +149,49 @@ class RunTest(object):
             self.com_util.stamp_to_json()
             # 有可能url中需要前置数据处理，所以需要放这里
             # preset = self.get_data.get_pres_data(line)
-            id = self.get_data.get_id_yaml(i)
-            envir = id[0].split('-')[0]  # case的执行环境设定，如：ysy_test-001
+            id = self.get_data.get_id(i)
+            envir = self.get_data.get_domain_yaml(i)  # case的执行环境设定，如：ysy_test
             self.preset_data(i, envir)
             is_run = self.get_data.get_is_run(i)
-            url = id[1] + self.get_data.get_request_url(i)
-            method = self.get_data.get_request_method(i)
-            header = self.get_data.get_header(i)
-            data = self.get_data.get_request_data(i)
-            key = self.get_data.get_global_val(i)
-            expect_val,not_expect_val = self.get_expect_and_not(envir,i)
             if is_run:
+                #确定要运行后，才执行下方数据获取
+                url, method, header, data, key, expect_val, not_expect_val = self.get_multi_data(envir,i)
                 # 运行的出接口响应值
                 res = self.run_me.run_main(method, url, data, header)  # output：str
                 if res == 'true' :                       #   当接口相应值为html，会直接返回True
-                    self.do_fail_result(i, res, id[0], url,expect_val,not_expect_val)
+                    self.do_fail_result(i, res, id, url,expect_val,not_expect_val)
                     continue
                 # elif key and 'code":0' not in res.text:  # 当接口相应异常且想获取全局变量值时，直接抛错 这个不行，因为有异常接口需要判断code为其它值
-                #     self.do_fail_result(i, res.text, id[0], url, expect_value, expect_no_value)
+                #     self.do_fail_result(i, res.text, id, url, expect_value, expect_no_value)
                 elif type(res) == type(1):                     # 返回状态码处理
-                    self.do_fail_result(i, res, id[0], url, expect_val, not_expect_val)
+                    self.do_fail_result(i, res, id, url, expect_val, not_expect_val)
                     break
                 if key:
                     # 获取需要提取的全局变量
                     for key, value in self.get_path(key, res.text).items():  # 获取字典对应的key，value
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
                     self.get_data.write_excle_data(i, 'pass')
-                    self.pass_count.append(id[0])
-                    # print('测试通过:', id[0], url)        #本地调试打开，生产需注释掉 进打印选项卡统计数据及失败数据--2019-07-12
+                    self.pass_count.append(id)
+                    print('测试通过:', id, url)        #本地调试打开，生产需注释掉 进打印选项卡统计数据及失败数据--2019-07-12
                 elif not_expect_val is not None and expect_val is not None:  # 期望包含值和期望不包含值都不为空
                     rel1 = self.com_util.is_contain(expect_val,res.text)
                     rel2 = self.com_util.not_contain(not_expect_val, res.text)  # 从期望值对比
                     if rel1 and rel2:
-                        self.do_pass_result(i, id[0], url)
+                        self.do_pass_result(i, id, url)
                     else:
-                        self.do_fail_result(i, res.text, id[0], url, expect_val, not_expect_val)
+                        self.do_fail_result(i, res.text, id, url, expect_val, not_expect_val)
                 elif expect_val is not None:  # 期望包含值是不为空的(这个值不可能为空)
                     rel1 = self.com_util.is_contain(expect_val, res.text)
                     if rel1:
-                        self.do_pass_result(i, id[0], url)
+                        self.do_pass_result(i, id, url)
                     else:
-                        self.do_fail_result(i, res.text, id[0], url, expect_val, not_expect_val)
+                        self.do_fail_result(i, res.text, id, url, expect_val, not_expect_val)
                 else:
-                    self.do_fail_result(i, res.text, id[0], url, expect_val, not_expect_val)
+                    self.do_fail_result(i, res.text, id, url, expect_val, not_expect_val)
                     continue
             # time.sleep(5)           # 避免json数据读取旧文件
         print("\n>>>>>>>>>>>测试用例集《{0}》,总计用例{1}个，通过{2}个用例，失败{3}个用例\n\n>>>>>>>>>>>".format(self.sheet_name,len(self.pass_count)+len(self.fail_count),len(self.pass_count),len(self.fail_count)))
         # return self.fail_count, self.pass_count
-
-
 
     def threads_to_run(self):
         """
@@ -208,17 +217,17 @@ class RunTest(object):
 
 
 if __name__ == '__main__':
-    # """仅调试使用"""
-    # run_test = RunTest(0)
-    # run_test.go_on_run()
+    """仅调试使用"""
+    run_test = RunTest(1)
+    run_test.go_on_run()
 
-    """多sheet，遍历执行"""
-    oe = OperateExcel()
-    sheets = oe.get_sheets()
-    for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
-        # print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
-        run_test = RunTest(i)
-        run_test.go_on_run()
+    # """多sheet，遍历执行"""
+    # oe = OperateExcel()
+    # sheets = oe.get_sheets()
+    # for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
+    #     # print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    #     run_test = RunTest(i)
+    #     run_test.go_on_run()
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
     # theading_list = []

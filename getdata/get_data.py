@@ -76,39 +76,52 @@ class GetData(object):
         """
         col = self.excel_data.gett_id()
         return self.read_ex.get_cell(row, col)
+    
+    def get_domain(self, row):
+        """
+        返回用例domain
+        :param row:
+        :return:
+        """
+        col = self.excel_data.get_domain()
+        return self.read_ex.get_cell(row, col)
 
-    def get_id_yaml(self, row):
+    def get_domain_yaml(self, row):
         """
         判定id中yaml值,返回实际id值与url域名
         每次新增加域名或ip需要在这里添加对应的值
         :return:
         """
-        value = self.get_id(row)
-        if value.startswith('ysy_release'):
+        value = self.get_domain(row)
+        if value == ('ysy_release'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_release']
-        elif value.startswith('ysy_test'):
+        elif value == ('ysy_test'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_test']
-        elif value.startswith('ysy_t_property'):
+        elif value == ('ysy_t_property'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_t_property']
-        elif value.startswith('ysy_zp_test'):
+        elif value == ('ysy_zp_test'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_zp_test']
-        elif value.startswith('property_bg_test') :
+        elif value == ('property_bg_test') :
             url_head = self.oper_ya.read_yaml()['url']['property_bg_test']
-        elif value.startswith('tfysy_repair_test'):
+        elif value == ('tfysy_repair_test'):
             url_head = self.oper_ya.read_yaml()['url']['tfysy_repair_test']
-        elif value.startswith("tfysy_test"):
+        elif value == ("tfysy_test"):
             url_head = self.oper_ya.read_yaml()['url']['tfysy_test']
-        elif value.startswith("ttfra_test"):
+        elif value == ("ttfra_test"):
             url_head = self.oper_ya.read_yaml()['url']['ttfra_test']
-        elif value.startswith('property_bg_TEST'):
+        elif value == ("ttfwap_test"):
+            url_head = self.oper_ya.read_yaml()['url']['ttfwap_test']
+        elif value == ("tto2o_test"):
+            url_head = self.oper_ya.read_yaml()['url']['tto2o_test']
+        elif value == ('property_bg_TEST'):
             url_head = self.oper_ya.read_yaml()['url']['property_bg_TEST']
-        elif value.startswith('ysy_property_off_web'):
+        elif value == ('ysy_property_off_web'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_property_off_web']
-        elif value.startswith('ysy_t_property_app'):
+        elif value == ('ysy_t_property_app'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_t_property_app']
-        elif value.startswith('tp_tfysy_binduser'):
+        elif value == ('tp_tfysy_binduser'):
             url_head = self.oper_ya.read_yaml()['url']['tp_tfysy_binduser']
-        elif value.startswith('zp_test'):
+        elif value == ('zp_test'):
             url_head = self.oper_ya.read_yaml()['url']['zp_test']
         else:
             url_head = None             #当这里没有检测到符合条件的，就返回None

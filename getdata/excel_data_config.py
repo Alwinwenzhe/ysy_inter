@@ -6,20 +6,21 @@
 class ExceDataConfig(object):
 
     Id = '0'
-    Run = '1'
-    Url = '3'
-    Method = '7'
-    Header_value = '8'
-    Global_val = '9'
-    Depend_id = '10'
-    Depend_data = '11'
-    Depend_field = '12'
-    Prese_data = '13'
-    Request_data = '14'
-    Expect_result = '15'
-    Expect_no_result = '16'
-    Reality_result = '17'
-    Whether_pass = '18'
+    Domain = '1'
+    Run = '2'
+    Url = '4'
+    Method = '8'
+    Header_value = '9'
+    Global_val = '10'
+    Depend_id = '11'
+    Depend_data = '12'
+    Depend_field = '13'
+    Prese_data = '14'
+    Request_data = '15'
+    Expect_result = '16'
+    Expect_no_result = '17'
+    Reality_result = '18'
+    Whether_pass = '19'
 
     def gett_id(self):
         """
@@ -27,6 +28,13 @@ class ExceDataConfig(object):
          :return: id对应列index
          """
         return ExceDataConfig.Id  # 类中的方法，可以通过类名，直接调用其常量及方法;注意是调用函数本身
+
+    def get_domain(self):
+        '''
+        获取域名
+        :return:
+        '''
+        return ExceDataConfig.Domain
 
     def get_run(self):
         """

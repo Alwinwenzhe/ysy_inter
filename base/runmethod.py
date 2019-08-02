@@ -7,7 +7,6 @@ import requests
 import json
 from util.common_util import CommonUtil
 
-
 class RunMethod(object):
 
     def __init__(self):
@@ -90,7 +89,6 @@ class RunMethod(object):
         else:
             print("Fail,request menthod is error!Please check it!")
         return res
-
 
 if __name__ == '__main__':
     pass
