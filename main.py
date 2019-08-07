@@ -218,7 +218,7 @@ class RunTest(object):
 
 if __name__ == '__main__':
     """仅调试使用"""
-    run_test = RunTest(0)
+    run_test = RunTest(1)
     run_test.go_on_run()
 
     # """多sheet，遍历执行"""
