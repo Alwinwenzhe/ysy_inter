@@ -108,17 +108,21 @@ class CommonUtil(object):
         :param res:
         :return:
         """
-        if 'code' in res.text:
+        if 'code' in res.text:              # 判定返回值是否直接是json数据串
             # result =  res.json()
             # return json.dumps(result, indent=3, sort_keys=True, ensure_ascii=False)  # 返回值可以包含非ascii字符
             return res          #这里由于在main函数中使用了res.text，所以这里需要返回整个res--20190710
         elif 'DOCTYPE html' in res.text:        #  这里是验证当res返回内容为html，需要从str格式中寻找目标字符串
-            if status_code != 200:      # 接口异常，直接返回错误吗
-                return status_code
-            else:
-                return 'true'           # 接口正常返回true
-        # else:         #这里应该是无用的，注销掉--20190709
-        #     return res
+            # if status_code != 200:      # 接口异常，直接返回错误吗
+            #     return status_code
+            # else:
+            #     return 'true'           # 接口正常返回true
+            try:
+                if status_code == 200:  # 接口异常，直接返回错误吗
+                    return status_code
+            except Exception as e:
+                print ('接口返回的状态码有误，请检查！',e)
+
 
     def current_stamp(self):
         '''获取当前时间戳'''
