@@ -110,9 +110,9 @@ class OperateMySQL(object):
 		:param str:可能包含了formate的字符串
 		:return:不包含了formate的字符串
 		"""
-        if 'formate' in var_str:
+        if 'format' in var_str:
             p1 = re.compile(r"[(](.*?)[')]", re.S)  # 非贪心匹配
-            split_str = var_str.split('formate')
+            split_str = var_str.split('format')
             var_1 = re.findall(p1, split_str[1])
             #这里会对list中每个值进行判断
             var_1 = self.list_value_y_j(var_1)

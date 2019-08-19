@@ -148,7 +148,7 @@ class RunTest(object):
             time.sleep(1)  # 休眠1s，避开系统提示频繁请求
             self.com_util.stamp_to_json()
             # 有可能url中需要前置数据处理，所以需要放这里
-            # preset = self.get_data.get_pres_data(line)
+            # preset = self.get_data.get_pres_data(i)
             id = self.get_data.get_id(i)
             envir = self.get_data.get_domain_yaml(i)  # case的执行环境设定，如：ysy_test
             self.preset_data(i, envir)

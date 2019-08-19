@@ -27,8 +27,9 @@ Header---{"Content-Type":"application/json; charset=UTF-19","accessToken":"j::da
 全局变量值(值全路径)---data/accessToken,data/userOrderCount/userId
 该字段表示从响应值中取出的值，按dict格式编写
 
-预置数据---version$$SELECT IFNULL(dv.version,0) FROM data_version dv WHERE dv.code='ios'
-;SELECT IFNULL(pe.is_receive,0) FROM property_employees pe WHERE pe.mobile={0} AND pe.state=1formate(y::account/test/repair_acc);
+预置数据--
+address$$SELECT IFNULL(tra.address,'NULL') from tf_repair_address tra INNER JOIN user u ON u.id = tra.id_user AND tra.is_valid = 'Y' AND tra.is_default = 'Y' WHERE u.mobile = {0}format(y::account/tftest/user_account);categoryId$$SELECT IFNULL(trr.id_call_center,'NULL') from tf_repair_address tra INNER JOIN user u ON u.id = tra.id_user INNER JOIN tf_repair_region trr ON tra.community_name = trr.name AND tra.is_valid = 'Y' AND tra.is_default = 'Y' AND trr.is_valid = 'Y' WHERE u.mobile = {0}format(y::account/tftest/user_account)
+
 该字段可由直接结果或sql返回值作为判断，多个直接结果使用“；”间隔，sql内使用$$分割预期获取的变量值与sql语句；该字段表示用例执行前需要预先写入json的值，以备用例中读入该值，且sql中可以带入参数
 
 
