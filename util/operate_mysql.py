@@ -46,25 +46,6 @@ class OperateMySQL(object):
             self.user = self.oy.read_yaml()['db']['tfysy_repair_test']['user']
             self.pwd = self.oy.read_yaml()['db']['tfysy_repair_test']['pwd']
 
-    def formate_sql(self,sql_str):
-        '''
-        该方法暂时不使用，被re_sql代替
-        :param sql_str:
-        :return:
-        '''
-        if '%%%(' in sql_str:
-            sql_list = sql_str.split("%%%(")
-            sql_vars = sql_list[1].split(",")
-            temp_str = ''
-            sql_var_list = []
-            for i in sql_vars:
-                value = self.oj.get_json_value(i)
-                temp_str = temp_str + "," + value
-            temp_str = str(temp_str.strip(","))  # 去掉左右两边的逗号
-            return sql_list[0].format(temp_str)
-        else:
-            return sql_str
-
     def execute_sql(self, conn_str, sql_str):
         '''
         连接并创建游标,执行sql,返回结果
