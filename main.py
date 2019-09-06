@@ -13,7 +13,6 @@ from util.operate_excel import OperateExcel
 import json, time, argparse
 import threading,multiprocessing
 
-
 class RunTest(object):
     """
     主程序入口
@@ -93,7 +92,7 @@ class RunTest(object):
         """
         self.get_data.write_excle_data(result_row, 'pass')
         self.pass_count.append(case_id)
-        print('\033[0m测试通过:', case_id, case_url)        #调试时可不用注释该行
+        # print('\033[0m测试通过:', case_id, case_url)        #调试时可不用注释该行
 
     def preset_data(self, line, envir):
         '''
@@ -172,7 +171,7 @@ class RunTest(object):
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
                     self.get_data.write_excle_data(i, 'pass')
                     self.pass_count.append(id)
-                    print('测试通过:', id, url)        #本地调试打开，生产需注释掉 进打印选项卡统计数据及失败数据--2019-07-12
+                    # print('测试通过:', id, url)        #本地调试打开，生产需注释掉 进打印选项卡统计数据及失败数据--2019-07-12
                 elif not_expect_val is not None and expect_val is not None:  # 期望包含值和期望不包含值都不为空
                     rel1 = self.com_util.is_contain(expect_val,res.text)
                     rel2 = self.com_util.not_contain(not_expect_val, res.text)  # 从期望值对比
@@ -215,19 +214,34 @@ class RunTest(object):
         self.s_email.send_main(f, p)
         print("p,f:", p, f)
 
+    def run_param(self):
+        '''输出单变量'''
+        parser = argparse.ArgumentParser()
+        parser.add_argument("totalEvent")  # 添加参数--key
+        args = parser.parse_args()  # Namespace(package='com.xxx', totalEvent='100')赋值给args
+        param = vars(args)
+        v = {}
+        for key, value in param.items():
+            v[key] = value
+        return value
 
 if __name__ == '__main__':
-    """仅调试使用"""
-    run_test = RunTest(1)
-    run_test.go_on_run()
+    run_test = RunTest(0)
+    mode =run_test.run_param()
+    # mode = 'debug'
 
-    # """多sheet，遍历执行"""
-    # oe = OperateExcel()
-    # sheets = oe.get_sheets()
-    # for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
-    #     # print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
-    #     run_test = RunTest(i)
-    #     run_test.go_on_run()
+    if mode == 'release':
+        """多sheet，遍历执行"""
+        oe = OperateExcel()
+        sheets = oe.get_sheets()
+        for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
+            # print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
+            run_test = RunTest(i)
+            run_test.go_on_run()
+    else:
+        """仅调试使用"""
+        run_test.go_on_run()
+
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""
     # theading_list = []

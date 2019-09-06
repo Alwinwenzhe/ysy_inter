@@ -5,10 +5,11 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="">
+    <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="增加了sql执行时的异常处理">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/case.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/case.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/json.json" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/json.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/operate_mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operate_mysql.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,10 +20,10 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ysy_inter$run_test__2_.coverage" NAME="run_test (2) Coverage Results" MODIFIED="1544681672954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ysy_inter$debug__1_.coverage" NAME="debug (1) Coverage Results" MODIFIED="1566371596587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/ysy_inter$debug__1_.coverage" NAME="debug (1) Coverage Results" MODIFIED="1567761833131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/ysy_inter$operate_mysql.coverage" NAME="operate_mysql Coverage Results" MODIFIED="1545376797022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/ysy_inter$runmethod.coverage" NAME="runmethod Coverage Results" MODIFIED="1559635946164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/base" />
-    <SUITE FILE_PATH="coverage/ysy_inter$main.coverage" NAME="main Coverage Results" MODIFIED="1566437918321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ysy_inter$main.coverage" NAME="main Coverage Results" MODIFIED="1567761934277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ysy_inter$Unittests_in_unittest_demo_py.coverage" NAME="Unittests in unittest_demo.py Coverage Results" MODIFIED="1562836080414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/ysy_inter$operate_excel.coverage" NAME="operate_excel Coverage Results" MODIFIED="1562911109424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
     <SUITE FILE_PATH="coverage/ysy_inter$mytool.coverage" NAME="mytool Coverage Results" MODIFIED="1552274173057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../python3/Lib/site-packages/Alwin" />
@@ -68,45 +69,49 @@
     <session id="1746992316">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="174" />
+          <entry key="project.closed" value="185" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="31" />
-          <entry key="project.open.time.14" value="41" />
-          <entry key="project.open.time.15" value="29" />
-          <entry key="project.open.time.16" value="17" />
-          <entry key="project.open.time.17" value="8" />
+          <entry key="project.open.time.14" value="42" />
+          <entry key="project.open.time.15" value="31" />
+          <entry key="project.open.time.16" value="18" />
+          <entry key="project.open.time.17" value="9" />
           <entry key="project.open.time.18" value="5" />
           <entry key="project.open.time.19" value="9" />
-          <entry key="project.open.time.2" value="10" />
+          <entry key="project.open.time.2" value="12" />
           <entry key="project.open.time.20" value="3" />
           <entry key="project.open.time.21" value="3" />
           <entry key="project.open.time.22" value="5" />
-          <entry key="project.open.time.23" value="4" />
+          <entry key="project.open.time.23" value="5" />
           <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.3" value="14" />
+          <entry key="project.open.time.27" value="3" />
+          <entry key="project.open.time.3" value="16" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.4" value="9" />
-          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.5" value="3" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="213" />
+          <entry key="project.opened" value="227" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="CommonUtil" value="1" />
+          <entry key="OperateExcel" value="3" />
+          <entry key="RunTest" value="4" />
+          <entry key="SendEmail" value="1" />
           <entry key="admin" value="1" />
-          <entry key="html" value="3" />
-          <entry key="json" value="61" />
+          <entry key="html" value="4" />
+          <entry key="json" value="62" />
           <entry key="md" value="10" />
           <entry key="pstat" value="1" />
-          <entry key="py" value="647" />
+          <entry key="py" value="651" />
           <entry key="pyi" value="5" />
           <entry key="sql" value="3" />
           <entry key="xml" value="7" />
@@ -116,36 +121,37 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Database Element" value="1" />
-          <entry key="HTML" value="3" />
-          <entry key="JSON" value="61" />
+          <entry key="HTML" value="4" />
+          <entry key="JSON" value="62" />
           <entry key="Markdown" value="10" />
           <entry key="Profiler Session" value="1" />
-          <entry key="Python" value="647" />
+          <entry key="Python" value="651" />
           <entry key="PythonStub" value="5" />
           <entry key="Scratch" value="3" />
+          <entry key="UML" value="9" />
           <entry key="XML" value="7" />
           <entry key="YAML" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="65" />
+          <entry key="Python Console" value="121" />
           <entry key="dummy" value="24" />
-          <entry key="json" value="81" />
+          <entry key="json" value="86" />
           <entry key="md" value="585" />
-          <entry key="py" value="29593" />
+          <entry key="py" value="29952" />
           <entry key="sql" value="73" />
-          <entry key="txt" value="835" />
+          <entry key="txt" value="851" />
           <entry key="xml" value="148" />
           <entry key="yaml" value="1213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="81" />
+          <entry key="JSON" value="86" />
           <entry key="Markdown" value="585" />
-          <entry key="PLAIN_TEXT" value="859" />
-          <entry key="Python" value="29657" />
+          <entry key="PLAIN_TEXT" value="875" />
+          <entry key="Python" value="30072" />
           <entry key="RegExp" value="1" />
           <entry key="Scratch" value="73" />
           <entry key="XML" value="148" />
@@ -162,7 +168,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/operate_yaml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="740">
               <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
             </state>
           </provider>
@@ -171,11 +177,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/base/runmethod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+            <state relative-caret-position="295">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="239" column="32" lean-forward="true" selection-start-line="239" selection-start-column="32" selection-end-line="239" selection-end-column="32" />
               <folding>
-                <element signature="e#52#67#0" expanded="true" />
+                <element signature="e#9017#9050#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="255" selection-start-line="255" selection-end-line="255" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/util/operate_mysql.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -183,31 +216,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/case/debug.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/my_exception.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="215" column="27" lean-forward="true" selection-start-line="215" selection-start-column="27" selection-end-line="215" selection-end-column="27" />
-              <folding>
-                <element signature="n#!!doc" />
-                <element signature="e#43#79#0" expanded="true" />
-                <element signature="e#8252#8271#0" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -224,11 +234,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>official</find>
-      <find>release</find>
       <find>天</find>
       <find>url = id[1] + self.get_data.get_request_url(i)</find>
-      <find>测试通过</find>
       <find>id</find>
       <find>ysy_test</find>
       <find>start</find>
@@ -254,6 +261,9 @@
       <find>format</find>
       <find>Whether or not to perform value is error!!</find>
       <find>print &quot;</find>
+      <find>[0m测试通过</find>
+      <find>测试通过</find>
+      <find>class</find>
     </findStrings>
     <replaceStrings>
       <replace>(</replace>
@@ -328,12 +338,12 @@
         <option value="$PROJECT_DIR$/case/debug.html" />
         <option value="$PROJECT_DIR$/case/monkey_activity.py" />
         <option value="$PROJECT_DIR$/case/appconfig.xml" />
-        <option value="$PROJECT_DIR$/dataconfig/json.json" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/case/debug.py" />
         <option value="$PROJECT_DIR$/util/my_exception.py" />
-        <option value="$PROJECT_DIR$/util/operate_mysql.py" />
+        <option value="$PROJECT_DIR$/dataconfig/json.json" />
+        <option value="$PROJECT_DIR$/case/debug.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/util/operate_mysql.py" />
       </list>
     </option>
   </component>
@@ -344,10 +354,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="17" />
-    <option name="y" value="12" />
-    <option name="width" value="1053" />
-    <option name="height" value="732" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -357,7 +365,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -384,6 +391,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -535,8 +543,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.my_exception" />
         <item itemvalue="Python.debug (1)" />
+        <item itemvalue="Python.my_exception" />
         <item itemvalue="Python.monkey_activity" />
         <item itemvalue="Python.debug" />
       </list>
@@ -812,7 +820,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566205822100</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="增加了sql执行时的异常处理">
+      <created>1566438040864</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1566438040864</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -836,27 +851,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7128713" visible="true" weight="0.18759455" />
-      <window_info id="Structure" order="1" sideWeight="0.28476822" side_tool="true" weight="0.16111952" />
-      <window_info id="Terminal" order="2" sideWeight="0.48526523" side_tool="true" weight="0.1732224" />
-      <window_info id="Favorites" order="3" sideWeight="0.48526523" side_tool="true" weight="0.1732224" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6388309" visible="true" weight="0.15885022" />
+      <window_info id="Structure" order="1" sideWeight="0.3611691" side_tool="true" visible="true" weight="0.15885022" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3876923" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7639939" visible="true" weight="0.4369231" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4076923" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7639939" weight="0.2983871" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.41612902" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.26618704" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.26615384" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49848714" weight="0.3276923" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.23600605" side_tool="true" weight="0.5611511" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.27769783" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3410072" />
-      <window_info anchor="bottom" id="Database Console" order="13" weight="0.4705036" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49266246" visible="true" weight="0.22741936" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.2629032" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.4705036" />
+      <window_info anchor="bottom" id="Favorites" order="15" sideWeight="0.48526523" weight="0.22" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.26190478" />
@@ -898,7 +912,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加一生约checklist用例，增加split默认方法" />
     <MESSAGE value="将一生约接口用例中，话题等用例预期值修改为动态值" />
     <MESSAGE value="修复了预置数据不会立即生效的问题" />
     <MESSAGE value="切换至运行生产环境" />
@@ -923,7 +936,8 @@
     <MESSAGE value="修改json文件，当为空白json文件，至少保留格式{}" />
     <MESSAGE value="调试版本发布后用例中运行失败的7个用例" />
     <MESSAGE value="去掉了formate_sql方法--该方法没有其它地方调用" />
-    <option name="LAST_COMMIT_MESSAGE" value="去掉了formate_sql方法--该方法没有其它地方调用" />
+    <MESSAGE value="增加了sql执行时的异常处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了sql执行时的异常处理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -940,7 +954,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>105</line>
+          <line>104</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -975,17 +989,12 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/util/operate_mysql.py</url>
-          <line>86</line>
+          <line>97</line>
           <option name="timeStamp" value="135" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/util/operate_mysql.py</url>
-          <line>59</line>
-          <option name="timeStamp" value="137" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>57</line>
+          <line>56</line>
           <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -998,10 +1007,25 @@
           <line>40</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/base/runmethod.py</url>
           <line>62</line>
           <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>156</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>137</line>
+          <option name="timeStamp" value="172" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/util/operate_mysql.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="176" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1073,34 +1097,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/requests/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="848" selection-start-line="848" selection-end-line="848" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/AlwinLibrary/alwin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../python3/Lib/site-packages/xlrd/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/report/htmlreport.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1250,20 +1246,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/case/socket.py" />
     <entry file="file://$PROJECT_DIR$/case/socket_server.py" />
-    <entry file="file://$PROJECT_DIR$/case/debug.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/common_util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2820">
           <caret line="146" selection-start-line="146" selection-end-line="146" />
-          <folding>
-            <element signature="e#27#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1273,13 +1259,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataconfig/json.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret column="399" lean-forward="true" selection-start-column="399" selection-end-column="399" />
         </state>
       </provider>
     </entry>
@@ -1321,31 +1300,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="183" selection-start-line="183" selection-end-line="183" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/case/unittest_demo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/operate_yaml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/debug.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1356,39 +1314,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/my_exception.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+    <entry file="uml://Python/util.send_email.SendEmail">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>util.send_email.SendEmail</OriginalElement>
+          <nodes>
+            <node x="" y="">util.send_email.SendEmail</node>
+            <node x="" y="">object</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="90.0" y="56.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/operate_mysql.py">
+    <entry file="uml://Python/util.operate_excel.OperateExcel">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>util.operate_excel.OperateExcel</OriginalElement>
+          <nodes>
+            <node x="" y="">util.operate_excel.OperateExcel</node>
+            <node x="" y="">object</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="106.0" y="56.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/main.RunTest">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>main.RunTest</OriginalElement>
+          <nodes>
+            <node x="" y="">main.RunTest</node>
+            <node x="" y="">object</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="55.0" y="56.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/util.common_util.CommonUtil">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>util.common_util.CommonUtil</OriginalElement>
+          <nodes>
+            <node x="" y="">util.common_util.CommonUtil</node>
+            <node x="" y="">object</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="100.0" y="56.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/my_exception.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="66" column="31" lean-forward="true" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+        <state relative-caret-position="340">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataconfig/json.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="449" selection-start-column="449" selection-end-column="449" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/debug.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/operate_yaml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/base/runmethod.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
-          <folding>
-            <element signature="e#52#67#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="295">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/debug.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="255" selection-start-line="255" selection-end-line="255" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="215" column="27" lean-forward="true" selection-start-line="215" selection-start-column="27" selection-end-line="215" selection-end-column="27" />
+        <state relative-caret-position="327">
+          <caret line="239" column="32" lean-forward="true" selection-start-line="239" selection-start-column="32" selection-end-line="239" selection-end-column="32" />
           <folding>
-            <element signature="n#!!doc" />
-            <element signature="e#43#79#0" expanded="true" />
-            <element signature="e#8252#8271#0" />
+            <element signature="e#9017#9050#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/operate_mysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
         </state>
       </provider>
     </entry>

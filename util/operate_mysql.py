@@ -51,20 +51,31 @@ class OperateMySQL(object):
         连接并创建游标,执行sql,返回结果
         :return:
         '''
-        try:
-            self.conn_db(conn_str)
-            db = pymysql.connect(host=self.dbhost, port=self.dbport, user=self.user, passwd=self.pwd, db=self.dbname,
-                                 charset='utf8')
-            cursor = db.cursor()  # 创建一个游标
-            exe_sql = self.re_sql(sql_str)
-            cursor.execute(exe_sql)
-            data = cursor.fetchone()
-            return data[0]
-        except Exception:
-            print("sql执行异常，请检查")
-        finally:
-            cursor.close()
-            db.close()  # 关闭数据库
+        # try:
+        self.conn_db(conn_str)
+        db = pymysql.connect(host=self.dbhost, port=self.dbport, user=self.user, passwd=self.pwd, db=self.dbname,
+                             charset='utf8')
+        cursor = db.cursor()  # 创建一个游标
+        exe_sql = self.re_sql(sql_str)
+        cursor.execute(exe_sql)
+        data = cursor.fetchone()
+        data = self.bytes_to_str(data[0])
+        return data
+        # except Exception:
+        #     print("sql执行异常，请检查")
+        # finally:
+        cursor.close()
+        db.close()  # 关闭数据库
+
+    def bytes_to_str(self,val1):
+        '''
+        转化bytes为str
+        :param val1:
+        :return:
+        '''
+        if type(val1) == bytes:
+            val1 = val1.decode(encoding='utf-8')
+        return val1
 
     def deal_sql2(self, conn, sql_str):
         """
