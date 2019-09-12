@@ -21,7 +21,7 @@ class OperateMySQL(object):
         :param goal_db:
         :return:
         """
-        if goal_db[0] ==("ysy_test") or goal_db[0] ==("ysy_t_property") or goal_db[0] ==("ysy_t_property_app") or goal_db[0] ==('zp_test'):
+        if goal_db[0] ==("ysy_test") or goal_db[0] ==("ysy_t_property") or goal_db[0] ==("ysy_t_property_app") or goal_db[0] ==('zp_test') or goal_db[0] ==("ysy_demo"):            #演示环境连接的数据库是假的
             self.dbhost = self.oy.read_yaml()['db']['ysy_test']['db_host']
             self.dbport = self.oy.read_yaml()['db']['ysy_test']['db_port']
             self.dbname = self.oy.read_yaml()['db']['ysy_test']['db_name']

@@ -95,6 +95,8 @@ class GetData(object):
         value = self.get_domain(row)
         if value == ('ysy_release'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_release']
+        elif value == ('ysy_demo'):
+            url_head = self.oper_ya.read_yaml()['url']['ysy_demo']
         elif value == ('ysy_test'):
             url_head = self.oper_ya.read_yaml()['url']['ysy_test']
         elif value == ('ysy_t_property'):

@@ -45,5 +45,8 @@ Request_data---{"mobile":"y::account/release/user_account","verifyCode":"6688"}
 SELECT IFNULL(pe.is_receive,0) FROM property_employees pe WHERE pe.mobile={0} AND pe.state=1formate(y::account/test/repair_acc)
 
 
+注意：
+新增域名，需要在Global_var.yaml、get_data.py、operate_mysql.py中增加相关数据
+
 
 

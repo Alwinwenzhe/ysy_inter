@@ -92,7 +92,7 @@ class RunTest(object):
         """
         self.get_data.write_excle_data(result_row, 'pass')
         self.pass_count.append(case_id)
-        # print('\033[0m测试通过:', case_id, case_url)        #调试时可不用注释该行
+        print('\033[0m测试通过:', case_id, case_url)        #调试时可不用注释该行
 
     def preset_data(self, line, envir):
         '''
@@ -171,7 +171,7 @@ class RunTest(object):
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
                     self.get_data.write_excle_data(i, 'pass')
                     self.pass_count.append(id)
-                    # print('测试通过:', id, url)        #本地调试打开，生产需注释掉 进打印选项卡统计数据及失败数据--2019-07-12
+                    print('测试通过:', id, url)        #本地调试打开，生产需注释掉 进打印选项卡统计数据及失败数据--2019-07-12
                 elif not_expect_val is not None and expect_val is not None:  # 期望包含值和期望不包含值都不为空
                     rel1 = self.com_util.is_contain(expect_val,res.text)
                     rel2 = self.com_util.not_contain(not_expect_val, res.text)  # 从期望值对比
@@ -227,8 +227,8 @@ class RunTest(object):
 
 if __name__ == '__main__':
     run_test = RunTest(0)
-    mode =run_test.run_param()
-    # mode = 'debug'
+    # mode =run_test.run_param()    #运行模式
+    mode = 'debug'          # 调试模式
 
     if mode == 'release':
         """多sheet，遍历执行"""

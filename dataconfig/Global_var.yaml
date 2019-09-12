@@ -8,6 +8,7 @@ basic_name:
 
 url:
    ysy_test: 'https://trest.yishengyue.cn'
+   ysy_demo: 'http://yanshiapi.yishengyue.cn'
    # 旧物业系统接口地址
    ysy_t_property: 'http://116.62.63.151:8096'
    ysy_t_property_app: 'http://116.62.63.151:8106'
@@ -36,6 +37,8 @@ account:
     property_manage_user: '15828022851'
     property_manage_register: '13438981899'
     property_manage_test: '18800000000'
+  demo:
+    user_account: '18080836627'
   release:
     property_account: '18030478860'
     user_account: '15828022852'
