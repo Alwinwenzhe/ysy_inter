@@ -35,6 +35,7 @@ address$$SELECT IFNULL(tra.address,'NULL') from tf_repair_address tra INNER JOIN
 
 Request_data---{"mobile":"y::account/release/user_account","verifyCode":"6688"}
 该字段代表请求体，且部分值可能来源于yaml或json
+请求体中增加随机数处理，格式如："stepNum":"r::500&6000"
 
 预期结果包含(有全局变量值，则不需要预期结果)---code":104  SELECT IFNULL(GROUP_CONCAT(name),0) from menu WHERE is_valid='Y' AND su_system='3';
 该字段可由直接结果或sql返回值作为判断，如果都有，需要用**间隔

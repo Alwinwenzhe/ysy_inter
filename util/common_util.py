@@ -3,6 +3,7 @@
 # Status
 import datetime
 import time
+import random
 import json
 from util.operate_json import OperateJson
 from util.operate_yaml import OperateYaml
@@ -146,6 +147,15 @@ class CommonUtil(object):
         key = 'tomorrow_time'
         self.oper_json.write_json_value(key, value)
 
+    def random_var(self,start,end):
+        '''
+        根据开始和结束输入一组随机数
+        :param start:
+        :param end:
+        :return:
+        '''
+        return random.randint(int(start),int(end))
+
     def split_combine(self,var,split_char_1='**',split_char_2=';'):
         '''
         var中必须是split_char_1在前，split_char_2在后
@@ -185,3 +195,4 @@ if __name__ == '__main__':
     list1 = [1,2,3]
     data2 = [4,5]
     # print(cu.data_joint(list1,data2))
+    print(cu.random_var(100,1000))
