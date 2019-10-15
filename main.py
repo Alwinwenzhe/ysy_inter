@@ -215,7 +215,7 @@ class RunTest(object):
         print("p,f:", p, f)
 
     def run_param(self):
-        '''输出单变量'''
+        '''输出单变量,从jenkins或手动输入获取'''
         parser = argparse.ArgumentParser()
         parser.add_argument("totalEvent")  # 添加参数--key
         args = parser.parse_args()  # Namespace(package='com.xxx', totalEvent='100')赋值给args
@@ -225,13 +225,25 @@ class RunTest(object):
             v[key] = value
         return value
 
+    # def print_pass(self,var1,id,url):
+    #     '''
+    #     打印日志判断，如果是调试，则打印；如果是正式则只打印失败日志
+    #     :param var1:
+    #     :return:
+    #     '''
+    #     if var1 == 'debug':
+    #         print('测试通过:', id, url)
+    #     elif var1 == 'release':
+
+
+
 if __name__ == '__main__':
     run_test = RunTest(0)
     mode =run_test.run_param()    #运行模式
     # mode = 'debug'          # 调试模式
 
     if mode == 'release':
-        """多sheet，遍历执行"""
+        """多sheet，遍历执run_param行"""
         oe = OperateExcel()
         sheets = oe.get_sheets()
         for i in range(1, len(sheets)):  # 从sheetid为1开始遍历

@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/case.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/case.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/json.json" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/json.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,20 +68,20 @@
     <session id="1746992316">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="199" />
+          <entry key="project.closed" value="204" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="31" />
-          <entry key="project.open.time.14" value="42" />
-          <entry key="project.open.time.15" value="32" />
-          <entry key="project.open.time.16" value="19" />
+          <entry key="project.open.time.14" value="43" />
+          <entry key="project.open.time.15" value="34" />
+          <entry key="project.open.time.16" value="21" />
           <entry key="project.open.time.17" value="13" />
           <entry key="project.open.time.18" value="7" />
           <entry key="project.open.time.19" value="11" />
           <entry key="project.open.time.2" value="12" />
-          <entry key="project.open.time.20" value="4" />
+          <entry key="project.open.time.20" value="5" />
           <entry key="project.open.time.21" value="3" />
           <entry key="project.open.time.22" value="8" />
           <entry key="project.open.time.23" value="5" />
@@ -91,13 +92,13 @@
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.4" value="10" />
-          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="245" />
+          <entry key="project.opened" value="253" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -139,9 +140,9 @@
           <entry key="dummy" value="24" />
           <entry key="json" value="86" />
           <entry key="md" value="683" />
-          <entry key="py" value="30221" />
+          <entry key="py" value="30366" />
           <entry key="sql" value="73" />
-          <entry key="txt" value="960" />
+          <entry key="txt" value="971" />
           <entry key="xml" value="148" />
           <entry key="yaml" value="1304" />
         </counts>
@@ -150,8 +151,8 @@
         <counts>
           <entry key="JSON" value="86" />
           <entry key="Markdown" value="683" />
-          <entry key="PLAIN_TEXT" value="984" />
-          <entry key="Python" value="30341" />
+          <entry key="PLAIN_TEXT" value="995" />
+          <entry key="Python" value="30486" />
           <entry key="RegExp" value="1" />
           <entry key="Scratch" value="73" />
           <entry key="XML" value="148" />
@@ -168,8 +169,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/common_util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3000">
-              <caret line="156" selection-start-line="156" selection-end-line="156" />
+            <state relative-caret-position="30">
+              <caret line="149" column="14" lean-forward="true" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="18" />
               <folding>
                 <element signature="e#27#42#0" expanded="true" />
               </folding>
@@ -177,14 +178,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="88" column="34" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
+            <state relative-caret-position="205">
+              <caret line="135" column="38" selection-start-line="135" selection-start-column="38" selection-end-line="135" selection-end-column="38" />
               <folding>
                 <element signature="n#!!doc" />
-                <element signature="e#9059#9092#0" />
+                <element signature="e#8522#8557#0" />
+                <element signature="e#9314#9347#0" />
               </folding>
             </state>
           </provider>
@@ -193,18 +195,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="22" column="43" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="43" />
+            <state relative-caret-position="220">
+              <caret line="32" column="16" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="740">
-                <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+              <first_editor relative-caret-position="162">
+                <caret line="37" column="38" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="38" />
               </first_editor>
               <second_editor />
             </state>
@@ -214,8 +216,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4020">
-              <caret line="201" column="13" selection-start-line="201" selection-start-column="13" selection-end-line="201" selection-end-column="13" />
+            <state relative-caret-position="314">
+              <caret line="171" column="33" selection-start-line="171" selection-start-column="29" selection-end-line="171" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -232,10 +234,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>id</find>
-      <find>start</find>
-      <find>if</find>
-      <find>print</find>
       <find>ttfra_test</find>
       <find>ttfwap_test</find>
       <find>=</find>
@@ -262,6 +260,10 @@
       <find>通过</find>
       <find>失败</find>
       <find>[0m测试通过:</find>
+      <find>do_pass_result</find>
+      <find>0m</find>
+      <find>rando</find>
+      <find>forma</find>
     </findStrings>
     <replaceStrings>
       <replace>(</replace>
@@ -363,7 +365,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -380,6 +381,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -843,7 +845,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568942183411</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="去掉所有展厅步数的运行">
+      <created>1569223193524</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1569223193524</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -869,10 +878,10 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6338912" visible="true" weight="0.1301059" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6338912" visible="true" weight="0.13993949" />
       <window_info id="Structure" order="1" sideWeight="0.36534446" side_tool="true" weight="0.1633888" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.38705036" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.38548386" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7639939" visible="true" weight="0.39032257" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33381295" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -883,7 +892,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.23600605" side_tool="true" weight="0.5611511" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.27769783" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49266246" visible="true" weight="0.44516128" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49266246" visible="true" weight="0.6887097" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.2629032" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.4705036" />
       <window_info anchor="bottom" id="Favorites" order="15" sideWeight="0.48526523" weight="0.22" />
@@ -928,7 +937,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="调整都线程运行及日志输出方式" />
     <MESSAGE value="更改了main文件中的get_sheet_name" />
     <MESSAGE value="1、新增用例&#10;2、excel中新增行为字段" />
     <MESSAGE value="1、修改了一生约版本接口，期望值中多余的值" />
@@ -953,7 +961,8 @@
     <MESSAGE value="新增展厅环境，增加家庭成员步数" />
     <MESSAGE value="get_data中增加随机函数处理家人运动步数写入" />
     <MESSAGE value="运行模式去掉默认debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="运行模式去掉默认debug" />
+    <MESSAGE value="去掉所有展厅步数的运行" />
+    <option name="LAST_COMMIT_MESSAGE" value="去掉所有展厅步数的运行" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1422,48 +1431,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/util/common_util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="156" selection-start-line="156" selection-end-line="156" />
+        <state relative-caret-position="30">
+          <caret line="149" column="14" lean-forward="true" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="18" />
           <folding>
             <element signature="e#27#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
+    <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="43" />
+        <state relative-caret-position="314">
+          <caret line="171" column="33" selection-start-line="171" selection-start-column="29" selection-end-line="171" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="135" column="38" selection-start-line="135" selection-start-column="38" selection-end-line="135" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#8522#8557#0" />
+            <element signature="e#9314#9347#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="740">
-            <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+          <first_editor relative-caret-position="162">
+            <caret line="37" column="38" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="38" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4020">
-          <caret line="201" column="13" selection-start-line="201" selection-start-column="13" selection-end-line="201" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="88" column="34" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!doc" />
-            <element signature="e#9059#9092#0" />
-          </folding>
         </state>
       </provider>
     </entry>
