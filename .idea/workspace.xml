@@ -142,7 +142,7 @@
           <entry key="md" value="683" />
           <entry key="py" value="30366" />
           <entry key="sql" value="73" />
-          <entry key="txt" value="971" />
+          <entry key="txt" value="1005" />
           <entry key="xml" value="148" />
           <entry key="yaml" value="1304" />
         </counts>
@@ -151,7 +151,7 @@
         <counts>
           <entry key="JSON" value="86" />
           <entry key="Markdown" value="683" />
-          <entry key="PLAIN_TEXT" value="995" />
+          <entry key="PLAIN_TEXT" value="1029" />
           <entry key="Python" value="30486" />
           <entry key="RegExp" value="1" />
           <entry key="Scratch" value="73" />
@@ -178,11 +178,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="135" column="38" selection-start-line="135" selection-start-column="38" selection-end-line="135" selection-end-column="38" />
+            <state relative-caret-position="130">
+              <caret line="174" column="20" selection-start-line="174" selection-start-column="20" selection-end-line="174" selection-end-column="20" />
               <folding>
                 <element signature="n#!!doc" />
                 <element signature="e#8522#8557#0" />
@@ -195,20 +195,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="32" column="16" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="162">
-                <caret line="37" column="38" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="38" />
-              </first_editor>
-              <second_editor />
+            <state relative-caret-position="180">
+              <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -254,7 +242,6 @@
       <find>Whether or not to perform value is error!!</find>
       <find>print &quot;</find>
       <find>[0m测试通过</find>
-      <find>测试通过</find>
       <find>class</find>
       <find>ysy_test</find>
       <find>通过</find>
@@ -264,6 +251,7 @@
       <find>0m</find>
       <find>rando</find>
       <find>forma</find>
+      <find>测试通过</find>
     </findStrings>
     <replaceStrings>
       <replace>(</replace>
@@ -852,7 +840,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569223193524</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="调试了天富及一生约两个sheet中所有失败用例">
+      <created>1571128565116</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1571128565116</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -877,6 +872,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6338912" visible="true" weight="0.13993949" />
       <window_info id="Structure" order="1" sideWeight="0.36534446" side_tool="true" weight="0.1633888" />
@@ -892,7 +888,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.23600605" side_tool="true" weight="0.5611511" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.27769783" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49266246" visible="true" weight="0.6887097" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49266246" visible="true" weight="0.33870968" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.2629032" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.4705036" />
       <window_info anchor="bottom" id="Favorites" order="15" sideWeight="0.48526523" weight="0.22" />
@@ -937,7 +933,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="更改了main文件中的get_sheet_name" />
     <MESSAGE value="1、新增用例&#10;2、excel中新增行为字段" />
     <MESSAGE value="1、修改了一生约版本接口，期望值中多余的值" />
     <MESSAGE value="1、增加一生约用户关系改造的三个接口，20个用例" />
@@ -962,7 +957,8 @@
     <MESSAGE value="get_data中增加随机函数处理家人运动步数写入" />
     <MESSAGE value="运行模式去掉默认debug" />
     <MESSAGE value="去掉所有展厅步数的运行" />
-    <option name="LAST_COMMIT_MESSAGE" value="去掉所有展厅步数的运行" />
+    <MESSAGE value="调试了天富及一生约两个sheet中所有失败用例" />
+    <option name="LAST_COMMIT_MESSAGE" value="调试了天富及一生约两个sheet中所有失败用例" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1431,13 +1427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/common_util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1455,25 +1444,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="42">
+            <caret line="32" column="63" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="135" column="38" selection-start-line="135" selection-start-column="38" selection-end-line="135" selection-end-column="38" />
+        <state relative-caret-position="130">
+          <caret line="174" column="20" selection-start-line="174" selection-start-column="20" selection-end-line="174" selection-end-column="20" />
           <folding>
             <element signature="n#!!doc" />
             <element signature="e#8522#8557#0" />
             <element signature="e#9314#9347#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="162">
-            <caret line="37" column="38" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="38" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
