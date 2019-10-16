@@ -68,7 +68,7 @@ class RunTest(object):
             global_var[list_last] = res_value
         return global_var
 
-    def do_fail_result(self, i, res, id, url, expect_value, expect_no_value):
+    def do_fail_result(self, i, res, id, data, url, expect_value, expect_no_value):
         """
         测试失败时，对结果和输出的处理
         :param i:   第几行数据
@@ -80,9 +80,9 @@ class RunTest(object):
         """
         self.get_data.write_excle_data(i, res)  # 如果出错，返回接口错误信息
         self.fail_count.append(id)
-        print('\033[7;31m测试失败,ID:{0}, URL为：{1}, 期望值：{2},期望不包含值：{3},实际值为：{4}\033[0m'.format(id, url, expect_value,  expect_no_value, res))
+        print('\033[7;31m测试失败,ID:{0}, URL为：{1}, 请求数据为：{2}，期望值：{3},期望不包含值：{4},实际值为：{5}\033[0m'.format(id, url,data, expect_value, expect_no_value, res))
 
-    def do_pass_result(self, result_row, case_id, case_url):
+    def do_pass_result(self, result_row, case_id, case_url, mode):
         """
         测试成功时，对结果和输出的处理
         :param result_row: 结果位置处于第几行
@@ -92,7 +92,8 @@ class RunTest(object):
         """
         self.get_data.write_excle_data(result_row, 'pass')
         self.pass_count.append(case_id)
-        # print('\033[0m测试通过:', case_id, case_url)        #调试时可不用注释该行
+        if mode == 'debug':
+            print('\033[0m测试通过:', case_id, case_url)        #调试时可不用注释该行
 
     def preset_data(self, line, envir):
         '''
@@ -138,9 +139,10 @@ class RunTest(object):
         expect_val, not_expect_val = self.get_expect_and_not(domain, i)
         return url,method,header,data,key,expect_val,not_expect_val
 
-    def go_on_run(self):
+    def go_on_run(self,mode):
         """
         运行生产环境接口：ysy_api
+        mode:运行模式，当为debug时，会打印通过的用例
         :return: fail_count, pass_count
         """
         for i in range(1, self.sheet_row_counts()):  # 排除第一行
@@ -158,12 +160,12 @@ class RunTest(object):
                 # 运行的出接口响应值
                 res = self.run_me.run_main(method, url, data, header)  # output：str
                 if res == 'true' :                       #   当接口相应值为html，会直接返回True
-                    self.do_fail_result(i, res, id, url,expect_val,not_expect_val)
+                    self.do_fail_result(i, res, id, data, url,expect_val,not_expect_val)
                     continue
                 # elif key and 'code":0' not in res.text:  # 当接口相应异常且想获取全局变量值时，直接抛错 这个不行，因为有异常接口需要判断code为其它值
                 #     self.do_fail_result(i, res.text, id, url, expect_value, expect_no_value)
                 elif type(res) == type(1):                     # 返回状态码处理
-                    self.do_fail_result(i, res, id, url, expect_val, not_expect_val)
+                    self.do_fail_result(i, res, id, data, url, expect_val, not_expect_val)
                     break
                 if key:
                     # 获取需要提取的全局变量
@@ -176,17 +178,17 @@ class RunTest(object):
                     rel1 = self.com_util.is_contain(expect_val,res.text)
                     rel2 = self.com_util.not_contain(not_expect_val, res.text)  # 从期望值对比
                     if rel1 and rel2:
-                        self.do_pass_result(i, id, url)
+                        self.do_pass_result(i, id, url,mode)
                     else:
-                        self.do_fail_result(i, res.text, id, url, expect_val, not_expect_val)
+                        self.do_fail_result(i, res.text, id, data, url, expect_val, not_expect_val)
                 elif expect_val is not None:  # 期望包含值是不为空的(这个值不可能为空)
                     rel1 = self.com_util.is_contain(expect_val, res.text)
                     if rel1:
-                        self.do_pass_result(i, id, url)
+                        self.do_pass_result(i, id, url, mode)
                     else:
-                        self.do_fail_result(i, res.text, id, url, expect_val, not_expect_val)
+                        self.do_fail_result(i, res.text, id, data, url, expect_val, not_expect_val)
                 else:
-                    self.do_fail_result(i, res.text, id, url, expect_val, not_expect_val)
+                    self.do_fail_result(i, res.text, id, data, url, expect_val, not_expect_val)
                     continue
             # time.sleep(5)           # 避免json数据读取旧文件
         print("\n>>>>>>>>>>>测试用例集《{0}》,总计用例{1}个，通过{2}个用例，失败{3}个用例\n\n>>>>>>>>>>>".format(self.sheet_name,len(self.pass_count)+len(self.fail_count),len(self.pass_count),len(self.fail_count)))
@@ -240,7 +242,7 @@ class RunTest(object):
 if __name__ == '__main__':
     run_test = RunTest(0)
     mode =run_test.run_param()    #运行模式
-    # mode = 'debug'          # 调试模式
+    # mode = 'debug'                  # 调试模式,二选一
 
     if mode == 'release':
         """多sheet，遍历执run_param行"""
@@ -249,10 +251,10 @@ if __name__ == '__main__':
         for i in range(1, len(sheets)):  # 从sheetid为1开始遍历
             # print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>第" + str(i) + "个选项卡用例执行>>>>>>>>>>>>>>>>>>>>>>>>>>")
             run_test = RunTest(i)
-            run_test.go_on_run()
+            run_test.go_on_run(mode)
     else:
         """仅调试使用"""
-        run_test.go_on_run()
+        run_test.go_on_run(mode)
 
 
     # """多线程执行，有问题：用例先被执行了，没有进入多任务"""

@@ -18,5 +18,12 @@ class Timst(object):
 # print(timestamp)
 
 if __name__ == "__main__":
-    t = Timst()
-    print(t.current_stamp())
+    # t = Timst()
+    # print(t.current_stamp())
+
+    a = '31008.14'
+    b = '{"code":0,"data":[{"state":"TODAY_ORDER_NUM","numberOrAmount":"0","stateName":"今日订单数"},{"state":"DEAL","numberOrAmount":"31008.14","stateName":"成交金额"},{"state":"TODAY_STAY_SEND","numberOrAmount":"0","stateName":"今日付款"}],"ts":1571189663002}'
+    if a in b:
+        print ('yes')
+    else:
+        print ('no')
