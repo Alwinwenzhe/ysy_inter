@@ -124,7 +124,6 @@ class CommonUtil(object):
             except Exception as e:
                 print ('接口返回的状态码有误，请检查！',e)
 
-
     def current_stamp(self):
         '''获取当前时间戳'''
         now = datetime.datetime.now()                   # 返回当前时间，带有小数点

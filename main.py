@@ -238,7 +238,6 @@ class RunTest(object):
     #     elif var1 == 'release':
 
 
-
 if __name__ == '__main__':
     run_test = RunTest(0)
     mode =run_test.run_param()    #运行模式

@@ -167,6 +167,9 @@ class GetData(object):
             elif value.startswith("y::"):
                 temp = value.split("::")[1]
                 header_value[key] = self.oper_ya.read_main(temp)
+            elif value.startswith("ts::"):
+                temp = value.split("::")[1]
+                header_value[key] = self.com_util.current_stamp()
             elif value.startswith("r::"):   #处理请求体中的随机数
                 temp = value.split("::")[1]
                 temp_split = temp.split("&")
