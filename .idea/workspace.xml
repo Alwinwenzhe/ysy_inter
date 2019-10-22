@@ -9,9 +9,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/case.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/case.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataconfig/json.json" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/json.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getdata/get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/getdata/get_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/common_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/common_util.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +67,7 @@
     <session id="1746992316">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="205" />
+          <entry key="project.closed" value="206" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
@@ -90,7 +87,7 @@
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.27" value="3" />
           <entry key="project.open.time.29" value="1" />
-          <entry key="project.open.time.3" value="17" />
+          <entry key="project.open.time.3" value="18" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.4" value="10" />
@@ -100,7 +97,7 @@
           <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="254" />
+          <entry key="project.opened" value="255" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -144,7 +141,7 @@
           <entry key="md" value="683" />
           <entry key="py" value="30590" />
           <entry key="sql" value="73" />
-          <entry key="txt" value="1093" />
+          <entry key="txt" value="1133" />
           <entry key="xml" value="148" />
           <entry key="yaml" value="1304" />
         </counts>
@@ -153,7 +150,7 @@
         <counts>
           <entry key="JSON" value="86" />
           <entry key="Markdown" value="683" />
-          <entry key="PLAIN_TEXT" value="1117" />
+          <entry key="PLAIN_TEXT" value="1157" />
           <entry key="Python" value="30710" />
           <entry key="RegExp" value="1" />
           <entry key="Scratch" value="73" />
@@ -171,12 +168,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="175" column="95" selection-start-line="175" selection-start-column="95" selection-end-line="175" selection-end-column="95" />
+            <state relative-caret-position="93">
+              <caret line="252" column="36" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
               <folding>
                 <element signature="n#!!doc" />
                 <element signature="e#8680#8715#0" />
-                <element signature="e#9502#9535#0" />
               </folding>
             </state>
           </provider>
@@ -185,7 +181,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/base/runmethod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
+            <state relative-caret-position="1620">
               <caret line="83" selection-start-line="83" selection-end-line="83" />
             </state>
           </provider>
@@ -194,7 +190,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
+            <state relative-caret-position="3180">
               <caret line="165" column="65" selection-start-line="165" selection-start-column="51" selection-end-line="165" selection-end-column="65" />
             </state>
           </provider>
@@ -863,7 +859,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571275747521</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="修改回接口返回值获取方式&#10;一生约正式环境获取验证码接口使用老接口">
+      <created>1571648666413</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1571648666413</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -888,8 +891,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6338912" visible="true" weight="0.14220877" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6338912" visible="true" weight="0.14447807" />
       <window_info id="Structure" order="1" sideWeight="0.36534446" side_tool="true" weight="0.1633888" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.36612904" />
@@ -903,7 +907,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.23600605" side_tool="true" weight="0.5611511" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.27769783" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49266246" visible="true" weight="0.6048387" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49266246" visible="true" weight="0.6032258" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.2629032" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.4705036" />
       <window_info anchor="bottom" id="Favorites" order="15" sideWeight="0.48526523" weight="0.22" />
@@ -948,7 +952,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加demo，系统参数传递" />
     <MESSAGE value="main函数中增加系统参数接受方法" />
     <MESSAGE value="增加天富一生约接口用例涉及：登录、能源-绑定户号" />
     <MESSAGE value="增加天富一生约接口用例涉及：户号查询，雪莲宝接口配置" />
@@ -973,7 +976,8 @@
     <MESSAGE value="去掉通过的日志打印" />
     <MESSAGE value="增加一生约商家APP部分用例&#10;优化调试模式日志输出" />
     <MESSAGE value="修改一生约绑定手机号接口参数为随机手机号" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改一生约绑定手机号接口参数为随机手机号" />
+    <MESSAGE value="修改回接口返回值获取方式&#10;一生约正式环境获取验证码接口使用老接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改回接口返回值获取方式&#10;一生约正式环境获取验证码接口使用老接口" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1455,13 +1459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/base/runmethod.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dataconfig/json.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1469,22 +1466,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="165" column="65" selection-start-line="165" selection-start-column="51" selection-end-line="165" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="175" column="95" selection-start-line="175" selection-start-column="95" selection-end-line="175" selection-end-column="95" />
+        <state relative-caret-position="93">
+          <caret line="252" column="36" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
           <folding>
             <element signature="n#!!doc" />
             <element signature="e#8680#8715#0" />
-            <element signature="e#9502#9535#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/runmethod.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3180">
+          <caret line="165" column="65" selection-start-line="165" selection-start-column="51" selection-end-line="165" selection-end-column="65" />
         </state>
       </provider>
     </entry>
