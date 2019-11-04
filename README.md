@@ -25,6 +25,7 @@ Header---{"Content-Type":"application/json; charset=UTF-19","accessToken":"j::da
 该字段中部分值可能取值于yaml或json中的值
 
 全局变量值(值全路径)---data/accessToken,data/userOrderCount/userId
+注意，当data中的目标数据被包含在list中，取值方式为：data/0/biotopeId
 该字段表示从响应值中取出的值，按dict格式编写
 
 预置数据--

@@ -240,8 +240,8 @@ class RunTest(object):
 
 if __name__ == '__main__':
     run_test = RunTest(0)
-    mode =run_test.run_param()    #运行模式
-    # mode = 'debug'                  # 调试模式,二选一
+    # mode =run_test.run_param()    #运行模式
+    mode = 'debug'                  # 调试模式,二选一
 
     if mode == 'release':
         """多sheet，遍历执run_param行"""
