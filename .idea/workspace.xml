@@ -5,15 +5,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ysy_inter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ysy_inter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataconfig/case.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/case.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataconfig/json.json" beforeDir="false" afterPath="$PROJECT_DIR$/dataconfig/json.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/operate_yaml.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/operate_yaml.py" afterDir="false" />
-    </list>
+    <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="161" selection-start-line="161" selection-end-line="161" />
+            <state relative-caret-position="85">
+              <caret line="158" column="33" lean-forward="true" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -380,14 +372,7 @@
       <updated>1542614649813</updated>
       <workItem from="1574759285662" duration="639000" />
       <workItem from="1575444138533" duration="4269000" />
-      <workItem from="1575511227062" duration="206000" />
-    </task>
-    <task id="LOCAL-00002" summary="重新执行了一次，引起了json发生变化&#10;case中好像没修改">
-      <created>1550136389490</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1550136389491</updated>
+      <workItem from="1575511227062" duration="498000" />
     </task>
     <task id="LOCAL-00003" summary="main中增加每个选项卡通过和失败用例统计">
       <created>1550136976130</created>
@@ -725,7 +710,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572514666269</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="拉取到本地，进行了调试">
+      <created>1575511633364</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1575511633364</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -740,7 +732,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5114000" />
+    <option name="totallyTimeSpent" value="5406000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -753,13 +745,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1455" height="935" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.62474227" visible="true" weight="0.15891196" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.62474227" visible="true" weight="0.15891196" />
       <window_info id="Structure" order="1" sideWeight="0.37525773" side_tool="true" visible="true" weight="0.15891196" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.36612904" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7639939" weight="0.6298701" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39601496" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39601496" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.26615384" />
@@ -825,7 +818,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加天富一生约接口用例涉及：户号查询，雪莲宝接口配置" />
     <MESSAGE value="增加天富一生约接口用例涉及：石城动态，能源banner，报修" />
     <MESSAGE value="调整用例" />
     <MESSAGE value="调试用例" />
@@ -850,7 +842,8 @@
     <MESSAGE value="修改回接口返回值获取方式&#10;一生约正式环境获取验证码接口使用老接口" />
     <MESSAGE value="调整了一生约第41个用例为暂不运行" />
     <MESSAGE value="增加了一生约物业app接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了一生约物业app接口" />
+    <MESSAGE value="拉取到本地，进行了调试" />
+    <option name="LAST_COMMIT_MESSAGE" value="拉取到本地，进行了调试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1282,8 +1275,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="161" selection-start-line="161" selection-end-line="161" />
+        <state relative-caret-position="85">
+          <caret line="158" column="33" lean-forward="true" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
         </state>
       </provider>
     </entry>
