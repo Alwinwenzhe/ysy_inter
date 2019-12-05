@@ -5,7 +5,10 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="" />
+    <list default="true" id="fcaca6aa-ca6b-4c44-b03f-49290bab635d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="158" column="33" lean-forward="true" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
+            <state relative-caret-position="345">
+              <caret line="252" column="33" lean-forward="true" selection-start-line="252" selection-start-column="33" selection-end-line="252" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -76,7 +79,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/codecs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="6160">
               <caret line="309" selection-start-line="309" selection-end-line="309" />
             </state>
           </provider>
@@ -85,7 +88,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/operate_yaml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="440">
               <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
             </state>
           </provider>
@@ -94,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="300">
               <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
             </state>
           </provider>
@@ -103,7 +106,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/debug/debug.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="280">
               <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
             </state>
           </provider>
@@ -112,7 +115,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/base/runmethod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="340">
               <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
               <folding>
                 <element signature="e#52#67#0" expanded="true" />
@@ -124,7 +127,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/common_util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="2280">
               <caret line="114" selection-start-line="114" selection-end-line="114" />
               <folding>
                 <element signature="e#27#42#0" expanded="true" />
@@ -136,7 +139,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="3180">
               <caret line="165" column="65" selection-start-line="165" selection-start-column="51" selection-end-line="165" selection-end-column="65" />
             </state>
           </provider>
@@ -262,8 +265,8 @@
         <option value="$PROJECT_DIR$/debug/debug.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/util/operate_yaml.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_resolver.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -372,14 +375,8 @@
       <updated>1542614649813</updated>
       <workItem from="1574759285662" duration="639000" />
       <workItem from="1575444138533" duration="4269000" />
-      <workItem from="1575511227062" duration="498000" />
-    </task>
-    <task id="LOCAL-00003" summary="main中增加每个选项卡通过和失败用例统计">
-      <created>1550136976130</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1550136976130</updated>
+      <workItem from="1575511227062" duration="1958000" />
+      <workItem from="1575539448078" duration="165000" />
     </task>
     <task id="LOCAL-00004" summary="190215 增加物业账号">
       <created>1550222694889</created>
@@ -717,7 +714,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575511633364</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="拉取到本地，进行了调试">
+      <created>1575511770876</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1575511770876</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -732,7 +736,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5406000" />
+    <option name="totallyTimeSpent" value="7031000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -747,12 +751,12 @@
     <frame x="-7" y="-7" width="1455" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.62474227" visible="true" weight="0.15891196" />
-      <window_info id="Structure" order="1" sideWeight="0.37525773" side_tool="true" visible="true" weight="0.15891196" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6239103" visible="true" weight="0.16105941" />
+      <window_info id="Structure" order="1" sideWeight="0.37608966" side_tool="true" visible="true" weight="0.16105941" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.36612904" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7639939" weight="0.6298701" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39601496" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39601496" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.26615384" />
@@ -1275,42 +1279,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="158" column="33" lean-forward="true" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
+        <state relative-caret-position="345">
+          <caret line="252" column="33" lean-forward="true" selection-start-line="252" selection-start-column="33" selection-end-line="252" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python38/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="6160">
           <caret line="309" selection-start-line="309" selection-end-line="309" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/util/operate_yaml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="440">
           <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataconfig/Global_var.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="300">
           <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/debug/debug.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="280">
           <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/base/runmethod.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="340">
           <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding>
             <element signature="e#52#67#0" expanded="true" />
@@ -1320,7 +1324,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/util/common_util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="2280">
           <caret line="114" selection-start-line="114" selection-end-line="114" />
           <folding>
             <element signature="e#27#42#0" expanded="true" />
@@ -1330,7 +1334,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getdata/get_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="3180">
           <caret line="165" column="65" selection-start-line="165" selection-start-column="51" selection-end-line="165" selection-end-column="65" />
         </state>
       </provider>
