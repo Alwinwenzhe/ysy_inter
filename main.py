@@ -59,7 +59,8 @@ class RunTest(object):
         for i in list_comma:  # 写入之多个时，需循环处理2018-10-30 13：00
             list = i.split("/")
             list_last = list[-1]  # 获取最后一个值
-            res_value = json.loads(res, encoding='utf-8')
+            #res_value = json.loads(res, encoding='utf-8')
+            res_value = json.loads(res)
             for i in range(len(list)):
                 if str(list[i]).isdigit():
                     res_value = res_value[int(list[i])]
@@ -173,7 +174,7 @@ class RunTest(object):
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
                     self.get_data.write_excle_data(i, 'pass')
                     self.pass_count.append(id)
-                    # print('测试通过:', id, url)        #本地调试打开，生产需注释掉 进打印选项卡统计数据及失败数据--2019-07-12
+                    self.do_pass_result(i, id, url, mode)
                 elif not_expect_val is not None and expect_val is not None:  # 期望包含值和期望不包含值都不为空
                     rel1 = self.com_util.is_contain(expect_val,res.text)
                     rel2 = self.com_util.not_contain(not_expect_val, res.text)  # 从期望值对比

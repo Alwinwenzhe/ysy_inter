@@ -17,7 +17,7 @@ class OperateYaml(object):
         :return:
         """
         with open(self.filename, 'r', encoding='utf-8') as f:  # encoding解决yaml中 中文问题
-            data = yaml.load(f)
+            data = yaml.load(f,Loader=yaml.FullLoader)
         return data
 
     def read_main(self, str):
