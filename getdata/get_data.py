@@ -274,11 +274,13 @@ class GetData(object):
         for i in expect_data:
             if "SELECT" in str(i) or "UPDATE" in str(i) or "DELETE" in str(i) or "INSERT" in str(i) :  # 验证是否为SQL语句
                 temp = self.oper_sql.execute_sql(envir, i)
-                if ',' in str(temp):                        # 返回結果中包含多個結果，進行拆分
+                if temp == None:
+                    return "sql result is None"
+                elif ',' in str(temp):                        # 返回結果中包含多個結果，進行拆分
                     temp_list = self.com_util.split_self(',',temp)
                     result = result + temp_list             # 合并list
                 else:
-                    result.append(temp)
+                    result.append(temp)                     # 将单个str直接添加到最后返回
             else:
                 result.append(i)
         return result

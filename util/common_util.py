@@ -83,11 +83,14 @@ class CommonUtil(object):
                     temp = temp + list_split
                 else:
                     temp.append(i)
+            return temp
         elif isinstance(total_str,str):
             if ',' in str(total_str):
                 list_split = total_str.split(symbol)
                 temp = temp + list_split
-        return temp
+            else:
+                temp.append(total_str)          # 注意这里添加
+            return temp
 
     def data_joint(self,data1,data2):
         """

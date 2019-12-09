@@ -5,14 +5,6 @@
 
 import numpy as np
 
-# Scalar
-x = np.array(6) # scalar
-print ("x: ", x)
-# Number of dimensions
-print ("x ndim: ", x.ndim)
-# Dimensions
-print ("x shape:", x.shape)
-# Size of elements
-print ("x size: ", x.size)
-# Data type
-print ("x dtype: ", x.dtype)
+temp = []
+temp.append('ab')
+print('hello')
