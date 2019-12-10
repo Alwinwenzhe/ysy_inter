@@ -160,17 +160,20 @@ class RunTest(object):
                 url, method, header, data, key, expect_val, not_expect_val = self.get_multi_data(envir,i)
                 # 运行的出接口响应值
                 res = self.run_me.run_main(method, url, data, header)  # output：str
-                if res == 'true' :                       #   当接口相应值为html，会直接返回True
-                    self.do_fail_result(i, res, id, data, url,expect_val,not_expect_val)
+                if 'code":0' not in res:                        #d 当接口直接报错时，直接返回错误内容
+                    self.do_fail_result(i, res.text, id, data, url, expect_val, not_expect_val)
+                    continue
+                elif res == 'true' :                       #   当接口相应值为html，会直接返回True
+                    self.do_fail_result(i, res.text, id, data, url,expect_val,not_expect_val)
                     continue
                 # elif key and 'code":0' not in res.text:  # 当接口相应异常且想获取全局变量值时，直接抛错 这个不行，因为有异常接口需要判断code为其它值
                 #     self.do_fail_result(i, res.text, id, url, expect_value, expect_no_value)
                 elif type(res) == type(1):                     # 返回状态码处理
-                    self.do_fail_result(i, res, id, data, url, expect_val, not_expect_val)
+                    self.do_fail_result(i, res.text, id, data, url, expect_val, not_expect_val)
                     break
                 if key:
                     # 获取需要提取的全局变量
-                    for key, value in self.get_path(key, res.text).items():  # 获取字典对应的key，value
+                    for key, value in self.get_path(key, res.text.text).items():  # 获取字典对应的key，value
                         self.oper_json.write_json_value(key, value)  # 当有全局变量成功取出，则pass
                     self.get_data.write_excle_data(i, 'pass')
                     self.pass_count.append(id)

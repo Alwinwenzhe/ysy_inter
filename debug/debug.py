@@ -5,6 +5,8 @@
 
 import numpy as np
 
-temp = []
-temp.append('ab')
-print('hello')
+t = '{"code":182,"msg":"该手机号已被使用","ts":1575978677111}'
+if 'code":0' in t:
+    print('yes')
+else:
+    print('no')
